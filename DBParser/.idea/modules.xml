@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DBPROJECT/DBPROJECT.iml" filepath="$PROJECT_DIR$/DBPROJECT/DBPROJECT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DBParser.iml" filepath="$PROJECT_DIR$/DBParser.iml" />
+    </modules>
+  </component>
+</project>
