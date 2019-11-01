@@ -1,3 +1,5 @@
+package app;
+
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.*;
@@ -61,6 +63,7 @@ public class XMLParser {
         entities.put("&apos;", "\'");
         entities.put("&quot;", "\"");
         entities.put("&amp;", "&");
+        entities.put("\t", "");
 
         for (HashMap.Entry<String,String> entity: entities.entrySet()){
             wikitext = wikitext.replaceAll(entity.getKey(), entity.getValue());
@@ -83,5 +86,9 @@ public class XMLParser {
             }
         }
         return result.toString();
+    }
+
+    public String wikiToHtml(String wikitext){
+        return info.bliki.wiki.model.WikiModel.toHtml(wikitext);
     }
 }

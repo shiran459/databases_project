@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DBParser-20191026T094110Z-001.iml" filepath="$PROJECT_DIR$/.idea/DBParser-20191026T094110Z-001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DBParser/DBPROJECT.iml" filepath="$PROJECT_DIR$/DBParser/DBPROJECT.iml" />
     </modules>
   </component>
 </project>

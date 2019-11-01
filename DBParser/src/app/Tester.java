@@ -1,3 +1,7 @@
+package app;
+
+import app.lib.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,6 +11,7 @@ import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Tester {
 
@@ -19,13 +24,29 @@ public class Tester {
     String htmlString;
     XMLParser xmlParser;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         // ################################## RUN SOME TESTS #####################################//
+//
+//        app.Tester tester = new app.Tester();
+//        tester.beforeAll();
 
-        Tester tester = new Tester();
-        tester.beforeAll();
+//        String xmlpath = "C:\\Users\\User\\Documents\\GitHub\\databases_project\\DBParser\\Examples\\sample2.xml";
+//        File xmlfile = new File(xmlpath);
+//        app.XMLParser parser = new app.XMLParser(xmlfile);
+//        Element page = parser.getNextPage();
+//        String s = parser.getPageWikitext(page);
+//        String html = parser.wikiToHtml(s);
+//        System.out.println(html);
 
+
+        String htmlpath = "C:\\Users\\User\\Documents\\GitHub\\databases_project\\DBParser\\Examples\\sample2.html";
+        File htmlfile = new File(htmlpath);
+//        app.HTMLPageParser.parseIntoParagraphs(htmlfile);
+
+        IndexByParagraph a = new IndexByParagraph(htmlfile);
+
+        HashMap<String, List<int[]>> index = a.index;
 
     }
 
@@ -82,13 +103,13 @@ public class Tester {
     }
     private void testInsertWordIndex(){
         beforeTestWordIndex();
-        HashMap<String,ArrayList<Integer>> index = HTMLPageParser.createIndex(htmlString);
+        HashMap<String,ArrayList<Integer>> index = HTMLPageParser.createIndexByOffset(htmlString);
         testInsertWordIndex(index);
     }
 
     private void testInsertWordIndex(HashMap<String, ArrayList<Integer>> index) {
         try{
-            ServerLib.insertWordIndex(1,index);
+            WordLib.insertWordIndex(1,index);
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -101,7 +122,7 @@ public class Tester {
     private void testCreateIndex(){
         XMLParser parser = new XMLParser(htmlFile);
         String text = parser.getTextContent();
-        HashMap<String, ArrayList<Integer>> index = HTMLPageParser.createIndex(text);
+        HashMap<String, ArrayList<Integer>> index = HTMLPageParser.createIndexByOffset(text);
 
         //Print index
         printWordIndex(index);
@@ -109,7 +130,7 @@ public class Tester {
 
     private void testCreateWordGroup(){
         try{
-            ServerLib.insertGroup("My Group Name", 1);
+            GroupLib.insertGroup("My Group Name", 1);
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -117,7 +138,7 @@ public class Tester {
 
     private void testInsertUser(){
         try{
-            ServerLib.insertUser("My Usename", "<no hash>", "<no token>", null);
+            UserLib.insertUser("My Usename", "<no hash>", "<no token>", null);
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -125,7 +146,7 @@ public class Tester {
 
     private void testInsertArticle(){
         try{
-            ServerLib.insertArticle("Mt title", "<no path>");
+            ArticleLib.insertArticle("Mt title", "<no path>");
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -133,7 +154,7 @@ public class Tester {
 
     private void testInsertGroup(){
         try{
-            ServerLib.insertGroup("My Group", 5);
+            GroupLib.insertGroup("My Group", 5);
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -142,7 +163,7 @@ public class Tester {
     //######################################### QUERY METHODS ######################################//
     private boolean testGetWordId(String word, int expectedId){
         try{
-            return ServerLib.getWordId(word) == expectedId;
+            return WordLib.getWordId(word) == expectedId;
         }
         catch (SQLException e){}
         return false;
@@ -150,7 +171,7 @@ public class Tester {
 
     private boolean testGetArticlePath(int articleId, String expectedPath){
         try{
-            return ServerLib.getArticlePath(articleId).equals(expectedPath);
+            return ArticleLib.getArticlePath(articleId).equals(expectedPath);
         }
         catch (SQLException e){}
         return false;

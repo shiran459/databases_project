@@ -1,3 +1,5 @@
+package app;
+
 /**
  * Builds the database from the XML dump.
  */
