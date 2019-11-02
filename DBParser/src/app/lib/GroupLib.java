@@ -30,7 +30,7 @@ public class GroupLib {
      * Inserts a word set belong to a group into the WORDS_BY_GROUP table.
      *
      * @param groupId ID of the group.
-     * @param words   Word set of the group.
+     * @param words   ArticleWord set of the group.
      * @throws SQLException
      */
     private static void insertGroupWordSet(int groupId, Set<String> words) throws SQLException {

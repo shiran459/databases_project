@@ -44,7 +44,7 @@ public class Tester {
         File htmlfile = new File(htmlpath);
 //        app.HTMLPageParser.parseIntoParagraphs(htmlfile);
 
-        IndexByParagraph a = new IndexByParagraph(htmlfile);
+        LocationByParagraph a = new LocationByParagraph(htmlfile);
 
         HashMap<String, List<int[]>> index = a.index;
 

@@ -16,7 +16,7 @@ public class ArticleLib {
      * @param path  Path to the HTML file of the article.
      * @throws SQLException If the transaction has failed.
      */
-    public static void insertArticle(String title, String path) throws SQLException {
+    public static int insertArticle(String title, String path) throws SQLException {
         String sql = "INSERT INTO articles(article_id, article_name,path)" +
                 "VALUES (?, ? ,?)";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
@@ -24,6 +24,13 @@ public class ArticleLib {
         pstmt.setString(2, title);
         pstmt.setString(3, path);
         pstmt.executeUpdate();
+
+        ResultSet rs=pstmt.getGeneratedKeys();
+
+        if(rs.next()){
+            return rs.getInt(1);
+        }
+        return -1;
     }
 
     public static String getArticlePath(int articleId) throws SQLException {

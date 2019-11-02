@@ -37,8 +37,8 @@ public class HTMLPageParser {
      * @param text A text to be indexed.
      * @return A HashMap index of the words.
      */
-    public static HashMap<String, ArrayList<Integer>> createIndexByOffset(String text) {
-        HashMap<String, ArrayList<Integer>> index = new HashMap<>();
+    public static HashMap<String, ArticleWord> createIndexByOffset(String text) {
+        HashMap<String, ArticleWord> index = new HashMap<>();
 
         //Remove non-alphanumeric characters then split to words
         String[] words = getWordList(text);
@@ -46,11 +46,11 @@ public class HTMLPageParser {
         //Add the current word location to the index
         for (int i = 0; i < words.length; i++) {
             if (index.containsKey(words[i])) {
-                index.get(words[i]).add(i);
+                index.get(words[i]).offests.add(i);
             } else {
-                ArrayList<Integer> locations = new ArrayList<Integer>();
-                locations.add(i);
-                index.put(words[i], locations);
+                ArticleWord word = new ArticleWord(words[i]);
+                word.offests.add(i);
+                index.put(words[i], word);
             }
         }
 

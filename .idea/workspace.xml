@@ -2,47 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d71cbc-b99d-4b28-acd0-72000cc20eca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__info_bliki_wiki_bliki_core_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_luaj_luaj_jse_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ojdbc10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/Examples/sample2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/Examples/sample2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/app/HTMLPageParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/app/IndexByOffset.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/app/IndexByParagraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/app/lib/ArticleLib.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/app/lib/ExpressionLib.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/app/lib/GroupLib.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/app/lib/UserLib.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/app/lib/WordLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBParser/src/app/ArticleWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/DBPROJECT/DBPROJECT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/DBPROJECT.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/DBPROJECT/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/ConnectionManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/DatabaseBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/DatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/DatabaseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/HTMLPageParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/OracleConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/OracleConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/OracleConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/ServerLib.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/ServerLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/lib/ServerLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/Tester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/Tester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/XMLParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/app/HTMLPageParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/HTMLPageParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/app/IndexByOffset.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/LocationByOffset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/app/IndexByParagraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/LocationByParagraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/app/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/Tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/app/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/app/lib/ArticleLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/lib/ArticleLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/app/lib/GroupLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/lib/GroupLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/app/lib/ServerLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/lib/ServerLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/app/lib/WordLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/app/lib/WordLib.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/DBParser/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,33 +35,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="2" />
+          <entry key="html" value="3" />
           <entry key="iml" value="1" />
-          <entry key="java" value="39" />
-          <entry key="xml" value="5" />
+          <entry key="java" value="64" />
+          <entry key="xml" value="7" />
           <entry key="xpath" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="2" />
+          <entry key="HTML" value="3" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="39" />
-          <entry key="XML" value="5" />
+          <entry key="JAVA" value="64" />
+          <entry key="XML" value="7" />
           <entry key="XPath" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="23" />
-          <entry key="java" value="2521" />
+          <entry key="java" value="3831" />
           <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="23" />
-          <entry key="JAVA" value="2521" />
+          <entry key="JAVA" value="3831" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
@@ -103,28 +73,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/ServerLib.java">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/app/HTMLPageParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="253">
+              <caret line="59" column="97" selection-start-line="59" selection-start-column="97" selection-end-line="59" selection-end-column="97" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#237#512#0" />
-                <element signature="e#518#1522#0" />
-                <element signature="e#9246#9746#0" />
+                <element signature="method#parseIntoParagraphs#0;class#HTMLPageParser#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/app/XMLParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getNextPage#0;class#XMLParser#0" />
+                <element signature="method#isArticlePage#0;class#XMLParser#0" />
+                <element signature="method#getPageWikitext#0;class#XMLParser#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/ArticleLib.java">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/ServerLib.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="168" column="29" selection-start-line="168" selection-start-column="29" selection-end-line="168" selection-end-column="29" />
+            <state relative-caret-position="616">
+              <caret line="51" column="24" selection-start-line="51" selection-end-line="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#insertArticle#0;class#ArticleLib#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/ArticleLib.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#getArticlePath#0;class#ArticleLib#0" />
                 <element signature="method#searchArticlesByTitle#0;class#ArticleLib#0" />
                 <element signature="method#searchArticlesByCategory#0;class#ArticleLib#0" />
@@ -135,6 +129,42 @@
                 <element signature="method#getLocationsByOffset#0;class#ArticleLib#0" />
                 <element signature="method#getLocationsByParagraph#0;class#ArticleLib#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/app/LocationByParagraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/WordLib.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="20" column="52" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#searchWordLocationsInArticle#0;class#WordLib#0" />
+                <element signature="method#getContexts#0;class#WordLib#0" />
+                <element signature="method#getAllWords#0;class#WordLib#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBParser/Examples/sample2.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="636">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
             </state>
           </provider>
         </entry>
@@ -154,6 +184,7 @@
       <find>searchArticlesByWords</find>
       <find>info.bliki.wiki.model</find>
       <find>index</find>
+      <find>createw</find>
       <find>wordIndex</find>
     </findStrings>
   </component>
@@ -177,12 +208,21 @@
         <option value="$PROJECT_DIR$/DBParser/src/app/ConnectionManager.java" />
         <option value="$PROJECT_DIR$/DBParser/src/lib/ServerLib.java" />
         <option value="$PROJECT_DIR$/DBParser/src/app/ServerLib.java" />
-        <option value="$PROJECT_DIR$/DBParser/src/app/lib/ServerLib.java" />
         <option value="$PROJECT_DIR$/DBParser/src/app/lib/UserLib.java" />
         <option value="$PROJECT_DIR$/DBParser/src/app/lib/ExpressionLib.java" />
-        <option value="$PROJECT_DIR$/DBParser/src/app/lib/ArticleLib.java" />
-        <option value="$PROJECT_DIR$/DBParser/src/app/lib/WordLib.java" />
         <option value="$PROJECT_DIR$/DBParser/src/app/lib/GroupLib.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/IndexByOffset.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/LocationByOffset.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/Location.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/IndexByParagraph.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/Word.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/LocationByParagraph.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/lib/WordLib.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/ArticleWord.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/HTMLPageParser.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/XMLParser.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/lib/ServerLib.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/app/lib/ArticleLib.java" />
       </list>
     </option>
   </component>
@@ -192,7 +232,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-289" />
     <option name="y" value="296" />
     <option name="width" value="1300" />
@@ -211,11 +251,6 @@
             <path>
               <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="DBParser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
-              <item name="Examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
@@ -243,7 +278,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572609277237" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572688661481" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/DBParser/ojdbc10.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -320,17 +355,17 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.5024814" side_tool="true" weight="0.25767368" />
-      <window_info anchor="bottom" id="Messages" weight="0.3287841" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3287841" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3287841" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995037" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3287841" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3287841" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3287841" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.3287841" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3995037" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3287841" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -393,97 +428,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/Examples/sample2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-          <folding>
-            <element signature="e#612#617#0" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2390#2395#0" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#4598#4603#0" expanded="true" />
-            <element signature="e#4604#4609#0" expanded="true" />
-            <element signature="e#4700#4705#0" expanded="true" />
-            <element signature="e#4706#4711#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/app/XMLParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="53" column="48" lean-forward="true" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#isArticlePage#0;class#XMLParser#0" />
-            <element signature="method#getTextContent#0;class#XMLParser#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/Examples/sample2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.4/lib/src.zip!/java.xml/javax/xml/parsers/ParserConfigurationException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/app/IndexByParagraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/app/IndexByOffset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/app/Tester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-          <folding>
-            <element signature="e#2085#2086#0" expanded="true" />
-            <element signature="e#2134#2135#0" expanded="true" />
-            <element signature="e#2170#2171#0" expanded="true" />
-            <element signature="e#2220#2221#0" expanded="true" />
-            <element signature="method#testConstructor#0;class#Tester#0" />
-            <element signature="method#printWordIndex#0;class#Tester#0" />
-            <element signature="method#testInsertWordIndex#0;class#Tester#0" />
-            <element signature="method#testInsertWordIndex#1;class#Tester#0" />
-            <element signature="e#3701#3702#0" expanded="true" />
-            <element signature="e#3784#3785#0" expanded="true" />
-            <element signature="method#testCreateIndex#0;class#Tester#0" />
-            <element signature="method#testCreateWordGroup#0;class#Tester#0" />
-            <element signature="method#testInsertUser#0;class#Tester#0" />
-            <element signature="method#testInsertArticle#0;class#Tester#0" />
-            <element signature="method#testInsertGroup#0;class#Tester#0" />
-            <element signature="method#testGetWordId#0;class#Tester#0" />
-            <element signature="method#testGetArticlePath#0;class#Tester#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/app/HTMLPageParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="78" column="41" lean-forward="true" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#parseIntoParagraphs#0;class#HTMLPageParser#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -528,16 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/WordLib.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="155" column="29" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/GroupLib.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -548,26 +486,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/ServerLib.java">
+    <entry file="file://$PROJECT_DIR$/DBParser/Examples/sample2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        <state relative-caret-position="680">
+          <caret line="37" column="8" selection-start-line="37" selection-end-line="38" />
+          <folding>
+            <element signature="e#612#617#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2390#2395#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4598#4603#0" expanded="true" />
+            <element signature="e#4604#4609#0" expanded="true" />
+            <element signature="e#4700#4705#0" expanded="true" />
+            <element signature="e#4706#4711#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/app/LocationByOffset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/app/ArticleWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#237#512#0" />
-            <element signature="e#518#1522#0" />
-            <element signature="e#9246#9746#0" />
+            <element signature="e#305#306#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/Examples/sample2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/WordLib.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#searchWordLocationsInArticle#0;class#WordLib#0" />
+            <element signature="method#getContexts#0;class#WordLib#0" />
+            <element signature="method#getAllWords#0;class#WordLib#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/app/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="44" />
+          <folding>
+            <element signature="method#testConstructor#0;class#Tester#0" />
+            <element signature="method#printWordIndex#0;class#Tester#0" />
+            <element signature="method#testCreateIndex#0;class#Tester#0" />
+            <element signature="method#testCreateWordGroup#0;class#Tester#0" />
+            <element signature="method#testInsertUser#0;class#Tester#0" />
+            <element signature="method#testInsertArticle#0;class#Tester#0" />
+            <element signature="method#testInsertGroup#0;class#Tester#0" />
+            <element signature="method#testGetWordId#0;class#Tester#0" />
+            <element signature="method#testGetArticlePath#0;class#Tester#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.4/lib/src.zip!/java.xml/javax/xml/parsers/DocumentBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2504">
+          <caret line="196" column="20" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/app/XMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getNextPage#0;class#XMLParser#0" />
+            <element signature="method#isArticlePage#0;class#XMLParser#0" />
+            <element signature="method#getPageWikitext#0;class#XMLParser#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.4/lib/src.zip!/java.base/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="273" column="11" selection-start-line="273" selection-start-column="11" selection-end-line="273" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/app/HTMLPageParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="59" column="97" selection-start-line="59" selection-start-column="97" selection-end-line="59" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#parseIntoParagraphs#0;class#HTMLPageParser#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/app/LocationByParagraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.4/lib/src.zip!/java.sql/java/sql/PreparedStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.4/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="107" column="13" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/ArticleLib.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="168" column="29" selection-start-line="168" selection-start-column="29" selection-end-line="168" selection-end-column="29" />
+        <state relative-caret-position="407">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#insertArticle#0;class#ArticleLib#0" />
             <element signature="method#getArticlePath#0;class#ArticleLib#0" />
             <element signature="method#searchArticlesByTitle#0;class#ArticleLib#0" />
             <element signature="method#searchArticlesByCategory#0;class#ArticleLib#0" />
@@ -577,6 +637,16 @@
             <element signature="method#getArticleWords#0;class#ArticleLib#0" />
             <element signature="method#getLocationsByOffset#0;class#ArticleLib#0" />
             <element signature="method#getLocationsByParagraph#0;class#ArticleLib#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/app/lib/ServerLib.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="51" column="24" selection-start-line="51" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

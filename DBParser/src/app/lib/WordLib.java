@@ -1,5 +1,6 @@
 package app.lib;
 
+import app.ArticleWord;
 import app.ConnectionManager;
 
 import java.sql.PreparedStatement;
@@ -17,15 +18,15 @@ public class WordLib {
      * @param index     The index to be stored.
      * @throws SQLException If the transaction has failed.
      */
-    public static void insertWordIndex(int articleId, HashMap<String, ArrayList<Integer>> index) throws SQLException {
+    public static void insertWordIndex(int articleId, List<ArticleWord> wordsList) throws SQLException {
         //Prepare an SQL statement
         StringBuilder sql = new StringBuilder("INSERT ALL ");
 
-        ArrayList<Integer> locations;
+        List<Integer> locations;
 
         //Create a statement SQL pattern
-        for (HashMap.Entry<String, ArrayList<Integer>> entry : index.entrySet()) {
-            locations = entry.getValue();
+        for (ArticleWord word : wordsList) {
+            locations = word.offests;
 
             for (int location : locations) {
                 sql.append("INTO word_index(article_id, word_id, word_offset, par_num, par_offset, word_context) VALUES (?,?,?,?,?,?) ");
@@ -41,19 +42,21 @@ public class WordLib {
             //Fill the SQL pattern with variables
             int i = 0;
             int columns = 6;   //total number of columns in the word index table
-            for (HashMap.Entry<String, ArrayList<Integer>> entry : index.entrySet()) {
-                String currWord = entry.getKey();
+            for (ArticleWord word : wordsList) {
+                String currWord = word.value;
 
                 insertWord(currWord);
                 int wordId = getWordId(currWord);
-                locations = entry.getValue();
+                for (int j = 0; j < word.offests.size(); j++) {
+                    int offset = word.offests.get(j);
+                    int paragraph = word.paragraphs.getParagraph(j);
+                    int paragraphOffset = word.paragraphs.getParagraphOffset(j);
 
-                for (int location : locations) {
                     pstmt.setInt(columns * i + 1, articleId);
                     pstmt.setInt(columns * i + 2, wordId);
-                    pstmt.setInt(columns * i + 3, location);
-                    pstmt.setInt(columns * i + 4, -1);
-                    pstmt.setInt(columns * i + 5, -1);
+                    pstmt.setInt(columns * i + 3, offset);
+                    pstmt.setInt(columns * i + 4, paragraph);
+                    pstmt.setInt(columns * i + 5, paragraphOffset);
                     pstmt.setString(columns * i + 6, "<no context>");
 
                     i++;
@@ -114,7 +117,7 @@ public class WordLib {
 
     /**
      * Searches for all locations of a word in a given article.
-     * @param wordId Word to be searched.
+     * @param wordId ArticleWord to be searched.
      * @param articleId Article to be searched in.
      * @return A list of all locations (by offset)
      * @throws SQLException If a transaction has failed.
@@ -136,7 +139,6 @@ public class WordLib {
 
         return locations;
     }
-
 
     private static ResultSet getContexts(int wordId) throws SQLException {
         ResultSet res = null;

@@ -88,7 +88,8 @@ public class XMLParser {
         return result.toString();
     }
 
-    public String wikiToHtml(String wikitext){
+    public static String wikiToHtml(String wikitext){
+
         return info.bliki.wiki.model.WikiModel.toHtml(wikitext);
     }
 }

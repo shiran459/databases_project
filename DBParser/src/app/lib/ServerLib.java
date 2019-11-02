@@ -1,13 +1,19 @@
 package app.lib;
 
-import app.ConnectionManager;
+import app.*;
 import info.bliki.wiki.model.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.sql.*;
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class ServerLib {
 
@@ -22,39 +28,33 @@ public class ServerLib {
 
     }
 
-    public static boolean uploadArticle(String title, String wikitextFilePath) {
-        //Read file into string
-        String wikitext;
-        try {
-            wikitext = new String(Files.readAllBytes(Paths.get(wikitextFilePath)));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
+    public static boolean uploadArticle(String title, String wikitext)
+            throws Exception {
 
-        //Convert wikitext string to html
-        String html = WikiModel.toHtml(wikitext);
+        //convert to html
+        String htmlContent = "<page>" + XMLParser.wikiToHtml(wikitext) + "</page>";
+        //Save html to file
+        Path filePath = Paths.get("Articles", title + ".html");
+        Files.writeString(filePath, htmlContent, StandardOpenOption.APPEND);
+        File htmlFile = new File(filePath.toString());
+        XMLParser parser = new XMLParser(htmlFile);
 
-        //Extract categories, word index
-        //TODO: Add text analysis here (getCategories(),getWordIndex(),clean the html)
+        String articleText = parser.getTextContent();
 
-        //Create html file
-        String path = "C:\\Users\\Gilad\\Desktop\\" + title + ".html";
-        if (!createHtmlFile(html, path)) return false;
+        //Insert article
+        int articleId = ArticleLib.insertArticle(title, filePath.toString());
+        //create ArticleWords and offset
+        HashMap<String, ArticleWord> wordMap = HTMLPageParser.createIndexByOffset(articleText);
+        //Enrich offset by paragraph
+        LocationByParagraph.enrichLocationByParagraph(htmlFile, wordMap);
+        //Update Word and WordIndex tables
+        List<ArticleWord> wordsList = new ArrayList<>(wordMap.values());
+        WordLib.insertWordIndex(articleId, wordsList);
 
-        //Update database
-        try {
-            ArticleLib.insertArticle(title, path);
-        } catch (SQLException e) {
-            e.printStackTrace();        //TODO: Handle failure due to constraint violation (e.g. non-unique title)
-            return false;
-        }
         return true;
     }
 
     //====================================== PRIVATE METHODS ====================================//
-    //@TODO: Add a second location
-
 
     private static boolean createHtmlFile(String html, String path) {
         //Create an html file
