@@ -53,7 +53,7 @@ public class ArticleLib {
         }
     }
 
-    public static ResultSet searchArticlesByTitle(String title) throws SQLException {
+    public static List<Integer> searchArticlesByTitle(String title) throws SQLException {
         ResultSet res = null;
         String sql = "SELECT article_id, title " +
                 "FROM articles " +
@@ -63,11 +63,20 @@ public class ArticleLib {
         pstmt.setString(1, title);
         res = pstmt.executeQuery();
 
-        return res;
+        //Extract results
+        List<Integer> results = new ArrayList<>();
+        while (res.next()){
+            results.add(res.getInt("article_id"));
+        }
+
+        //Close resource
+        res.close();
+
+        return results;
     }
 
-    public static ResultSet searchArticlesByCategory(String category) throws SQLException {
-        ResultSet res = null;
+    public static List<Integer> searchArticlesByCategory(String category) throws SQLException {
+        ResultSet res;
         String sql = "SELECT article_id, title " +
                 "FROM articles_by_category NATURAL JOIN categories " +
                 "WHERE category_name = ?";
@@ -76,7 +85,16 @@ public class ArticleLib {
         pstmt.setString(1, category);
         res = pstmt.executeQuery();
 
-        return res;
+        //Extract results
+        List<Integer> results = new ArrayList<Integer>();
+        while (res.next()){
+            results.add(res.getInt("article_id"));
+        }
+
+        //Close resources
+        res.close();
+
+        return results;
     }
 
     public static List<Integer> getArticlesByWord(String word) throws SQLException {
@@ -89,20 +107,20 @@ public class ArticleLib {
         pstmt.setString(1, word);
         res = pstmt.executeQuery();
 
-        //Return results to user
-        List<Integer> articleIds = new ArrayList<Integer>();
+        //Extract results
+        List<Integer> results = new ArrayList<Integer>();
         while (res.next()){
-            articleIds.add(res.getInt("article_id"));
+            results.add(res.getInt("article_id"));
         }
 
         //Close resources
         res.close();
 
-        return articleIds;
+        return results;
     }
 
-    public static ResultSet searchArticlesByWords(ArrayList<Integer> containsWords) throws SQLException {
-        ResultSet res = null;
+    public static List<Integer> searchArticlesByWordsIds(List<Integer> containsWords) throws SQLException {
+        ResultSet res;
         StringBuilder wordSubQueries = new StringBuilder();
         String sql = "SELECT article_id, title " +
                 "FROM word_index NATURAL JOIN articles NATURAL JOIN words " +
@@ -125,29 +143,73 @@ public class ArticleLib {
         } catch (SQLException e) {
             throw new SQLException();
         }
-        return res;
+
+        //Extract results
+        List<Integer> articleIds = new ArrayList<>();
+        while(res.next()){
+            articleIds.add(res.getInt("article_id"));
+        }
+
+        //Close resources
+        res.close();
+
+        return articleIds;
     }
 
-    public static List<Integer> getArticlesByExpression(int expressionId) throws SQLException{
-        ArrayList<Integer> result = new ArrayList<>();
+    public static List<Integer> searchArticlesByWords(List<String> words) throws SQLException {
+        ResultSet res;
+        StringBuilder wordSubQueries = new StringBuilder();
+        String sql = "SELECT DISTINCT article_id " +
+                "FROM word_index NATURAL JOIN words " +
+                "WHERE article_id IN ";
+        for (int i = 0; i < words.size(); i++) {
+            if (i == words.size() - 1) {
+                wordSubQueries.append("(SELECT article_id " +
+                        "FROM word_index NATURAL JOIN words " +
+                        "WHERE value = ?)");
+            } else {
+                wordSubQueries.append("(SELECT article_id " +
+                        "FROM word_index NATURAL JOIN words " +
+                        "value = ?) INTERSECT ");
+            }
+        }
+        sql += "(" + wordSubQueries + ")";
 
+        try {
+            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+            for (int i = 0; i < words.size(); i++) {
+                pstmt.setString(i + 1, words.get(i));
+            }
+            res = pstmt.executeQuery();
+        } catch (SQLException e) {
+            throw new SQLException();
+        }
+
+        //Extract results
+        List<Integer> articleIdList = new ArrayList<Integer>();
+        while(res.next()){
+            articleIdList.add(res.getInt("article_id"));
+        }
+
+        //Close resources
+        res.close();
+
+        return articleIdList;
+    }
+
+    public static List<Integer> searchArticlesByExpression(int expressionId) throws SQLException{
         //Filter by articles which contain all the words in the expression
-        ArrayList<Integer> wordIdList = ExpressionLib.getExpressionWordIdList(expressionId);
-        ResultSet rs = searchArticlesByWords(wordIdList);
+        List<Integer> wordIdList = ExpressionLib.getExpressionWordIdList(expressionId);
+        List<Integer> articleIdList = searchArticlesByWordsIds(wordIdList);
+        List<Integer> result = new ArrayList<>();
 
         //Filter by articles which contain the expression
-        while(rs.next()){
-            int articleId = rs.getInt("article_id");
+        for (Integer articleId: articleIdList){
             List<Integer> expressionLocations = ExpressionLib.searchExpressionInArticle(expressionId, articleId);
-            if (expressionLocations.isEmpty()){
-                rs.deleteRow();
-            }
-            else{
+            if (!expressionLocations.isEmpty()){
                 result.add(articleId);
             }
         }
-
-        rs.close();
         return result;
     }
 
