@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Article Search Results</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>Article ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="articleId: ${articleIdList}">
+            <td th:text="${articleId}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
