@@ -14,7 +14,7 @@ public class WordLib {
      * Stores the words of a word index at the WORDS and WORD_INDEX tables.
      *
      * @param articleId The article the index belongs to.
-     * @param wordsList     The index to be stored.
+     * @param wordsList The index to be stored.
      * @throws SQLException If the transaction has failed.
      */
     public static void insertWordIndex(int articleId, List<ArticleWord> wordsList) throws SQLException {
@@ -115,14 +115,51 @@ public class WordLib {
         }
     }
 
+    public static String getWordValue(int wordId) throws SQLException {
+        String sql = "SELECT value " +
+                "FROM words " +
+                "WHERE word_id = ?";
+
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, wordId);
+        ResultSet res = pstmt.executeQuery();
+
+        if (!res.next()) {
+            return null;
+        } else {
+            return res.getString("value");
+        }
+    }
+
+    public static List<String> getAllWords() throws SQLException {
+        ResultSet res = null;
+        String sql = "SELECT value " +
+                "FROM word_index NATURAL JOIN words";
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        res = pstmt.executeQuery();
+
+        //Extract results from result set
+        List<String> result = new ArrayList<>();
+        while (res.next()) {
+            result.add(res.getString("value"));
+        }
+
+        //Close resources
+        pstmt.close();
+        res.close();
+
+        return result;
+    }
+
     /**
      * Searches for all locations of a word in a given article.
-     * @param wordId ArticleWord to be searched.
+     *
+     * @param wordId    ArticleWord to be searched.
      * @param articleId Article to be searched in.
      * @return A list of all locations (by offset)
      * @throws SQLException If a transaction has failed.
      */
-    static List<Integer> searchWordLocationsInArticle(int wordId, int articleId) throws SQLException{
+    static List<Integer> searchWordLocationsInArticle(int wordId, int articleId) throws SQLException {
         String sql = "SELECT offset " +
                 "FROM word_index " +
                 "WHERE word_id = ? AND article_id = ?";
@@ -133,38 +170,38 @@ public class WordLib {
         ResultSet res = pstmt.executeQuery();
 
         ArrayList<Integer> locations = new ArrayList<>();
-        while (res.next()){
+        while (res.next()) {
             locations.add(res.getInt("offset"));
         }
 
         return locations;
     }
 
-    private static ResultSet getContexts(int wordId) throws SQLException {
-        ResultSet res = null;
-        String sql = "SELECT article_id, context " +
-                "FROM word_index " +
+    public static Object[] getContexts(int wordId) throws SQLException {
+        String sql = "SELECT article_id, title, context " +
+                "FROM word_index NATURAL JOIN articles " +
                 "WHERE word_id = ?";
-        try {
-            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-            res = pstmt.executeQuery();
-            pstmt.setInt(1, wordId);
-        } catch (SQLException e) {
-            throw new SQLException();
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        ResultSet res = pstmt.executeQuery();
+        pstmt.setInt(1, wordId);
+
+        //Extract results from result set
+        List<Integer> articleIdList = new ArrayList<>();
+        List<String> titleList = new ArrayList<>();
+        List<String> contextList = new ArrayList<>();
+        Object[] result = {articleIdList, titleList, contextList};
+
+        while (res.next()) {
+            articleIdList.add(res.getInt("article_id"));
+            titleList.add(res.getString("title"));
+            contextList.add(res.getString("context"));
         }
-        return res;
+
+        //Close resources
+        pstmt.close();
+        res.close();
+
+        return result;
     }
 
-    private static ResultSet getAllWords() throws SQLException {
-        ResultSet res = null;
-        String sql = "SELECT word_id, value " +
-                "FROM word_index NATURAL JOIN words";
-        try {
-            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-            res = pstmt.executeQuery();
-        } catch (SQLException e) {
-            throw new SQLException();
-        }
-        return res;
-    }
 }

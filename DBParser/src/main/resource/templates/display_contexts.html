@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="Displaying all contexts of '${wordValue}'"></title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Article</th>
+        <th>Context</th>
+    </tr>
+    <tr th:each="title, iStat: ${titleList}">
+        <td th:text="${title}"></td>
+        <td th:text="${contextList[iStat.index].field}"></td>
+    </tr>
+</table>
+</body>
+</html>

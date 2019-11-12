@@ -7,14 +7,14 @@
 <body>
 <table>
     <thead>
-        <tr>
-            <th>Article ID</th>
-        </tr>
+    <tr>
+        <th>Article ID</th>
+    </tr>
     </thead>
     <tbody>
-        <tr th:each="articleId: ${articleIdList}">
-            <td> <a th:href="@{~/articles/{id}(id=${articleId})}">some title</a></td>
-        </tr>
+    <tr th:each="articleId: ${articleIdList}">
+        <td><a th:href="@{~/articles/{id}(id=${articleId})}">some title</a></td>
+    </tr>
     </tbody>
 </table>
 </body>
