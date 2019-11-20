@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class HTMLPageParser {
-    public static final int CONTETX_SIZE = 5;
+public class HtmlParser {
+    public static final int CONTEXT_SIZE = 5;
     //=========================== METHODS ===========================//
 
 //        public String clean(String htmlPage){
@@ -55,7 +55,7 @@ public class HTMLPageParser {
 
     private static String getWordContext(String[] articleText, int location){
         String context = articleText[location];
-        for(int i = 1; i <= CONTETX_SIZE; i++){
+        for(int i = 1; i <= CONTEXT_SIZE; i++){
             if(location - i >= 0)
                 context = articleText[location] + context;
             if (location + i < articleText.length)

@@ -77,7 +77,6 @@ public class WordLib {
      * @param value String of the word to be added.
      * @return True if the word was added, otherwise returns false.
      */
-    //TODO fill in context
     public static boolean insertWord(String value) {
         int length = value.length();
         String sql = "MERGE INTO words " +

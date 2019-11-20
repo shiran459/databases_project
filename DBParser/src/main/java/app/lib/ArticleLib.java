@@ -34,7 +34,6 @@ public class ArticleLib {
     }
 
     public static String getArticleTitle(int articleId) throws SQLException {
-        //Get the file path
         ResultSet res = null;
         String sql = "SELECT title " +
                 "FROM articles " +

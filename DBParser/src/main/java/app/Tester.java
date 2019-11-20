@@ -79,7 +79,6 @@ public class Tester {
 
 
     //----------------------------------------- TESTING METHODS -------------------------------------//
-    //################################### TEST INSERT METHODS ######################################//
     //This function tests the xml parser
     private void testConstructor(File xmlFile) {
         try (BufferedReader br = new BufferedReader(new FileReader(xmlFile))) {
@@ -93,6 +92,16 @@ public class Tester {
         }
     }
 
+
+    //######################################### TEST WORD LIB ######################################//
+    private boolean testGetWordId(String word, int expectedId){
+        try{
+            return WordLib.getWordId(word) == expectedId;
+        }
+        catch (SQLException e){}
+        return false;
+    }
+
     private void printWordIndex(HashMap<String, ArrayList<Integer>> index) {
         for (HashMap.Entry<String, ArrayList<Integer>> indexEntry : index.entrySet()) {
             System.out.println("\n" + indexEntry.getKey() + ":");
@@ -104,9 +113,58 @@ public class Tester {
 
     private void testInsertWordIndex(){
         beforeTestWordIndex();
-        HashMap<String,ArticleWord> index = HTMLPageParser.createIndexByOffset(htmlString);
+        HashMap<String,ArticleWord> index = HtmlParser.createIndexByOffset(htmlString);
         testInsertWordIndex(index);
     }
+
+
+    //####################################### TEST USER LIB ####################################//
+
+    private void testInsertUser(){
+        try{
+            UserLib.insertUser("My Usename", "<no hash>", "<no token>", null);
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    //####################################### TEST GROUP LIB ####################################//
+
+    private void testCreateWordGroup(){
+        try{
+            GroupLib.insertGroup("My Group Name", 1);
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    private void testInsertGroup(){
+        try{
+            GroupLib.insertGroup("My Group", 5);
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    //####################################### TEST ARTICLE LIB ####################################//
+    private void testInsertArticle(){
+        try{
+            ArticleLib.insertArticle("Mt title", "<no path>");
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private boolean testGetArticlePath(int articleId, String expectedPath){
+        try{
+            return ArticleLib.getArticlePath(articleId).equals(expectedPath);
+        }
+        catch (SQLException e){}
+        return false;
+    }
+
+
+    //##################################### TEST HTML PAGE PARSER ####################################//
 
     private void testInsertWordIndex(HashMap<String, ArticleWord> index) {
         try{
@@ -124,59 +182,10 @@ public class Tester {
     private void testCreateIndexByOffset(){
         XMLParser parser = new XMLParser(htmlFile);
         String text = parser.getTextContent();
-        HashMap<String,ArticleWord> index = HTMLPageParser.createIndexByOffset(text);
+        HashMap<String,ArticleWord> index = HtmlParser.createIndexByOffset(text);
 
         //Print index
 //        printWordIndex(index);
-    }
-
-    private void testCreateWordGroup(){
-        try{
-            GroupLib.insertGroup("My Group Name", 1);
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
-
-    private void testInsertUser(){
-        try{
-            UserLib.insertUser("My Usename", "<no hash>", "<no token>", null);
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
-
-    private void testInsertArticle(){
-        try{
-            ArticleLib.insertArticle("Mt title", "<no path>");
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    private void testInsertGroup(){
-        try{
-            GroupLib.insertGroup("My Group", 5);
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
-
-    //######################################### QUERY METHODS ######################################//
-    private boolean testGetWordId(String word, int expectedId){
-        try{
-            return WordLib.getWordId(word) == expectedId;
-        }
-        catch (SQLException e){}
-        return false;
-    }
-
-    private boolean testGetArticlePath(int articleId, String expectedPath){
-        try{
-            return ArticleLib.getArticlePath(articleId).equals(expectedPath);
-        }
-        catch (SQLException e){}
-        return false;
     }
 
 }

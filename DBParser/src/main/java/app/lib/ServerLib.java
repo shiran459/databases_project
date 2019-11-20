@@ -43,7 +43,7 @@ public class ServerLib {
         //Insert article
         int articleId = ArticleLib.insertArticle(title, filePath.toString());
         //create ArticleWords and offset
-        HashMap<String, ArticleWord> wordMap = HTMLPageParser.createIndexByOffset(articleText);
+        HashMap<String, ArticleWord> wordMap = HtmlParser.createIndexByOffset(articleText);
         //Enrich offset by paragraph
         LocationByParagraph.enrichLocationByParagraph(htmlFile, wordMap);
         //Update Word and WordIndex tables

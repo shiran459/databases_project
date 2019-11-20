@@ -10,24 +10,43 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
 
 @Controller
 public class SearchController {
 
     //======================= ARTICLE MAPPINGS ========================//
-    @GetMapping("/search_articles_by_word")
+    @GetMapping("/articles/search/")
+    public String searchArticles(@RequestParam(name = "searchKey", required = true) String searchKey,
+                                 @RequestParam(name = "searchInput", required = true) String searchInput,
+                                       Model model){
+
+    }
+
+
+    /**
+     * Displays article search results for searches made with a word as key.
+     * @param word  Word to use as search key.
+     * @param model
+     * @return  Article search result page.
+     */
+    @GetMapping("/articles/search/by_word")
     public String searchArticlesByWord(@RequestParam(name = "word", required = true) String word,
                                        Model model) {
         try {
             List<Integer> articleIdList = ArticleLib.searchArticlesByWord(word);
             model.addAttribute("articleIdList", articleIdList);
-            return "search_articles";
+            return "articles_search";
         } catch (Exception e) {
             return "error";
         }
     }
 
+    /**
+     * Displays article search results for searches made with words as key.
+     * @param wordsString  Words to use as search key.
+     * @param model
+     * @return  Article search result page.
+     */
     @GetMapping("/search_articles_by_words")
     public String searchArticlesByWords(@RequestParam(name = "words", required = true) String wordsString,
                                         Model model) {
@@ -41,7 +60,13 @@ public class SearchController {
         }
     }
 
-    @GetMapping("/search_articles_by_title")
+    /**
+     * Displays article search results for searches made with title as key.
+     * @param title Title to use as search key.
+     * @param model
+     * @return Article search result page.
+     */
+    @GetMapping("/articles/search/by_title")
     public String searchArticlesByTitle(@RequestParam(name = "title", required = true) String title,
                                         Model model) {
         try {
@@ -53,7 +78,13 @@ public class SearchController {
         }
     }
 
-    @GetMapping("/search_articles_by_category")
+    /**
+     * Displays article search results for searches made with category as key.
+     * @param category Category to use as search key.
+     * @param model
+     * @return Article search result page.
+     */
+    @GetMapping("/articles/search/by_category")
     public String searchArticlesByCategory(@RequestParam(name = "category", required = true) String category,
                                            Model model) {
         try {
@@ -66,22 +97,7 @@ public class SearchController {
     }
 
     //=========================== WORD MAPPINGS ==========================//
-
-    // TODO: Decide if keep or remove (need to decide where words are displayed in the website)
-//
-//    @GetMapping("/articles/{article_id}/words")
-//    public String displayArticleWords(@PathVariable(value="article_id", required=true) int articleId,
-//                                           Model model) {
-//        try {
-//            List<String> wordList = ArticleLib.getArticleWords(articleId);
-//            model.addAttribute("wordList", wordList);
-//            return "displayWords";
-//        } catch (Exception e){
-//            return "error";
-//        }
-//    }
-
-    @GetMapping("/words/view_all_words")
+    @GetMapping("/words/view_all")
     public String displayAllWords(int articleId,
                                   Model model) {
         try {

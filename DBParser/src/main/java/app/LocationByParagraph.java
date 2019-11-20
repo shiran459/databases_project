@@ -1,7 +1,5 @@
 package app;
 
-import app.ArticleWord;
-
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
@@ -23,9 +21,9 @@ public class LocationByParagraph {
     }
 
     public static void enrichLocationByParagraph(File htmlFile, HashMap<String, ArticleWord> wordMap) throws Exception{
-        List<String> paragraphList = HTMLPageParser.parseIntoParagraphs(htmlFile);
+        List<String> paragraphList = HtmlParser.parseIntoParagraphs(htmlFile);
         for (int i = 0; i < paragraphList.size(); i++){
-            String[] wordsInParagraph = HTMLPageParser.getWordList(paragraphList.get(i));
+            String[] wordsInParagraph = HtmlParser.getWordList(paragraphList.get(i));
             for (int j = 0; j < wordsInParagraph.length; j++){
                 String word = wordsInParagraph[j];
                 int[] location = new int[2];
