@@ -66,7 +66,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="words">
                     <a class="dropdown-item" href="/words/search">Search</a>
-                    <a class="dropdown-item" href="/words/upload">View all</a>
+                    <a class="dropdown-item" href="/words/view_all">View all</a>
                 </div>
             </li>
 
@@ -112,7 +112,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="articleId: ${articleIdList}">
+            <tr th:each="title: ${articleTitles}">
                 <th scope="row"></th>
                 <td th:text:articleId>
             </tr>

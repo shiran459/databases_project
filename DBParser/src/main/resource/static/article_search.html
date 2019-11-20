@@ -12,7 +12,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/page.css">
-    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/submit_btn.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
 <body>
@@ -52,7 +52,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="words">
                     <a class="dropdown-item" href="/words/search">Search</a>
-                    <a class="dropdown-item" href="/words/upload">View all</a>
+                    <a class="dropdown-item" href="/words/view_all">View all</a>
                 </div>
             </li>
 
@@ -90,7 +90,7 @@
     <h2>Search Articles</h2>
     <p>Search Wikipedia articles based on title or words</p>
 
-    <form>
+    <form action="/articles/search/results">
         <!-- Select Search Key -->
         Search by:
         <select class="browser-default custom-select" name="searchKey">
@@ -106,7 +106,7 @@
         <br>
 
         <!-- Submit Button -->
-        <div id="search-submit-btn">
+        <div class="submit-btn">
             <input type="submit" class="btn btn-primary btn-lg" value="SEARCH">
         </div>
     </form>

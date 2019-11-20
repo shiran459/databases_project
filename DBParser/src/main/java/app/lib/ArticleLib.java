@@ -76,9 +76,9 @@ public class ArticleLib {
         }
     }
 
-    public static List<Integer> searchArticlesByTitle(String title) throws SQLException {
+    public static List<String> searchArticlesByTitle(String title) throws SQLException {
         ResultSet res = null;
-        String sql = "SELECT article_id, title " +
+        String sql = "SELECT title " +
                 "FROM articles " +
                 "WHERE title LIKE ?";
 
@@ -87,9 +87,9 @@ public class ArticleLib {
         res = pstmt.executeQuery();
 
         //Extract results
-        List<Integer> results = new ArrayList<>();
+        List<String> results = new ArrayList<>();
         while (res.next()) {
-            results.add(res.getInt("article_id"));
+            results.add(res.getString("title"));
         }
 
         //Close resource
@@ -98,9 +98,9 @@ public class ArticleLib {
         return results;
     }
 
-    public static List<Integer> searchArticlesByCategory(String category) throws SQLException {
+    public static List<String> searchArticlesByCategory(String category) throws SQLException {
         ResultSet res;
-        String sql = "SELECT article_id, title " +
+        String sql = "SELECT title " +
                 "FROM articles_by_category NATURAL JOIN categories " +
                 "WHERE category_name = ?";
 
@@ -109,9 +109,9 @@ public class ArticleLib {
         res = pstmt.executeQuery();
 
         //Extract results
-        List<Integer> results = new ArrayList<Integer>();
+        List<String> results = new ArrayList<String>();
         while (res.next()) {
-            results.add(res.getInt("article_id"));
+            results.add(res.getString("title"));
         }
 
         //Close resources
@@ -120,27 +120,28 @@ public class ArticleLib {
         return results;
     }
 
-    public static List<Integer> searchArticlesByWord(String word) throws SQLException {
-        ResultSet res;
-        String sql = "SELECT DISTINCT word_index.article_id " +
-                "FROM word_index NATURAL JOIN words " +
-                "WHERE words.value = ?";
-
-        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-        pstmt.setString(1, word);
-        res = pstmt.executeQuery();
-
-        //Extract results
-        List<Integer> results = new ArrayList<Integer>();
-        while (res.next()) {
-            results.add(res.getInt("article_id"));
-        }
-
-        //Close resources
-        res.close();
-
-        return results;
-    }
+    //TODO: Decide whether to remove
+//    public static List<Integer> searchArticlesByWord(String word) throws SQLException {
+//        ResultSet res;
+//        String sql = "SELECT DISTINCT word_index.article_id " +
+//                "FROM word_index NATURAL JOIN words " +
+//                "WHERE words.value = ?";
+//
+//        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+//        pstmt.setString(1, word);
+//        res = pstmt.executeQuery();
+//
+//        //Extract results
+//        List<Integer> results = new ArrayList<Integer>();
+//        while (res.next()) {
+//            results.add(res.getInt("article_id"));
+//        }
+//
+//        //Close resources
+//        res.close();
+//
+//        return results;
+//    }
 
     public static List<Integer> searchArticlesByWords(List<String> words) throws SQLException {
         ResultSet res;

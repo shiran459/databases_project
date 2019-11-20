@@ -69,7 +69,7 @@ public class Tester {
     }
 
     public void beforeTestWordIndex(){
-        ServerLib.wipeTable("word_index");
+        TesterLib.wipeTable("word_index");
     }
 
     public void beforeXMLParser(){
@@ -187,5 +187,12 @@ public class Tester {
         //Print index
 //        printWordIndex(index);
     }
+
+
+
+
+
+
+    //##################################### SOME HELPFUL TESTING METHODS ################################//
 
 }

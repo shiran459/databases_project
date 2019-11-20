@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class ServerLib {
+public class TesterLib {
 
     public static void wipeTable(String tableName) {
         String sql = "DELETE FROM " + tableName;
@@ -27,6 +27,15 @@ public class ServerLib {
 
     }
 
+    /**
+     * Stores an article and all its relevant information in the DB.
+     * Updates the 'ARTICLES', 'WORDS', 'WORD_INDEX', 'CATEGORIES' & 'ARTICLES_BY_CATEGORY' tables.
+     * It will also create a new file for the article.
+     * @param title
+     * @param wikitext
+     * @return
+     * @throws Exception
+     */
     public static boolean uploadArticle(String title, String wikitext)
             throws Exception {
 
