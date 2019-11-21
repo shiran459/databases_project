@@ -5,6 +5,7 @@ import app.ConnectionManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,19 +18,19 @@ public class ArticleLib {
      * @throws SQLException If the transaction has failed.
      */
     public static int insertArticle(String title, String path) throws SQLException {
-        String sql = "INSERT INTO articles(article_id, article_name,path)" +
-                "VALUES (?, ? ,?)";
-        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-        pstmt.setNull(1, java.sql.Types.INTEGER);
-        pstmt.setString(2, title);
-        pstmt.setString(3, path);
+        String sql = "INSERT INTO articles(article_id, article_name, path)" +
+                "VALUES (article_seq.NEXTVAL, ?, ?)";
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql,new String[]{"article_id"});
+//        pstmt.setNull(1, java.sql.Types.INTEGER);
+        pstmt.setString(1, title);
+        pstmt.setString(2, path);
         pstmt.executeUpdate();
 
         //Get the generated articleId
         ResultSet rs = pstmt.getGeneratedKeys();
         int result = -1;
         if (rs.next()) {
-            result = rs.getInt("articleId");
+            result = rs.getInt(1);
         }
 
         //Close resources

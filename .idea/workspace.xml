@@ -20,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -187,23 +187,11 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/lib/ArticleLib.java</url>
-          <line>246</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/LocationByParagraph.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((DTMNodeList)nodeList).m_iter" custom="com.sun.org.apache.xml.internal.dtm.ref.DTMNodeList" />
+        <watch expression="wordsInParagraph" />
+        <watch expression="wordsList" />
       </configuration>
     </watches-manager>
   </component>

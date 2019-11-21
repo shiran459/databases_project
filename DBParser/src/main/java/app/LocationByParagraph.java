@@ -26,12 +26,12 @@ public class LocationByParagraph {
             String[] wordsInParagraph = HtmlParser.getWordList(paragraphList.get(i));
             for (int j = 0; j < wordsInParagraph.length; j++){
                 String word = wordsInParagraph[j];
+                if (word.isEmpty())
+                    continue;
                 int[] location = new int[2];
                 location[0] = i;
                 location[1] = j;
                 ArticleWord wordObj = wordMap.get(word);
-                 if(wordObj.paragraphs == null)
-                    wordObj.paragraphs = new LocationByParagraph();
                 wordObj.paragraphs.locations.add(location);
             }
         }

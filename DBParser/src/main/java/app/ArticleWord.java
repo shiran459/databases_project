@@ -9,10 +9,11 @@ public class ArticleWord {
     public int id;
     public int articleId;
     public List<Integer> offests = new ArrayList<>();
-    public LocationByParagraph paragraphs = null;
+    public LocationByParagraph paragraphs = new LocationByParagraph();
     public List<String> contextList = new ArrayList<>();
 
-    public ArticleWord(String value){
+    public ArticleWord(String value) {
         this.value = value;
     }
+
 }

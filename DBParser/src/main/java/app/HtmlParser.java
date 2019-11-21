@@ -4,17 +4,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathFactory;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPath;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -37,12 +34,14 @@ public class HtmlParser {
     public static HashMap<String, ArticleWord> createIndexByOffset(String text) {
         HashMap<String, ArticleWord> index = new HashMap<>();
 
-        //Remove non-alphanumeric characters then split to words
+        //Remove non-alphanumeric characters then split to words (words are in lowercase)
         String[] words = getWordList(text);
-        String[] dirtyWords = text.split(" ");
 
         //Add the current word location to the index
         for (int i = 0; i < words.length; i++) {
+            if(words[i].isEmpty())    //Do not insert empty strings to the index
+                continue;
+
             if (index.containsKey(words[i])) {
                 index.get(words[i]).offests.add(i);
             } else {
@@ -50,7 +49,8 @@ public class HtmlParser {
                 word.offests.add(i);
                 index.put(words[i], word);
             }
-            index.get(words[i]).contextList.add(getWordContext(dirtyWords, i));
+            //Save the context of the current word
+            index.get(words[i]).contextList.add(getWordContext(words, i));
         }
 
         return index;
@@ -77,7 +77,7 @@ public class HtmlParser {
      * @return An array of the text's words.
      */
     public static String[] getWordList(String text) {
-        text = text.replaceAll("[^a-zA-Z0-9 ]", "");
+        text = text.replaceAll("[^a-zA-Z0-9 ]", " ");
         text = text.replaceAll(" ( *)", " ");
         text = text.toLowerCase();
         String[] words = text.split(" ");

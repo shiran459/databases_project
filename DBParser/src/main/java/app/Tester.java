@@ -38,8 +38,8 @@ public class Tester {
     //----------------------------------------- BEFORE METHODS ---------------------------------------//
     public void beforeAll(){
         //Initialize variables
-        xmlPath = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Samples\\sample2.xml";
-        htmlPath = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Samples\\sample2.html";
+        xmlPath = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Samples\\small_sample.xml";
+        htmlPath = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Samples\\sample.html";
         File xmlFile = new File(xmlPath);
         File htmlFile = new File(htmlPath);
 

@@ -32,8 +32,6 @@ public class WordLib {
             }
         }
         sql.append("SELECT 1 FROM dual");
-        System.out.println(sql);
-
         //Create a statement object
         try {
             PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql.toString());
