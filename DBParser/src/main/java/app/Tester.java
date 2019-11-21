@@ -14,66 +14,42 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Tester {
+    String xmlPath = null;
+    String htmlPath = null;
 
-    String xmlPath;
-    String htmlPath;
+    File xmlFile = null;
+    File htmlFile = null;
 
-    File xmlFile;
-    File htmlFile;
+    String wikitext = null;
+    String htmlString = null;
 
-    String htmlString;
-    XMLParser xmlParser;
+    XMLParser xmlParser = null;
+
 
     public static void main(String[] args) throws Exception {
+        Tester tester = new Tester();
+        tester.beforeAll();
 
-        // ################################## RUN SOME TESTS #####################################//
-//
-//        main.java.app.Tester tester = new main.java.app.Tester();
-//        tester.beforeAll();
-
-//        String xmlpath = "C:\\Users\\User\\Documents\\GitHub\\databases_project\\DBParser\\Examples\\sample2.xml";
-//        File xmlfile = new File(xmlpath);
-//        main.java.app.XMLParser parser = new main.java.app.XMLParser(xmlfile);
-//        Element page = parser.getNextPage();
-//        String s = parser.getPageWikitext(page);
-//        String html = parser.wikiToHtml(s);
-//        System.out.println(html);
-
-
-        String htmlpath = "C:\\Users\\User\\Documents\\GitHub\\databases_project\\DBParser\\Examples\\sample2.html";
-        File htmlfile = new File(htmlpath);
-//        main.java.app.HTMLPageParser.parseIntoParagraphs(htmlfile);
-
-//        LocationByParagraph a = new LocationByParagraph(htmlfile);
-
-//        HashMap<String, List<int[]>> index = a.index;
-
+        testUploadArticle(tester.wikitext);
     }
-
 
 
     //============================================= METHODS ==========================================//
     //----------------------------------------- BEFORE METHODS ---------------------------------------//
     public void beforeAll(){
-        xmlPath = "C:\\Users\\Gilad\\Desktop\\sample2.xml";
-        htmlPath = "C:\\Users\\Gilad\\Desktop\\html sample 2.html";
-
+        //Initialize variables
+        xmlPath = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Samples\\sample2.xml";
+        htmlPath = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Samples\\sample2.html";
         File xmlFile = new File(xmlPath);
         File htmlFile = new File(htmlPath);
 
         try{
+            XMLParser xmlParser= new XMLParser(xmlFile);
+            wikitext = xmlParser.getPageWikitext(xmlParser.getNextPage());
             htmlString =  new String(Files.readAllBytes(Paths.get(htmlPath)));
         } catch (IOException e){
             e.printStackTrace();
         }
-    }
-
-    public void beforeTestWordIndex(){
-        TesterLib.wipeTable("word_index");
-    }
-
-    public void beforeXMLParser(){
-        xmlParser = new XMLParser(xmlFile);
     }
 
 
@@ -81,6 +57,7 @@ public class Tester {
     //----------------------------------------- TESTING METHODS -------------------------------------//
     //This function tests the xml parser
     private void testConstructor(File xmlFile) {
+        xmlParser = new XMLParser(xmlFile);
         try (BufferedReader br = new BufferedReader(new FileReader(xmlFile))) {
             String line = br.readLine();
             while (line != null) {
@@ -109,12 +86,6 @@ public class Tester {
                 System.out.println(location);
             }
         }
-    }
-
-    private void testInsertWordIndex(){
-        beforeTestWordIndex();
-        HashMap<String,ArticleWord> index = HtmlParser.createIndexByOffset(htmlString);
-        testInsertWordIndex(index);
     }
 
 
@@ -163,10 +134,23 @@ public class Tester {
         return false;
     }
 
+    //####################################### TEST SERVER LIB ####################################//
+    public static void testUploadArticle(String wikitext){
+        ServerLib.wipeTable("Word_Index");
+        ServerLib.wipeTable("Articles");
+        ServerLib.wipeTable("Words");
+        try {
+            ServerLib.uploadArticle("Some_Title", wikitext);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     //##################################### TEST HTML PAGE PARSER ####################################//
 
     private void testInsertWordIndex(HashMap<String, ArticleWord> index) {
+        ServerLib.wipeTable("word_index");
         try{
             List<ArticleWord> wordsList = new ArrayList<>(index.values());
             WordLib.insertWordIndex(1,wordsList);
@@ -188,11 +172,5 @@ public class Tester {
 //        printWordIndex(index);
     }
 
-
-
-
-
-
-    //##################################### SOME HELPFUL TESTING METHODS ################################//
 
 }

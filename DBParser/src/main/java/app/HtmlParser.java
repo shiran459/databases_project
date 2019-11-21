@@ -4,14 +4,17 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathFactory;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPath;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -53,10 +56,10 @@ public class HtmlParser {
         return index;
     }
 
-    private static String getWordContext(String[] articleText, int location){
+    private static String getWordContext(String[] articleText, int location) {
         String context = articleText[location];
-        for(int i = 1; i <= CONTEXT_SIZE; i++){
-            if(location - i >= 0)
+        for (int i = 1; i <= CONTEXT_SIZE; i++) {
+            if (location - i >= 0)
                 context = articleText[location] + context;
             if (location + i < articleText.length)
                 context = context + articleText[location];
@@ -104,5 +107,27 @@ public class HtmlParser {
         }
 
         return parsed;
+    }
+
+    /**
+     * Gets all inner-text of an html document
+     *
+     * @return String of the inner-text
+     */
+    public static String getTextContent(File htmlFile) throws Exception {
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.parse(htmlFile);
+        doc.getDocumentElement().normalize();
+
+        StringBuilder result = new StringBuilder();
+        NodeList nodeList = doc.getElementsByTagName("*");
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            Node node = nodeList.item(i);
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                result.append(node.getTextContent());
+            }
+        }
+        return result.toString();
     }
 }

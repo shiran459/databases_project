@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <title>WikiSearch | Article Search Results</title>
+    <title>WikiSearch | Homepage</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -11,26 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/page.css">
-    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/index.css"/>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
-</head>
 <body>
-<!--------------------Thymeleaf Loop Example---------------------->
-<!--<table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <th>Article ID</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr th:each="articleId: ${articleIdList}">-->
-<!--        <td><a th:href="@{~/articles/{id}(id=${articleId})}">some title</a></td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--</table>-->
 
-<!-------------------------- Navigation Bar ------------------------>
+<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Brand -->
     <a class="navbar-brand" href="/">WikiSearch</a>
@@ -66,7 +51,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="words">
                     <a class="dropdown-item" href="/words/search">Search</a>
-                    <a class="dropdown-item" href="/words/view_all">View all</a>
+                    <a class="dropdown-item" href="/words/upload">View all</a>
                 </div>
             </li>
 
@@ -98,31 +83,115 @@
     </div>
 </nav>
 
+<div id="homepage-welcome">
+    <p>
+    <h1>Welcome to WikiSearch!</h1><br><br>
+    <img src="/images/wikipedia-logo.png"/><br><br><br>
+    Here you can search thousands of Wikipedia articles, words and even custom expressions!<br>
+    Easily create your own word groups, expressions or upload new articles.
+    </p>
+</div>
 
-<!--------------------Article Search Results----------------------->
-<div class="page">
-    <h2>Article Search Results</h2>
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
 
-    <div id="searchResultArea">
-        <table class="table table-hover table-dark">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Article Title</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="title: ${articleTitles}">
-                <th scope="row"></th>
-                <td th:text:articleId>
-            </tr>
-            </tbody>
-        </table>
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Articles</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Search</a>
+                    </li>
+                    <li>
+                        <a href="#!">Upload</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Words</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Search</a>
+                    </li>
+                    <li>
+                        <a href="#!">View all</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Groups</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">View</a>
+                    </li>
+                    <li>
+                        <a href="#!">Create</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Expressions</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">View</a>
+                    </li>
+                    <li>
+                        <a href="#!">Create</a>
+                    </li>
+                </ul>
+
+        </div>
+        <!-- Grid row -->
+
     </div>
-</div>
-</div>
+    <!-- Footer Links -->
 
-<!------------------------ Bootstrap JS ---------------------------->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="https://wikisearch.site"> WikiSearch.site</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+<!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -132,5 +201,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+</body>
 </body>
 </html>

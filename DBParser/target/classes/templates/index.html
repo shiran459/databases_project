@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head xmlns:th="http://www.thymeleaf.org">
-    <title>WikiSearch | Upload Article</title>
+<html lang="en">
+<head>
+    <title>WikiSearch | Homepage</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/page.css">
-    <link rel="stylesheet" href="css/submit_btn.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
-</head>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
 <body>
-<!-------------------------- Navigation Bar ------------------------>
+
+<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Brand -->
     <a class="navbar-brand" href="/">WikiSearch</a>
@@ -52,7 +51,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="words">
                     <a class="dropdown-item" href="/words/search">Search</a>
-                    <a class="dropdown-item" href="/words/view_all">View all</a>
+                    <a class="dropdown-item" href="/words/upload">View all</a>
                 </div>
             </li>
 
@@ -84,35 +83,115 @@
     </div>
 </nav>
 
-<!--------------------Article Upload----------------------->
-<div class="page">
-    <!-- Page Description -->
-    <h2>Upload Article</h2>
-    <p>Upload a new article to WikiSearch.</p>
-    <br>
-
-    <form>
-        <!-- File Chooser -->
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-            </div>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01"
-                       aria-describedby="inputGroupFileAddon01" name="articleToUpload">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                </div>
-            </div>
-
-        <!-- Submit Button -->
-        <br><br>
-        <div class="submit-btn">
-            <input type="submit" class="btn btn-primary btn-lg" value="SUBMIT">
-        </div>
-    </form>
+<div id="homepage-welcome">
+    <p>
+    <h1>Welcome to WikiSearch!</h1><br><br>
+    <img src="/images/wikipedia-logo.png"/><br><br><br>
+    Here you can search thousands of Wikipedia articles, words and even custom expressions!<br>
+    Easily create your own word groups, expressions or upload new articles.
+    </p>
 </div>
 
-<!------------------------ Bootstrap JS ------------------------->
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Articles</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Search</a>
+                    </li>
+                    <li>
+                        <a href="#!">Upload</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Words</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Search</a>
+                    </li>
+                    <li>
+                        <a href="#!">View all</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Groups</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">View</a>
+                    </li>
+                    <li>
+                        <a href="#!">Create</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Expressions</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">View</a>
+                    </li>
+                    <li>
+                        <a href="#!">Create</a>
+                    </li>
+                </ul>
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="https://wikisearch.site"> WikiSearch.site</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+<!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -122,5 +201,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+</body>
 </body>
 </html>

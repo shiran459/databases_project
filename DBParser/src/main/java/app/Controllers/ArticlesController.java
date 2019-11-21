@@ -23,7 +23,7 @@ public class ArticlesController {
      * @return Article search page
      */
     @GetMapping("/articles/search")
-    public String searchArticle(Model model) {
+    public String displayArticleSearchPage(Model model) {
         return "article_search";
     }
 
@@ -101,10 +101,15 @@ public class ArticlesController {
     }
 
     //======================================= UPLOAD ARTICLE =========================================//
-//    @GetMapping("/articles/upload/")
-//    public String uploadArticle(@RequestParam(name = "searchKey", required = true) String searchKey,
-//                                 @RequestParam(name = "searchInput", required = true) String searchInput,
-//                                 Model model) {
-//    }
+    @GetMapping("/articles/upload")
+    public String displayUploadPage(Model model) {
+        return "article_upload";
+    }
+
+    //TODO: Use upload function
+    @GetMapping("/articles/upload/new_article")
+    public String uploadArticle(Model model) {
+        return "article_upload";
+    }
 
 }

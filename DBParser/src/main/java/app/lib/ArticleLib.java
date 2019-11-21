@@ -25,12 +25,18 @@ public class ArticleLib {
         pstmt.setString(3, path);
         pstmt.executeUpdate();
 
+        //Get the generated articleId
         ResultSet rs = pstmt.getGeneratedKeys();
-
+        int result = -1;
         if (rs.next()) {
-            return rs.getInt(1);
+            result = rs.getInt("articleId");
         }
-        return -1;
+
+        //Close resources
+        pstmt.close();
+        rs.close();;
+
+        return result;
     }
 
     public static String getArticleTitle(int articleId) throws SQLException {
@@ -248,7 +254,7 @@ public class ArticleLib {
 
         //Extract results from result set
         List<String> result = new ArrayList<>();
-        while (res.next()){
+        while (res.next()) {
             result.add(res.getString("value"));
         }
 

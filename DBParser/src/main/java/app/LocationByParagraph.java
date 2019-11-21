@@ -30,7 +30,7 @@ public class LocationByParagraph {
                 location[0] = i;
                 location[1] = j;
                 ArticleWord wordObj = wordMap.get(word);
-                if(wordObj.paragraphs == null)
+                 if(wordObj.paragraphs == null)
                     wordObj.paragraphs = new LocationByParagraph();
                 wordObj.paragraphs.locations.add(location);
             }
