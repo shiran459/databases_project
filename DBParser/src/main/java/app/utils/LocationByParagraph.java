@@ -1,4 +1,6 @@
-package app;
+package app.utils;
+
+import app.parsers.HtmlParser;
 
 import java.io.File;
 import java.util.HashMap;

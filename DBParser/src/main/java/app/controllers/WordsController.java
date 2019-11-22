@@ -1,4 +1,4 @@
-package app.Controllers;
+package app.controllers;
 
 import app.lib.ArticleLib;
 import app.lib.WordLib;

@@ -1,4 +1,4 @@
-package app.Controllers;
+package app.controllers;
 
 import app.lib.ArticleLib;
 import org.springframework.stereotype.Controller;
@@ -104,12 +104,4 @@ public class ArticlesController {
     @GetMapping("/articles/upload")
     public String displayUploadPage(Model model) {
         return "article_upload";
-    }
-
-    //TODO: Use upload function
-    @GetMapping("/articles/upload/new_article")
-    public String uploadArticle(Model model) {
-        return "article_upload";
-    }
-
-}
+    }}

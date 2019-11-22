@@ -1,4 +1,4 @@
-package app;
+package app.utils;
 
 /**
  * Builds the database from the XML dump.

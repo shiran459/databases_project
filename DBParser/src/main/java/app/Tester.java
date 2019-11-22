@@ -1,6 +1,9 @@
 package app;
 
 import app.lib.*;
+import app.parsers.HtmlParser;
+import app.parsers.XMLParser;
+import app.utils.ArticleWord;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -1,6 +1,10 @@
 package app.lib;
 
-import app.*;
+import app.parsers.HtmlParser;
+import app.parsers.XMLParser;
+import app.utils.ArticleWord;
+import app.utils.ConnectionManager;
+import app.utils.LocationByParagraph;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

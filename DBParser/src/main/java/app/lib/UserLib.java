@@ -1,6 +1,6 @@
 package app.lib;
 
-import app.ConnectionManager;
+import app.utils.ConnectionManager;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

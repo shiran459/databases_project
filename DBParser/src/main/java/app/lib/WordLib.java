@@ -1,7 +1,7 @@
 package app.lib;
 
-import app.ArticleWord;
-import app.ConnectionManager;
+import app.utils.ArticleWord;
+import app.utils.ConnectionManager;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

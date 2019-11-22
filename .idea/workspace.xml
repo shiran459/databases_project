@@ -2,11 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d71cbc-b99d-4b28-acd0-72000cc20eca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DBParser/src/main/resource/templates/display_words.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBParser/src/main/resource/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/Article Pages/Some_Title.html" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/article pages/Some_Title.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/Samples/sample.html" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/samples/sample.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/Samples/sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/samples/sample.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/Samples/small_sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/samples/small_sample.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/ArticleWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/ArticleWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/ArticlesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/ArticlesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/GeneralController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/HealthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/HealthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/WordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/WordsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/DatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/DatabaseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/HtmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/parsers/HtmlParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/LocationByOffset.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/LocationByOffset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/LocationByParagraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/LocationByParagraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/OracleConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/Tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/parsers/XMLParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ArticleLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ArticleLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/resource/templates/search_word.html" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/resource/templates/search_articles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ExpressionLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ExpressionLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/GroupLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/GroupLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ServerLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ServerLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/UserLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/UserLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/WordLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/WordLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,20 +37,97 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-799222547">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="2" />
+          <entry key="java" value="8" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="2" />
+          <entry key="JAVA" value="8" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="234" />
+          <entry key="java" value="102" />
+          <entry key="properties" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="234" />
+          <entry key="JAVA" value="102" />
+          <entry key="Properties" value="6" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="databases_project" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/display_words.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/ArticlesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1242">
+              <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/StorageService.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/FileUploadController.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/resource/application.properties" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/ArticlesController.java" />
+      </list>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -36,10 +136,78 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-289" />
+    <option name="y" value="296" />
+    <option name="width" value="1300" />
+    <option name="height" value="980" />
+  </component>
   <component name="ProjectId" id="1SjvfBD6V6u51UWjLibPCW36tqH" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572712830067" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574453802999" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/DBParser/src/main/resource/templates/Article Search" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -55,15 +223,11 @@
       <recent name="app.lib.UserLib" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="app.utils" />
+      <recent name="app.parsers" />
       <recent name="app" />
+      <recent name="app.storage" />
       <recent name="main" />
-      <recent name="main.java" />
-      <recent name="app.lib" />
-      <recent name="lib" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
-      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\Examples" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\Article Search" />
@@ -71,6 +235,10 @@
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static\images" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
+      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\Examples" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -86,19 +254,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Tester (1)">
-    <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.Application" />
-      <module name="DBPROJECT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.app.Application" />
       <module name="DBPROJECT" />
@@ -117,7 +272,7 @@
       <module name="DBPROJECT" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="app.*" />
+          <option name="PATTERN" value="app.storage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,8 +280,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tester (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.Tester" />
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Application" />
       <module name="DBPROJECT" />
       <extension name="coverage">
         <pattern>
@@ -141,6 +296,19 @@
     <configuration name="Tester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.app.Tester" />
       <module name="DBPROJECT" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Tester" />
+      <module name="DBPROJECT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.storage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -173,12 +341,49 @@
     </task>
     <servers />
   </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="936" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4975186" visible="true" weight="0.21163167" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5024814" side_tool="true" weight="0.25767368" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3287841" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3287841" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.3287841" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3995037" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3287841" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32956383" />
+    </layout>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -199,6 +404,87 @@
     <SUITE FILE_PATH="coverage/databases_project$Tester__1_.ic" NAME="Tester (1) Coverage Results" MODIFIED="1574321214239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.*</FILTER>
     </SUITE>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3830">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/display_words.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/OracleConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/utils/ConnectionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="44" selection-start-column="44" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="25" column="76" lean-forward="true" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/ArticlesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1242">
+          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
