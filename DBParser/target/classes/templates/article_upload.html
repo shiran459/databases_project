@@ -91,7 +91,14 @@
     <p>Upload a new article to WikiSearch.</p>
     <br>
 
-    <form>
+    <!-- Successful Upload Flash Message -->
+    <div th:if="message" class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Successfully uploaded!</h4>
+        <p th:text="message"/>
+        </div>
+
+    <!-- Upload Form -->
+    <form method="post" enctype="multipart/form-data" action="/articles/upload">
         <!-- File Chooser -->
         <div class="input-group">
             <div class="input-group-prepend">
@@ -107,8 +114,12 @@
         <!-- Submit Button -->
         <br><br>
         <div class="submit-btn">
-            <input type="submit" class="btn btn-primary btn-lg" value="SUBMIT">
+            <input type="submit" class="btn btn-primary btn-lg" value="UPLOAD">
         </div>
+
+        <!-- File Size Limit -->
+        <br>
+        <p>Note: max file size is 128kB</p>
     </form>
 </div>
 

@@ -2,34 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d71cbc-b99d-4b28-acd0-72000cc20eca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBParser/src/main/resource/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/storage/FileSystemStorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageFileNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/Article Pages/Some_Title.html" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/article pages/Some_Title.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/Samples/sample.html" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/samples/sample.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/Samples/sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/samples/sample.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/Samples/small_sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/samples/small_sample.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/ArticleWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/ArticleWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/ArticlesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/ArticlesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/GeneralController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/HealthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/HealthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/WordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/WordsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/DatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/DatabaseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/HtmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/parsers/HtmlParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/LocationByOffset.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/LocationByOffset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/LocationByParagraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/utils/LocationByParagraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/OracleConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/Tester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/parsers/XMLParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ArticleLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ArticleLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ExpressionLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ExpressionLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/GroupLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/GroupLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ServerLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/ServerLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/UserLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/UserLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/WordLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/lib/WordLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,16 +20,18 @@
     <session id="-799222547">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="2" />
-          <entry key="java" value="8" />
+          <entry key="class" value="1" />
+          <entry key="html" value="3" />
+          <entry key="java" value="26" />
           <entry key="properties" value="2" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="2" />
-          <entry key="JAVA" value="8" />
+          <entry key="CLASS" value="1" />
+          <entry key="HTML" value="3" />
+          <entry key="JAVA" value="26" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="1" />
         </counts>
@@ -58,14 +39,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="234" />
-          <entry key="java" value="102" />
+          <entry key="java" value="137" />
           <entry key="properties" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="234" />
-          <entry key="JAVA" value="102" />
+          <entry key="JAVA" value="137" />
           <entry key="Properties" value="6" />
         </counts>
       </usages-collector>
@@ -76,29 +57,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/display_words.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/ArticlesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1242">
-              <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+            <state relative-caret-position="481">
+              <caret line="46" column="64" selection-start-line="46" selection-start-column="64" selection-end-line="46" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -122,10 +97,15 @@
       <list>
         <option value="$PROJECT_DIR$/DBParser/src/main/java/app/StorageService.java" />
         <option value="$PROJECT_DIR$/DBParser/src/main/java/app/Controllers/FileUploadController.java" />
-        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java" />
         <option value="$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html" />
         <option value="$PROJECT_DIR$/DBParser/src/main/resource/application.properties" />
         <option value="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/ArticlesController.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/Application.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageProperties.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/storage/FileSystemStorageService.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageException.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageFileNotFoundException.java" />
+        <option value="$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java" />
       </list>
     </option>
   </component>
@@ -197,7 +177,24 @@
               <item name="DBParser" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="databases_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBParser" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -207,7 +204,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574453802999" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574526131469" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/DBParser/src/main/resource/templates/Article Search" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -253,7 +250,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Tester (1)">
+  <component name="RunManager" selected="Application.Application (1)">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.app.Application" />
       <module name="DBPROJECT" />
@@ -321,8 +318,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tester (1)" />
         <item itemvalue="Application.Application (1)" />
+        <item itemvalue="Application.Tester (1)" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Application.Tester" />
       </list>
@@ -343,6 +340,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="936" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4975186" visible="true" weight="0.21163167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -354,8 +352,8 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3287841" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3287841" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.3287841" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3995037" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.3287841" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.30148885" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -392,6 +390,16 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((DTMNodeList)nodeList).m_iter" custom="com.sun.org.apache.xml.internal.dtm.ref.DTMNodeList" />
@@ -413,13 +421,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/display_words.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DBParser/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -437,23 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -461,27 +445,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html">
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/display_words.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
+        <state relative-caret-position="330">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.4/lib/src.zip!/java.base/java/util/function/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="25" column="76" lean-forward="true" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+        <state relative-caret-position="260">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageFileNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#148#149#0" expanded="true" />
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/storage/FileSystemStorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="47" column="31" lean-forward="true" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2247#2248#0" expanded="true" />
+            <element signature="e#2300#2301#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#3022#3023#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/storage/StorageProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/GeneralController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/HealthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/resource/templates/article_upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="108" column="85" selection-start-line="108" selection-start-column="70" selection-end-line="108" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/WordsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/ArticlesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1242">
-          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+        <state relative-caret-position="481">
+          <caret line="46" column="64" selection-start-line="46" selection-start-column="64" selection-end-line="46" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.8.RELEASE/spring-web-5.1.8.RELEASE.jar!/org/springframework/web/bind/annotation/RequestParam.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/FileUploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
