@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import app.storage.StorageService;
 
 /**
- * This controller handles uploading of article files.
+ * This controller handles uploading of files.
  */
 @Controller
 public class FileUploadController {
@@ -31,7 +31,7 @@ public class FileUploadController {
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded " + file.getOriginalFilename() + "!");
 
-            return "redirect:/articles/upload";
+            return "redirect:/articles/upload/success";
         } catch (Exception e){
             return "error";
         }

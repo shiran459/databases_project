@@ -15,7 +15,7 @@ import java.util.List;
 @Controller
 public class ArticlesController {
 
-    //======================================= SEARCH ARTICLE =========================================//
+    //=================================== ARTICLE SEARCH PAGE ===================================//
 
     /**
      * Display article search page.
@@ -100,8 +100,16 @@ public class ArticlesController {
         }
     }
 
-    //======================================= UPLOAD ARTICLE =========================================//
+    //=============================== ARTICLE UPLOAD PAGE ====================================//
     @GetMapping("/articles/upload")
     public String displayUploadPage(Model model) {
+
         return "article_upload";
-    }}
+    }
+
+    @GetMapping("/articles/upload/success")
+    public String displayUploadSuccessPage(Model model) {
+
+        return "article_upload_success";
+    }
+}
