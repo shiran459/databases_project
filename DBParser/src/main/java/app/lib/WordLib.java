@@ -2,6 +2,7 @@ package app.lib;
 
 import app.utils.ArticleWord;
 import app.utils.ConnectionManager;
+import app.utils.WordLocation;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,52 +22,51 @@ public class WordLib {
         //Prepare an SQL statement
         StringBuilder sql = new StringBuilder("INSERT ALL ");
 
-        List<Integer> locations;
+        List<WordLocation> locations;
 
         //Create a statement SQL pattern
         for (ArticleWord word : wordsList) {
-            locations = word.offests;
+            locations = word.wordLocations;
 
-            for (int location : locations) {
+            for (WordLocation location : locations) {
                 sql.append("INTO word_index(article_id, word_id, word_offset, par_num, par_offset, word_context) VALUES (?,?,?,?,?,?) ");
             }
         }
         sql.append("SELECT 1 FROM dual");
         //Create a statement object
-        try {
-            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql.toString());
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql.toString());
 
-            //Fill the SQL pattern with variables
-            int i = 0;
-            int columns = 6;   //total number of columns in the word index table
-            for (ArticleWord word : wordsList) {
-                String currWord = word.value;
+        //Fill the SQL pattern with variables
+        int i = 0;
+        int columns = 6;   //total number of columns in the word index table
+        for (ArticleWord word : wordsList) {
+            String currWord = word.value;
 
-                insertWord(currWord);
-                int wordId = getWordId(currWord);
-                for (int j = 0; j < word.offests.size(); j++) {
-                    int offset = word.offests.get(j);
-                    int paragraph = word.paragraphs.getParagraph(j);
-                    int paragraphOffset = word.paragraphs.getParagraphOffset(j);
-                    String context = word.contextList.get(j);
+            insertWord(currWord);
+            int wordId = getWordId(currWord);
+            for (int j = 0; j < word.wordLocations.size(); j++) {
+                int offset = word.wordLocations.get(j).wordOffset;
+                int paragraph = word.wordLocations.get(j).paragraphNum;
+                int paragraphOffset = word.wordLocations.get(j).paragraphOffset;
+                String context = word.contextList.get(j);
 
-                    pstmt.setInt(columns * i + 1, articleId);
-                    pstmt.setInt(columns * i + 2, wordId);
-                    pstmt.setInt(columns * i + 3, offset);
-                    pstmt.setInt(columns * i + 4, paragraph);
-                    pstmt.setInt(columns * i + 5, paragraphOffset);
-                    pstmt.setString(columns * i + 6, context);
+                pstmt.setInt(columns * i + 1, articleId);
+                pstmt.setInt(columns * i + 2, wordId);
+                pstmt.setInt(columns * i + 3, offset);
+                pstmt.setInt(columns * i + 4, paragraph);
+                pstmt.setInt(columns * i + 5, paragraphOffset);
+                pstmt.setString(columns * i + 6, context);
 
-                    i++;
-                }
+                i++;
             }
-
-            //Execute the statement
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw e;
         }
+
+        //Execute the statement
+        pstmt.executeUpdate();
+
+        //close resources
+        pstmt.close();
+
     }
 
     /**
@@ -75,24 +75,21 @@ public class WordLib {
      * @param value String of the word to be added.
      * @return True if the word was added, otherwise returns false.
      */
-    public static boolean insertWord(String value) {
+    public static void insertWord(String value) throws SQLException {
         int length = value.length();
         String sql = "MERGE INTO words " +
                 "USING (SELECT ? word_id,? value,? length FROM dual) new_word " +
                 "ON (words.value = new_word.value) " +
                 "WHEN NOT MATCHED THEN INSERT (word_id, value, length) " +
                 "VALUES (NULL, new_word.value, new_word.length)";
-        try {
-            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-            pstmt.setNull(1, java.sql.Types.INTEGER);
-            pstmt.setString(2, value);
-            pstmt.setInt(3, length);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setNull(1, java.sql.Types.INTEGER);
+        pstmt.setString(2, value);
+        pstmt.setInt(3, length);
+        pstmt.executeQuery();
+
+        //close resources
+        pstmt.close();
     }
 
     //--------------------------------------- QUERY METHODS -------------------------------//
@@ -105,11 +102,14 @@ public class WordLib {
         pstmt.setString(1, word);
         ResultSet res = pstmt.executeQuery();
 
-        if (!res.next()) {
-            return -1;
-        } else {
-            return res.getInt("word_id");
-        }
+
+
+        int id = res.next() ?  res.getInt("word_id") : -1;
+
+        res.close();
+        pstmt.close();
+
+        return id;
     }
 
     public static String getWordValue(int wordId) throws SQLException {

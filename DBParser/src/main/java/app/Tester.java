@@ -34,6 +34,7 @@ public class Tester {
         tester.beforeAll();
 
         testUploadArticle(tester.wikitext);
+
     }
 
 
@@ -41,10 +42,10 @@ public class Tester {
     //----------------------------------------- BEFORE METHODS ---------------------------------------//
     public void beforeAll(){
         //Initialize variables
-        xmlPath = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Samples\\small_sample.xml";
+        xmlPath = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Samples\\sample.xml";
         htmlPath = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Samples\\sample.html";
-        File xmlFile = new File(xmlPath);
-        File htmlFile = new File(htmlPath);
+        xmlFile = new File(xmlPath);
+        htmlFile = new File(htmlPath);
 
         try{
             XMLParser xmlParser= new XMLParser(xmlFile);
@@ -175,5 +176,12 @@ public class Tester {
 //        printWordIndex(index);
     }
 
+    private void testWordLocationsExtractor() throws Exception{
 
+        HashMap<String, ArticleWord> wordsMap = HtmlParser.indexWords(htmlFile);
+
+        for (String key : wordsMap.keySet()){
+            System.out.println(key + " :  " + wordsMap.get(key).locationsToString());
+        }
+    }
 }

@@ -50,18 +50,17 @@ public class ServerLib {
         String path = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Article Pages\\" + title + ".html";
         File htmlFile = createHtmlFile(html, path);
 
-        String articleText = HtmlParser.getTextContent(htmlFile);
 
         //Insert article
         int articleId = ArticleLib.insertArticle(title, path);
 
         //Index the article
-        HashMap<String, ArticleWord> wordMap = HtmlParser.createIndexByOffset(articleText); //by offset
-        LocationByParagraph.enrichLocationByParagraph(htmlFile, wordMap); //add indexing by paragraph
+        HashMap<String, ArticleWord> wordMap = HtmlParser.indexWords(htmlFile);
 
         //Update Words and Word_Index tables
         List<ArticleWord> wordsList = new ArrayList<>(wordMap.values());
         WordLib.insertWordIndex(articleId, wordsList);
+
     }
 
     //====================================== PRIVATE METHODS ====================================//
