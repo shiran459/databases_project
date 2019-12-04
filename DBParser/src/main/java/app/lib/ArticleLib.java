@@ -83,6 +83,7 @@ public class ArticleLib {
     }
 
     public static List<String> searchArticlesByTitle(String title) throws SQLException {
+        title = '%' + title + '%';
         ResultSet res = null;
         String sql = "SELECT title " +
                 "FROM articles " +
@@ -149,11 +150,11 @@ public class ArticleLib {
 //        return results;
 //    }
 
-    public static List<Integer> searchArticlesByWords(List<String> words) throws SQLException {
+    public static List<String> searchArticlesByWords(List<String> words) throws SQLException {
         ResultSet res;
         StringBuilder wordSubQueries = new StringBuilder();
-        String sql = "SELECT DISTINCT article_id " +
-                "FROM word_index NATURAL JOIN words " +
+        String sql = "SELECT DISTINCT title " +
+                "FROM word_index NATURAL JOIN words NATURAL JOIN articles " +
                 "WHERE article_id IN ";
         for (int i = 0; i < words.size(); i++) {
             if (i == words.size() - 1) {
@@ -179,15 +180,15 @@ public class ArticleLib {
         }
 
         //Extract results
-        List<Integer> articleIdList = new ArrayList<Integer>();
+        List<String> titles = new ArrayList<String>();
         while (res.next()) {
-            articleIdList.add(res.getInt("article_id"));
+            titles.add(res.getString("title"));
         }
 
         //Close resources
         res.close();
 
-        return articleIdList;
+        return titles;
     }
 
     public static List<Integer> searchArticlesByWordsIds(List<Integer> containsWords) throws SQLException {

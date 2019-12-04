@@ -60,7 +60,7 @@ public class ArticlesController {
     public String searchArticleByWords (String wordsString, Model model) {
         List<String> words = Arrays.asList(wordsString.split("-"));
         try {
-            List<Integer> titleList = ArticleLib.searchArticlesByWords(words);
+            List<String> titleList = ArticleLib.searchArticlesByWords(words);
             model.addAttribute("titleList", titleList);
             return "article_search_results";
         } catch (Exception e) {

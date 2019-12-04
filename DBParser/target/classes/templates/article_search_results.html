@@ -105,18 +105,23 @@
 
     <div id="searchResultArea">
         <table class="table table-hover table-dark">
+
+            <!-- Table Headers -->
             <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Article Title</th>
             </tr>
             </thead>
+
+            <!-- Table Body -->
             <tbody>
-            <tr th:each="title: ${articleTitles}">
-                <th scope="row"></th>
-                <td th:text:articleId>
+            <tr th:each="title, iter: ${titleList}">
+                <td th:text="${iter.index+1}"></td>
+                <td th:text="${title}"></td>
             </tr>
             </tbody>
+
         </table>
     </div>
 </div>
