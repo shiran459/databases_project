@@ -5,10 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * Controls the homepage & error pages.
+ * Controls the homepage.
  */
 @Controller
-public class GeneralController {
+public class HomeController {
 
     /**
      * Displays the homepage.

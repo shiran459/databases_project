@@ -130,7 +130,7 @@ public class WordLib {
 
     public static List<String> getAllWords() throws SQLException {
         ResultSet res = null;
-        String sql = "SELECT value " +
+        String sql = "SELECT DISTINCT value " +
                 "FROM word_index NATURAL JOIN words";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
         res = pstmt.executeQuery();

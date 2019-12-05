@@ -24,7 +24,7 @@ public class ArticlesController {
      */
     @GetMapping("/articles/search")
     public String displayArticleSearchPage(Model model) {
-        return "article_search";
+        return "articles/article_search";
     }
 
     /**

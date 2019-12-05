@@ -16,12 +16,20 @@ import java.util.List;
 public class WordsController {
 
     @GetMapping("/words/view_all")
-    public String displayAllWords(int articleId,
-                                  Model model) {
+    public String displayAllWords(Model model) {
         try {
             List<String> wordList = WordLib.getAllWords();
             model.addAttribute("wordList", wordList);
-            return "display_words";
+            return "words/display_words";
+        } catch (Exception e) {
+            return "error";
+        }
+    }
+
+    @GetMapping("/words/search")
+    public String searchWords(Model model) {
+        try {
+            return "words/words_search";
         } catch (Exception e) {
             return "error";
         }
@@ -33,7 +41,7 @@ public class WordsController {
         try {
             List<String> wordList = ArticleLib.getArticleWords(articleId);
             model.addAttribute("wordList", wordList);
-            return "display_words";
+            return "words/display_words";
         } catch (Exception e) {
             return "error";
         }
@@ -51,7 +59,7 @@ public class WordsController {
             String value = WordLib.getWordValue(wordId);
             model.addAttribute("wordValue", value);
 
-            return "display_contexts";
+            return "words/display_contexts";
         } catch (Exception e) {
             return "error";
         }

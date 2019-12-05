@@ -23,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -43,7 +43,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574618096695" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DBParser/src/main/resource/templates/Article Search" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DBParser/src/main/resource/templates/words" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -69,11 +69,11 @@
       <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\Examples" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\words" />
+      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\articles" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\Article Search" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static" />
-      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static\images" />
-      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static\js" />
     </key>
   </component>
   <component name="RunDashboard">
