@@ -26,6 +26,22 @@ public class WordsController {
         }
     }
 
+//    @GetMapping("/words/search/by_article")
+//    public String displayArticleWords(@RequestParam(name="articleTitle", required=true) String articleTitle,
+//                                      @RequestParam(name="filter", required=false, defaultValue = "none") String filter,
+//                                      Model model) {
+//        try {
+//            List<String> wordList;
+//
+//            }
+//
+//            model.addAttribute("wordList", wordList);
+//            return "words/display_words";
+//        } catch (Exception e) {
+//            return "error";
+//        }
+//    }
+
     @GetMapping("/words/search")
     public String searchWords(Model model) {
         try {

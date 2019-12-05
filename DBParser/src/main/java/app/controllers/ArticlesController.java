@@ -1,6 +1,7 @@
 package app.controllers;
 
 import app.lib.ArticleLib;
+import app.utils.Article;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,7 +61,7 @@ public class ArticlesController {
     public String searchArticleByWords (String wordsString, Model model) {
         List<String> words = Arrays.asList(wordsString.split("-"));
         try {
-            List<String> titleList = ArticleLib.searchArticlesByWords(words);
+            List<Article> titleList = ArticleLib.searchArticlesByWords(words);
             model.addAttribute("titleList", titleList);
             return "article_search_results";
         } catch (Exception e) {

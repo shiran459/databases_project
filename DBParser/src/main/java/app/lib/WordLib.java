@@ -201,4 +201,23 @@ public class WordLib {
         return result;
     }
 
+    /**
+     * Filters
+     * @param words
+     * @param filterBy
+     */
+//    public static filterWords(List<ArticleWord> words, String filterBy){
+//        switch(filterBy){
+//            // Filter by word offset
+//            case "wordOffset": {
+//
+//                break;
+//            }
+//            //Filter by paragraph number + paragraph word offset
+//            case "parOffset": {
+//
+//                break;
+//            }
+//    }
+
 }

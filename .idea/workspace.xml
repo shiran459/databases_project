@@ -23,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -220,7 +220,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/lib/ArticleLib.java</url>
-          <line>97</line>
+          <line>98</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

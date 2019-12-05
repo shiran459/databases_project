@@ -108,7 +108,10 @@
             <tbody>
             <tr th:each="word, iter: ${wordList}">
                 <td th:text="${word.value}"></td>
-                <td th:text="${word.value}"></td>
+                <td th:text="${word.wordLocations.toString()"></td>
+                <td th:text="${word.wordLocations[iter.index].paragraphNum}"></td>
+                <td th:text="${word.wordLocations[iter.index].paragraphOffset}"></td>
+                <td th:text="${word.contextList[iter.index]}"></td>
             </tr>
             </tbody>
 

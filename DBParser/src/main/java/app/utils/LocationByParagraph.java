@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
+@Deprecated
 public class LocationByParagraph {
     public List<int[]> locations = new ArrayList<int[]>();
 

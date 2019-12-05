@@ -1,5 +1,6 @@
 package app.lib;
 
+import app.utils.Article;
 import app.utils.ConnectionManager;
 
 import java.sql.PreparedStatement;
@@ -150,10 +151,10 @@ public class ArticleLib {
 //        return results;
 //    }
 
-    public static List<String> searchArticlesByWords(List<String> words) throws SQLException {
+    public static List<Article> searchArticlesByWords(List<String> words) throws SQLException {
         ResultSet res;
         StringBuilder wordSubQueries = new StringBuilder();
-        String sql = "SELECT DISTINCT title " +
+        String sql = "SELECT DISTINCT article_id, title " +
                 "FROM word_index NATURAL JOIN words NATURAL JOIN articles " +
                 "WHERE article_id IN ";
         for (int i = 0; i < words.size(); i++) {
@@ -180,15 +181,18 @@ public class ArticleLib {
         }
 
         //Extract results
-        List<String> titles = new ArrayList<String>();
+        List<Article> articles = new ArrayList<>();
         while (res.next()) {
-            titles.add(res.getString("title"));
+            int articleId = res.getInt("article_id");
+            String title = res.getString("title");
+            Article article = new Article(articleId,title);
+            articles.add(article);
         }
 
         //Close resources
         res.close();
 
-        return titles;
+        return articles;
     }
 
     public static List<Integer> searchArticlesByWordsIds(List<Integer> containsWords) throws SQLException {
