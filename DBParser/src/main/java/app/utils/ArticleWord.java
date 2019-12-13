@@ -3,21 +3,23 @@ package app.utils;
 import java.util.List;
 import java.util.ArrayList;
 
-public class ArticleWord {
+public class ArticleWord extends Word{
 
-    public String value;
-    public int id;
     public int articleId;
-    @Deprecated
-    public List<Integer> offests = new ArrayList<>();
-    @Deprecated
-    public LocationByParagraph paragraphs = new LocationByParagraph();
 
     public List<String> contextList = new ArrayList<>();
     public List<WordLocation> wordLocations = new ArrayList<>();
 
     public ArticleWord(String value) {
-        this.value = value;
+        super(value);
+    }
+
+    public ArticleWord(String value, int id) {
+       super(value, id);
+    }
+
+    public ArticleWord() {
+        super();
     }
 
     public String locationsToString(){

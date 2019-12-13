@@ -1,12 +1,15 @@
 package app.lib;
 
 import app.utils.Article;
+import app.utils.ArticleWord;
 import app.utils.ConnectionManager;
+import app.utils.WordLocation;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ArticleLib {
@@ -18,7 +21,7 @@ public class ArticleLib {
      * @throws SQLException If the transaction has failed.
      */
     public static int insertArticle(String title, String path) throws SQLException {
-        String sql = "INSERT INTO articles(article_id, article_name, path)" +
+        String sql = "INSERT INTO articles(article_id, title, path)" +
                 "VALUES (article_seq.NEXTVAL, ?, ?)";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql,new String[]{"article_id"});
 //        pstmt.setNull(1, java.sql.Types.INTEGER);
@@ -63,10 +66,10 @@ public class ArticleLib {
         return title;
     }
 
-    public static String getArticlePath(int articleId) throws SQLException {
+    public static Article getArticleById(int articleId) throws SQLException {
         //Get the file path
         ResultSet res = null;
-        String sql = "SELECT path " +
+        String sql = "SELECT path, title " +
                 "FROM articles " +
                 "WHERE article_id = ?";
         try {
@@ -79,25 +82,32 @@ public class ArticleLib {
         if (!res.next()) {
             return null;
         } else {
-            return res.getString("path");
+            String title = res.getString("title");
+            String path = res.getString("path");
+            Article article = new Article(articleId, title);
+            article.path = path;
+            return article;
         }
     }
 
-    public static List<String> searchArticlesByTitle(String title) throws SQLException {
-        title = '%' + title + '%';
+    public static List<Article> searchArticlesByTitle(String title) throws SQLException {
+        String titlePattern = '%' + title + '%';
         ResultSet res = null;
-        String sql = "SELECT title " +
+        String sql = "SELECT article_id, title " +
                 "FROM articles " +
                 "WHERE title LIKE ?";
 
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-        pstmt.setString(1, title);
+        pstmt.setString(1, titlePattern);
         res = pstmt.executeQuery();
 
         //Extract results
-        List<String> results = new ArrayList<>();
+        List<Article> results = new ArrayList<>();
         while (res.next()) {
-            results.add(res.getString("title"));
+            int articleId = res.getInt("article_id");
+            String articleTitle = res.getString("title");
+            Article curr = new Article(articleId, articleTitle);
+            results.add(curr);
         }
 
         //Close resource
@@ -248,9 +258,9 @@ public class ArticleLib {
         return result;
     }
 
-    public static List<String> getArticleWords(int articleId) throws SQLException {
+    public static List<ArticleWord> getArticleWords(int articleId) throws SQLException {
         ResultSet res = null;
-        String sql = "SELECT value " +
+        String sql = "SELECT word_id, value, word_offset, par_num, par_offset " +
                 "FROM word_index NATURAL JOIN words " +
                 "WHERE article_id = ?";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
@@ -258,16 +268,26 @@ public class ArticleLib {
         res = pstmt.executeQuery();
 
         //Extract results from result set
-        List<String> result = new ArrayList<>();
+        HashMap<String, ArticleWord> wordHashMap = new HashMap<>();
         while (res.next()) {
-            result.add(res.getString("value"));
+            int wordId = res.getInt("word_id");
+            String value  = res.getString("value");
+            int wordOffset  = res.getInt("word_offset");
+            int parNum  = res.getInt("par_num");
+            int parOffset  = res.getInt("par_offset");
+
+            wordHashMap.putIfAbsent(value, new ArticleWord(value));
+            ArticleWord word = wordHashMap.get(value);
+            word.articleId = articleId;
+            word.id = wordId;
+            word.wordLocations.add(new WordLocation(wordOffset, parNum, parOffset));
         }
 
         //Close resources
         pstmt.close();
         res.close();
 
-        return result;
+        return new ArrayList<>(wordHashMap.values());
     }
 
     public static ResultSet getLocationsByOffset(int wordId, int articleId) throws SQLException {

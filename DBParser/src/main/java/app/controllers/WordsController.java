@@ -2,10 +2,13 @@ package app.controllers;
 
 import app.lib.ArticleLib;
 import app.lib.WordLib;
+import app.utils.Article;
+import app.utils.ArticleWord;
+import app.utils.Word;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -18,29 +21,13 @@ public class WordsController {
     @GetMapping("/words/view_all")
     public String displayAllWords(Model model) {
         try {
-            List<String> wordList = WordLib.getAllWords();
+            List<Word> wordList = WordLib.getAllWords();
             model.addAttribute("wordList", wordList);
-            return "words/display_words";
+            return "words/all_words";
         } catch (Exception e) {
             return "error";
         }
     }
-
-//    @GetMapping("/words/search/by_article")
-//    public String displayArticleWords(@RequestParam(name="articleTitle", required=true) String articleTitle,
-//                                      @RequestParam(name="filter", required=false, defaultValue = "none") String filter,
-//                                      Model model) {
-//        try {
-//            List<String> wordList;
-//
-//            }
-//
-//            model.addAttribute("wordList", wordList);
-//            return "words/display_words";
-//        } catch (Exception e) {
-//            return "error";
-//        }
-//    }
 
     @GetMapping("/words/search")
     public String searchWords(Model model) {
@@ -51,32 +38,48 @@ public class WordsController {
         }
     }
 
-    @GetMapping("/words/by_article")
-    public String displayWords(@RequestParam(value = "article_id", required = true) int articleId,
-                               Model model) {
+    @GetMapping("/words/by_article/{articleId}")
+    public String displayWords(@PathVariable int articleId, Model model) {
         try {
-            List<String> wordList = ArticleLib.getArticleWords(articleId);
+            List<ArticleWord> wordList = ArticleLib.getArticleWords(articleId);
             model.addAttribute("wordList", wordList);
-            return "words/display_words";
+            return "words/word_locations_in_article";
         } catch (Exception e) {
             return "error";
         }
     }
 
-    @GetMapping("/words/contexts")
-    public String displayWordContexts(@RequestParam(value = "word_id", required = true) int wordId,
-                                      Model model) {
+    @GetMapping("/articles/{articleId}/context/{wordId}")
+    public String displayWordContextsInArticle(@PathVariable int articleId, @PathVariable int wordId,
+                                               Model model){
         try {
-            Object[] contexts = WordLib.getContexts(wordId);
-            model.addAttribute("articleIdList", contexts[0]);
-            model.addAttribute("titleList", contexts[1]);
-            model.addAttribute("contextList", contexts[2]);
+            List<String> contexts = WordLib.getContextsInArticle(wordId, articleId);
+            Article article = ArticleLib.getArticleById(articleId);
+            Word word = WordLib.getWordById(wordId);
 
-            String value = WordLib.getWordValue(wordId);
-            model.addAttribute("wordValue", value);
+            model.addAttribute("contexts", contexts);
+            model.addAttribute("article", article);
+            model.addAttribute("word", word);
 
-            return "words/display_contexts";
+            return "words/display_article_contexts";
         } catch (Exception e) {
+            return "error";
+        }
+    }
+
+    @GetMapping("/words/context/{wordId}")
+    public String displayWordContexts(@PathVariable int wordId,
+                                               Model model){
+        try {
+            List<ArticleWord> articleWordList = WordLib.getAllContexts(wordId);
+            Word word = WordLib.getWordById(wordId);
+
+            model.addAttribute("articleWordList", articleWordList);
+            model.addAttribute("word", word);
+
+            return "words/all_contexts";
+        } catch (Exception e) {
+            e.printStackTrace();
             return "error";
         }
     }

@@ -47,7 +47,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
@@ -64,16 +64,17 @@
       <recent name="app.storage" />
       <recent name="main" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
-      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\Examples" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\java" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\words" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\articles" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\Article Search" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
-      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\words" />
+      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
+      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\Examples" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -216,15 +217,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/lib/ArticleLib.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((DTMNodeList)nodeList).m_iter" custom="com.sun.org.apache.xml.internal.dtm.ref.DTMNodeList" />
@@ -237,80 +229,5 @@
     <SUITE FILE_PATH="coverage/databases_project$Tester__1_.ic" NAME="Tester (1) Coverage Results" MODIFIED="1574321214239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.*</FILTER>
     </SUITE>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>DBPROJECT</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>ojdbc10</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

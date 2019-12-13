@@ -95,7 +95,8 @@
             <!-- Table Body -->
             <tbody>
             <tr th:each="word: ${wordList}">
-                <td th:text="${word}"></td>
+                <td th:text="${word.value}"></td>
+                <td><a th:href="@{/words/context/{wordId}(wordId=${word.id})}">View Contexts</a></td>
             </tr>
             </tbody>
 

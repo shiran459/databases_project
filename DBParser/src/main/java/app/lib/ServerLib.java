@@ -4,13 +4,22 @@ import app.parsers.HtmlParser;
 import app.parsers.XMLParser;
 import app.utils.ArticleWord;
 import app.utils.ConnectionManager;
-import app.utils.LocationByParagraph;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.*;
-import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
@@ -47,7 +56,31 @@ public class ServerLib {
         //Save html to file
         String html = XMLParser.wikiToHtml(wikitext);
         html = "<div>" + html +"</div>";
-        String path = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\Article Pages\\" + title + ".html";
+
+        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = builderFactory.newDocumentBuilder();
+        Document xmlDocument = builder.parse(new InputSource(new StringReader(html)));
+
+        Node root = xmlDocument.getChildNodes().item(0);
+        NodeList list = root.getChildNodes();
+        System.out.println(list.getLength());
+        for (int i = 0; i < list.getLength(); i++) {
+            Node node = list.item(i);
+            if (node.getNodeName().equals("div")){
+                root.removeChild(node);
+            }
+        }
+
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        StringWriter writer = new StringWriter();
+
+        transformer.transform(new DOMSource(xmlDocument), new StreamResult(writer));
+        html = writer.getBuffer().toString();
+
+
+        String path = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\article pages\\" + title + ".html";
         File htmlFile = createHtmlFile(html, path);
 
 
@@ -63,6 +96,11 @@ public class ServerLib {
 
     }
 
+
+    public static void uploadArticle(String title, Path wikitextPath) throws Exception{
+        String wikitext = Files.readString(wikitextPath);
+        uploadArticle(title, wikitext);
+    }
     //====================================== PRIVATE METHODS ====================================//
 
     private static File createHtmlFile(String html, String path) throws IOException {

@@ -102,15 +102,15 @@
 
             <!-- Table Body -->
             <tbody>
-            <tr th:each="title, iter: ${titleList}">
+            <tr th:each="article, iter: ${articleList}">
                 <td th:text="${iter.index+1}"></td>
-                <td th:text="${title}"></td>
+                <td><a th:href="@{/articles/{id}(id = ${article.id})}"><span th:text="${article.title}"></span></a></td>
+                <td><a th:href="@{/words/by_article/{id}(id = ${article.id})}">view all words</a></td>
             </tr>
             </tbody>
 
         </table>
     </div>
-</div>
 </div>
 
 <!------------------------ Bootstrap JS ---------------------------->

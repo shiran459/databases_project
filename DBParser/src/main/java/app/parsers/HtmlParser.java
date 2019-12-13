@@ -80,40 +80,6 @@ public class HtmlParser {
         }
     }
 
-
-    /**
-     * Creates an index for all the words in a given text. The index holds
-     * the locations of each of the words in the text.
-     *
-     * @param text A text to be indexed.
-     * @return A HashMap index of the words.
-     */
-    @Deprecated
-    public static HashMap<String, ArticleWord> createIndexByOffset(String text) {
-        HashMap<String, ArticleWord> index = new HashMap<>();
-
-        //Remove non-alphanumeric characters then split to words (words are in lowercase)
-        String[] words = getWordList(text);
-
-        //Add the current word location to the index
-        for (int i = 0; i < words.length; i++) {
-            if(words[i].isEmpty())    //Do not insert empty strings to the index
-                continue;
-
-            if (index.containsKey(words[i])) {
-                index.get(words[i]).offests.add(i);
-            } else {
-                ArticleWord word = new ArticleWord(words[i]);
-                word.offests.add(i);
-                index.put(words[i], word);
-            }
-            //Save the context of the current word
-            index.get(words[i]).contextList.add(getWordContext(words, i));
-        }
-
-        return index;
-    }
-
     private static String getWordContext(String[] articleText, int location) {
         String context = articleText[location];
         for (int i = 1; i <= CONTEXT_WORD_SIZE; i++) {

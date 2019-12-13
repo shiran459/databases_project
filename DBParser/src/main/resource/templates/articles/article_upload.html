@@ -84,6 +84,7 @@
     </div>
 </nav>
 
+
 <!--------------------Article Upload----------------------->
 <div class="page">
     <!-- Page Description -->
@@ -93,6 +94,15 @@
 
     <!-- Upload Form -->
     <form method="post" enctype="multipart/form-data" action="/articles/upload">
+
+        <!-- Article Title -->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Title</span>
+            </div>
+            <input type="text" class="form-control" id="title" aria-describedby="basic-addon3" name="Title">
+        </div>
+
         <!-- File Chooser -->
         <div class="input-group">
             <div class="input-group-prepend">

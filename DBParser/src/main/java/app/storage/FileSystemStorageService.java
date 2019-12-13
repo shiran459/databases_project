@@ -28,7 +28,7 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
-    public void store(MultipartFile file) {
+    public Path store(MultipartFile file) {
         String filename = StringUtils.cleanPath(file.getOriginalFilename());
         try {
             if (file.isEmpty()) {
@@ -41,8 +41,10 @@ public class FileSystemStorageService implements StorageService {
                                 + filename);
             }
             try (InputStream inputStream = file.getInputStream()) {
-                Files.copy(inputStream, this.rootLocation.resolve(filename),
+                Path filePath =  this.rootLocation.resolve(filename);
+                Files.copy(inputStream, filePath,
                         StandardCopyOption.REPLACE_EXISTING);
+                return filePath;
             }
         }
         catch (IOException e) {

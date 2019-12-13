@@ -2,12 +2,14 @@ package app.lib;
 
 import app.utils.ArticleWord;
 import app.utils.ConnectionManager;
+import app.utils.Word;
 import app.utils.WordLocation;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class WordLib {
@@ -112,8 +114,8 @@ public class WordLib {
         return id;
     }
 
-    public static String getWordValue(int wordId) throws SQLException {
-        String sql = "SELECT value " +
+    public static Word getWordById(int wordId) throws SQLException {
+        String sql = "SELECT value, word_id " +
                 "FROM words " +
                 "WHERE word_id = ?";
 
@@ -124,21 +126,27 @@ public class WordLib {
         if (!res.next()) {
             return null;
         } else {
-            return res.getString("value");
+            String value = res.getString("value");
+            int id = res.getInt("word_id");
+
+            return new Word(value, id);
         }
     }
 
-    public static List<String> getAllWords() throws SQLException {
+    public static List<Word> getAllWords() throws SQLException {
         ResultSet res = null;
-        String sql = "SELECT DISTINCT value " +
+        String sql = "SELECT DISTINCT word_id, value " +
                 "FROM word_index NATURAL JOIN words";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
         res = pstmt.executeQuery();
 
         //Extract results from result set
-        List<String> result = new ArrayList<>();
+        List<Word> result = new ArrayList<>();
         while (res.next()) {
-            result.add(res.getString("value"));
+            int wordId = res.getInt("word_id");
+            String value = res.getString("value");
+            Word word = new Word(value, wordId);
+            result.add(word);
         }
 
         //Close resources
@@ -174,24 +182,47 @@ public class WordLib {
         return locations;
     }
 
-    public static Object[] getContexts(int wordId) throws SQLException {
-        String sql = "SELECT article_id, title, context " +
+    public static List<ArticleWord> getAllContexts(int wordId) throws SQLException {
+        String sql = "SELECT article_id, word_context " +
                 "FROM word_index NATURAL JOIN articles " +
                 "WHERE word_id = ?";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-        ResultSet res = pstmt.executeQuery();
         pstmt.setInt(1, wordId);
+        ResultSet res = pstmt.executeQuery();
 
-        //Extract results from result set
-        List<Integer> articleIdList = new ArrayList<>();
-        List<String> titleList = new ArrayList<>();
-        List<String> contextList = new ArrayList<>();
-        Object[] result = {articleIdList, titleList, contextList};
+        HashMap<Integer, ArticleWord> wordHashMap = new HashMap<>();
 
         while (res.next()) {
-            articleIdList.add(res.getInt("article_id"));
-            titleList.add(res.getString("title"));
-            contextList.add(res.getString("context"));
+           int articleId = res.getInt("article_id");
+           String context = res.getString("word_context");
+           wordHashMap.putIfAbsent(articleId, new ArticleWord());
+           ArticleWord articleWord = wordHashMap.get(articleId);
+
+           articleWord.contextList.add(context);
+           articleWord.articleId = articleId;
+           articleWord.id = wordId;
+        }
+        //Close resources
+        pstmt.close();
+        res.close();
+
+        return new ArrayList<>(wordHashMap.values());
+    }
+
+    public static List<String>  getContextsInArticle(int wordId, int articleId) throws SQLException {
+        String sql = "SELECT word_context " +
+                "FROM word_index " +
+                "WHERE word_id = ? AND article_id = ?";
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, wordId);
+        pstmt.setInt(2, articleId);
+        ResultSet res = pstmt.executeQuery();
+
+        //Extract results from result set
+        List<String> result= new ArrayList<>();
+
+        while (res.next()) {
+            result.add(res.getString("word_context"));
         }
 
         //Close resources
@@ -200,24 +231,5 @@ public class WordLib {
 
         return result;
     }
-
-    /**
-     * Filters
-     * @param words
-     * @param filterBy
-     */
-//    public static filterWords(List<ArticleWord> words, String filterBy){
-//        switch(filterBy){
-//            // Filter by word offset
-//            case "wordOffset": {
-//
-//                break;
-//            }
-//            //Filter by paragraph number + paragraph word offset
-//            case "parOffset": {
-//
-//                break;
-//            }
-//    }
 
 }

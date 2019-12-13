@@ -132,7 +132,7 @@ public class Tester {
 
     private boolean testGetArticlePath(int articleId, String expectedPath){
         try{
-            return ArticleLib.getArticlePath(articleId).equals(expectedPath);
+            return ArticleLib.getArticleById(articleId).equals(expectedPath);
         }
         catch (SQLException e){}
         return false;
@@ -143,12 +143,12 @@ public class Tester {
         ServerLib.wipeTable("Word_Index");
         ServerLib.wipeTable("Articles");
         ServerLib.wipeTable("Words");
-        try {
-            ServerLib.uploadArticle("Some_Title", wikitext);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+//        try {
+//            ServerLib.uploadArticle("Some_Title", wikitext);
+//        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//        }
     }
 
     //##################################### TEST HTML PAGE PARSER ####################################//
@@ -165,15 +165,6 @@ public class Tester {
 
     private void testGetTextContent(){
         System.out.println("Text content:\n " + xmlParser.getTextContent());
-    }
-
-    private void testCreateIndexByOffset(){
-        XMLParser parser = new XMLParser(htmlFile);
-        String text = parser.getTextContent();
-        HashMap<String,ArticleWord> index = HtmlParser.createIndexByOffset(text);
-
-        //Print index
-//        printWordIndex(index);
     }
 
     private void testWordLocationsExtractor() throws Exception{

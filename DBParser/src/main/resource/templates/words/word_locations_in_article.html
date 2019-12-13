@@ -88,19 +88,17 @@
 <div class="page">
     <!-- Page Description -->
     <h2>View Words</h2>
-    <p th:text="Displaying words appearing in article: ${title}."></p>
 
     <!-------- Result Area -------->
-    <div id="searchResultArea">
+    <div class="page id='searchResultArea'">
         <table class="table table-hover table-dark">
 
             <!-- Table Headers -->
             <thead>
             <tr>
                 <th scope="col">Word</th>
-                <th scope="col">Word Offset</th>
-                <th scope="col">Paragraph Number</th>
-                <th scope="col">Paragraph Word Offset</th>
+                <th scope="col">Word Offsets</th>
+                <th scope="col">Paragraph</th>
             </tr>
             </thead>
 
@@ -108,10 +106,22 @@
             <tbody>
             <tr th:each="word, iter: ${wordList}">
                 <td th:text="${word.value}"></td>
-                <td th:text="${word.wordLocations.toString()"></td>
-                <td th:text="${word.wordLocations[iter.index].paragraphNum}"></td>
-                <td th:text="${word.wordLocations[iter.index].paragraphOffset}"></td>
-                <td th:text="${word.contextList[iter.index]}"></td>
+                <td>
+                    <table>
+                        <tr th:each="location: ${word.wordLocations}">
+                            <td th:text="${location.wordOffset}"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr th:each="location: ${word.wordLocations}">
+                            <td th:text="${location.paragraphNum}"></td>
+                            <td th:text="${location.paragraphOffset}"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td><a th:href="@{/articles/{articleId}/context/{wordId}(articleId = ${word.articleId}, wordId = ${word.id})}">view contexts</a></td>
             </tr>
             </tbody>
 

@@ -5,8 +5,11 @@ import app.utils.Article;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
@@ -47,8 +50,9 @@ public class ArticlesController {
             case "category": {
                 return searchArticleByCategory(searchInput, model);
             }
-            default:
+            default:{
                 return "error";
+            }
         }
     }
 
@@ -61,9 +65,9 @@ public class ArticlesController {
     public String searchArticleByWords (String wordsString, Model model) {
         List<String> words = Arrays.asList(wordsString.split("-"));
         try {
-            List<Article> titleList = ArticleLib.searchArticlesByWords(words);
-            model.addAttribute("titleList", titleList);
-            return "article_search_results";
+            List<Article> articleList = ArticleLib.searchArticlesByWords(words);
+            model.addAttribute("articleList", articleList);
+            return "articles/article_search_results";
         } catch (Exception e) {
             return "error";
         }
@@ -77,9 +81,9 @@ public class ArticlesController {
      */
     public String searchArticleByTitle(String title, Model model) {
         try {
-            List<String> titleList = ArticleLib.searchArticlesByTitle(title);
-            model.addAttribute("titleList", titleList);
-            return "article_search_results";
+            List<Article> articleList = ArticleLib.searchArticlesByTitle(title);
+            model.addAttribute("articleList", articleList);
+            return "articles/article_search_results";
         } catch (Exception e) {
             return "error";
         }
@@ -105,12 +109,32 @@ public class ArticlesController {
     @GetMapping("/articles/upload")
     public String displayUploadPage(Model model) {
 
-        return "article_upload";
+        return "articles/article_upload";
     }
 
     @GetMapping("/articles/upload/success")
     public String displayUploadSuccessPage(Model model) {
 
-        return "article_upload_success";
+        return "articles/article_upload_success";
+    }
+
+
+    //=============================== ARTICLE DISPLAY ====================================//
+    @GetMapping("/articles/{id}")
+    public String displayArticle(@PathVariable String id, Model model) {
+        try {
+            //Fetch Article
+            Article article = ArticleLib.getArticleById(Integer.parseInt(id));
+
+            //Read into string
+            String content = Files.readString(Paths.get(article.path));
+            //Wrap in model
+            model.addAttribute("articleContent", content);
+            model.addAttribute("article", article);
+
+            return "articles/article_display";
+        } catch (Exception e) {
+            return "error";
+        }
     }
 }
