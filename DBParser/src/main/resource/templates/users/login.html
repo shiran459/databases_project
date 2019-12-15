@@ -87,9 +87,11 @@
 
 <!---------------- Login Screen ----------------------->
 <div class="page">
-	<form action="/login">
+	<h2>Login</h2>
+
+	<form action="/users/login" id="login-form">
 		<label>Username:</label>
-		<input type="email" name="username">
+		<input type="text" name="username">
 		<br>
 		<label>Password:</label>
 		<input type="password" name="password">
@@ -97,6 +99,9 @@
 		<br>
 		<button type="submit">Login</button>
 	</form>
+
+	<br>
+	<a href="/register">Don't have a user? Register now</a>
 </div>
 
 
@@ -110,6 +115,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="/js/login.js"></script>
 
 </body>
 </html>

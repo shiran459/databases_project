@@ -16,73 +16,8 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
 </head>
 <body>
-<!-------------------------- Navigation Bar ------------------------>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Brand -->
-    <a class="navbar-brand" href="/">WikiSearch</a>
 
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-        <!-- Links -->
-        <ul class="navbar-nav">
-
-            <!-- Dropdown Links -->
-            <!-- Articles -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="articles" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Articles
-                </a>
-                <div class="dropdown-menu" aria-labelledby="articles">
-                    <a class="dropdown-item" href="/articles/search">Search</a>
-                    <a class="dropdown-item" href="/articles/upload">Upload</a>
-                </div>
-            </li>
-
-            <!-- Words -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="words" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Words
-                </a>
-                <div class="dropdown-menu" aria-labelledby="words">
-                    <a class="dropdown-item" href="/words/search">Search</a>
-                    <a class="dropdown-item" href="/words/view_all">View all</a>
-                </div>
-            </li>
-
-            <!-- Groups -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="groups" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Groups
-                </a>
-                <div class="dropdown-menu" aria-labelledby="groups">
-                    <a class="dropdown-item" href="/groups/view">View</a>
-                    <a class="dropdown-item" href="/groups/create">Create</a>
-                </div>
-            </li>
-
-            <!-- Expressions -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="expressions" role="button"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Expressions
-                </a>
-                <div class="dropdown-menu" aria-labelledby="expressions">
-                    <a class="dropdown-item" href="/expressions/view">View</a>
-                    <a class="dropdown-item" href="/expressions/create">Create</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
+<nav th:insert="fragments/general.html :: nav(currUser=${user})"> </nav>
 
 <!--------------------Article Search----------------------->
 <div class="page">

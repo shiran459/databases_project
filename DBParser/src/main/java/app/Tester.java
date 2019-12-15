@@ -4,6 +4,7 @@ import app.lib.*;
 import app.parsers.HtmlParser;
 import app.parsers.XMLParser;
 import app.utils.ArticleWord;
+import app.utils.User;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -33,7 +34,7 @@ public class Tester {
         Tester tester = new Tester();
         tester.beforeAll();
 
-        testUploadArticle(tester.wikitext);
+        testValidSession();
 
     }
 
@@ -94,14 +95,46 @@ public class Tester {
 
 
     //####################################### TEST USER LIB ####################################//
+    public static void testRegister(){
+        ServerLib.wipeTable("users");
+        try {
+            User user = UserLib.register("shiran", "Password1");
+            System.out.println("Token: " + user.token);
+            System.out.println("Id: " + user.userId);
+            System.out.println("Username: " + user.username);
 
-    private void testInsertUser(){
-        try{
-            UserLib.insertUser("My Usename", "<no hash>", "<no token>", null);
-        } catch (SQLException e){
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
     }
+
+    public static void testLogin(){
+        try {
+            User user = UserLib.login("shiran", "Password1");
+            System.out.println("Token: " + user.token);
+            System.out.println("Id: " + user.userId);
+            System.out.println("Username: " + user.username);
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testValidSession(){
+        try {
+            User user = UserLib.login("shiran", "Password1");
+            User user2 = UserLib.currentUser(user.token);
+            System.out.println("Id: " + user2.userId);
+            System.out.println("Username: " + user2.username);
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 
     //####################################### TEST GROUP LIB ####################################//
 
