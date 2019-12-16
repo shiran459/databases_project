@@ -34,8 +34,8 @@ public class Tester {
         Tester tester = new Tester();
         tester.beforeAll();
 
-        testValidSession();
-
+        tester.
+        testCreateGroup();
     }
 
 
@@ -138,21 +138,14 @@ public class Tester {
 
     //####################################### TEST GROUP LIB ####################################//
 
-    private void testCreateWordGroup(){
+    public static void testCreateGroup(){
         try{
-            GroupLib.insertGroup("My Group Name", 1);
+            GroupLib.createGroup("My Group Name", 1);
         } catch (SQLException e){
             e.printStackTrace();
         }
     }
 
-    private void testInsertGroup(){
-        try{
-            GroupLib.insertGroup("My Group", 5);
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
 
     //####################################### TEST ARTICLE LIB ####################################//
     private void testInsertArticle(){

@@ -10,7 +10,7 @@ body{
     margin-top: 5%;
     margin-left: 25%;
     margin-right: 25%;
-    margin-bottom: 9%;
+    margin-bottom: 7.8%;
     padding-top: 50px;
     padding-bottom: 3%;
     border-radius: 25px;
@@ -18,9 +18,4 @@ body{
     font-weight: bold;
     background: #ffffff;
     box-shadow: 2px 2px 5px grey;
-}
-
-footer {
-  background: #ffffff;
-  border-top: 3px solid #007399;
 }

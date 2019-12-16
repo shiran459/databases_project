@@ -123,14 +123,20 @@ public class WordLib {
         pstmt.setInt(1, wordId);
         ResultSet res = pstmt.executeQuery();
 
+        Word result;
         if (!res.next()) {
-            return null;
+            result =  null;
         } else {
             String value = res.getString("value");
             int id = res.getInt("word_id");
 
-            return new Word(value, id);
+            result = new Word(value, id);
         }
+
+        res.close();
+        pstmt.close();
+
+        return result;
     }
 
     public static List<Word> getAllWords() throws SQLException {

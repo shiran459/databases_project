@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>WikiSearch | Homepage</title>
+    <title>WikiSearch | Article Search Results</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -11,24 +11,41 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="/css/page.css">
+    <link rel="stylesheet" href="/css/search.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+</head>
 <body>
 
 <nav th:insert="fragments/general.html :: nav(currUser=${user})"> </nav>
 
-<!------------ Page Content -------------->
+<!-------------------- View Groups ----------------------->
+<div class="page">
+    <h2>My Word Groups</h2>
+    <p>Now displaying your word groups:</p>
 
-<div id="homepage-welcome">
-    <p>
-    <h1>Welcome to WikiSearch!</h1><br><br>
-    <img src="/images/wikipedia-logo.png"/><br><br><br>
-    Here you can search thousands of Wikipedia articles, words and even custom expressions!<br>
-    Easily create your own word groups, expressions or upload new articles.
-    </p>
+    <div th:each="group, iter: ${groups}">
+        <table class="table table-hover table-bordered">
+
+            <!-- Table Headers -->
+            <thead class="thead-light">
+            <tr>
+                <th scope="col" th:text="${group.groupName}"></th>
+            </tr>
+            </thead>
+
+            <!-- Table Body -->
+            <tbody>
+            <tr th:each="word: ${group.words}">
+                <td th:text = "${word.value}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
-<!-- Bootstrap JS -->
+<!------------------------ Bootstrap JS ---------------------------->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -39,5 +56,4 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -134,32 +134,10 @@ public class ArticleLib {
 
         //Close resources
         res.close();
+        pstmt.close();
 
         return results;
     }
-
-    //TODO: Decide whether to remove
-//    public static List<Integer> searchArticlesByWord(String word) throws SQLException {
-//        ResultSet res;
-//        String sql = "SELECT DISTINCT word_index.article_id " +
-//                "FROM word_index NATURAL JOIN words " +
-//                "WHERE words.value = ?";
-//
-//        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-//        pstmt.setString(1, word);
-//        res = pstmt.executeQuery();
-//
-//        //Extract results
-//        List<Integer> results = new ArrayList<Integer>();
-//        while (res.next()) {
-//            results.add(res.getInt("article_id"));
-//        }
-//
-//        //Close resources
-//        res.close();
-//
-//        return results;
-//    }
 
     public static List<Article> searchArticlesByWords(List<String> words) throws SQLException {
         ResultSet res;
