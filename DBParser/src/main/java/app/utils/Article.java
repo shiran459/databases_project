@@ -9,4 +9,6 @@ public class Article {
         this.id = id;
         this.title = title;
     }
+
+    public Article() {}
 }

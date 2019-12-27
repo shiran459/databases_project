@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExpressionLib {
-    public static void insertExpression(int userId, String wordIdList, String value, int wordCount) throws SQLException {
+    public static void insertExpression(int userId, String wordIdList, String value) throws SQLException {
         java.sql.Date creationDate = new java.sql.Date(System.currentTimeMillis());
         String sql = "INSERT INTO expressions(expression_id, user_id, word_id_list, value, word_count, creation_date) " +
                 "VALUES (NULL, ?, ?, ?, ?, ?)";
@@ -17,8 +17,7 @@ public class ExpressionLib {
         pstmt.setInt(1, userId);
         pstmt.setString(2, wordIdList);
         pstmt.setString(3, value);
-        pstmt.setInt(1, wordCount);
-        pstmt.setDate(1, creationDate);
+        pstmt.setDate(4, creationDate);
         pstmt.executeUpdate();
     }
 
@@ -33,20 +32,20 @@ public class ExpressionLib {
     /**
      * Returns a list of all locations (by word offset) of an expression in a given article.
      * @param expressionId ID of the expression searched.
-     * @param aricleId ID of the article to be searched in.
+     * @param articleId ID of the article to be searched in.
      * @return A list of all locations (by word offset) of an expression in a given article
      * @throws SQLException If a transaction has failed.
      */
-    static List<Integer> searchExpressionInArticle(int expressionId, int aricleId) throws SQLException {
-        ArrayList<Integer> expressionWords = getExpressionWordIdList(expressionId);
+    static List<Integer> searchExpressionInArticle(int expressionId, int articleId) throws SQLException {
+        List<Integer> expressionWords = getExpressionWordIdList(expressionId);
 
-        List<Integer> potentialExpressionLocations = WordLib.searchWordLocationsInArticle(expressionWords.get(0), aricleId); //Locations of the first word in the word ID list
+        List<Integer> potentialExpressionLocations = WordLib.searchWordLocationsByArticle(expressionWords.get(0), articleId); //Locations of the first word in the word ID list
 
         if (potentialExpressionLocations.isEmpty())
             return potentialExpressionLocations;
 
         for (int i = 1; i < expressionWords.size(); i++) {
-            List<Integer> currWordLocations = WordLib.searchWordLocationsInArticle(expressionWords.get(i), aricleId); //Locations of i'th word
+            List<Integer> currWordLocations = WordLib.searchWordLocationsByArticle(expressionWords.get(i), articleId); //Locations of i'th word
 
             List<Boolean> flags = new ArrayList<>();
             for (int expressionStart : potentialExpressionLocations)

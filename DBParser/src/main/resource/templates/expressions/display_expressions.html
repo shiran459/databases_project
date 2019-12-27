@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>WikiSearch | Upload Complete</title>
+    <title>WikiSearch | My Expressions</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,44 +12,34 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/css/page.css">
-    <link rel="stylesheet" href="/css/submit_btn.css">
+    <link rel="stylesheet" href="/css/search.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
 </head>
 <body>
 
 <nav th:insert="fragments/general.html :: nav(currUser=${user})"> </nav>
 
-<!--------------------Article Upload----------------------->
+<!-------------------- View Groups ----------------------->
 <div class="page">
+    <h2>My Expressions</h2>
+    <p>Now displaying your expressions:</p>
 
-    <!-- Group name already taken -->
-    <div th:if="${group == null}" class="alert alert-warning" role="alert">
-        <h4 class="alert-heading">Group '<span th:text="${groupName}"></span>' already exists!</h4>
-        <p>
-            You already have a group with such name.<br><br>
-            <b>What would you like to do?</b>
-        <p/>
-
-        <ul>
-            <li>
-                <a href="/groups/create">Use a different name</a><br>
-            </li>
-            <li>
-                <a href="/groups/view">View your groups</a>
-            </li>
-
-        </ul>
-    </div>
-
-    <!-- Group created successfully -->
-    <div th:unless="${group == null}" class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Group '<span th:text="${group.groupName}"></span>' created successfully!</h4>
-        <p>You can view it <a href="/groups/view">here</a><p/>
-    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Expression</th>
+            <th>Creation Date</th>
+        </tr>
+        </thead>
+        <tr th:each="expression: ${expressions}">
+            <td th:text="${expression.value}"></td>
+            <td th:text="${expression.creationDate}"></td>
+        </tr>
+    </table>
 
 </div>
 
-<!------------------------ Bootstrap JS ------------------------->
+<!------------------------ Bootstrap JS ---------------------------->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -59,7 +49,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
-
 </body>
 </html>

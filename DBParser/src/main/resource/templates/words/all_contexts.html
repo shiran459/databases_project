@@ -40,7 +40,7 @@
             <!-- Table Body -->
             <tbody>
             <tr th:each="articleWord: ${articleWordList}">
-                <td><a th:href="@{/articles/{id}(id = ${articleWord.articleId})}">View Article</a></td>
+                <td><a th:href="@{/articles/{id}(id = ${articleWord.article.id})}">View Article</a></td>
                 <td>
                     <table>
                         <tr th:each="context: ${articleWord.contextList}">

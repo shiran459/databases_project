@@ -170,7 +170,7 @@ public class WordLib {
      * @return A list of all locations (by offset)
      * @throws SQLException If a transaction has failed.
      */
-    static List<Integer> searchWordLocationsInArticle(int wordId, int articleId) throws SQLException {
+    static List<Integer> searchWordLocationsByArticle(int wordId, int articleId) throws SQLException {
         String sql = "SELECT offset " +
                 "FROM word_index " +
                 "WHERE word_id = ? AND article_id = ?";
@@ -185,8 +185,12 @@ public class WordLib {
             locations.add(res.getInt("offset"));
         }
 
+        res.close();
+        pstmt.close();
+
         return locations;
     }
+
 
     public static List<ArticleWord> getAllContexts(int wordId) throws SQLException {
         String sql = "SELECT article_id, word_context " +
@@ -205,7 +209,7 @@ public class WordLib {
            ArticleWord articleWord = wordHashMap.get(articleId);
 
            articleWord.contextList.add(context);
-           articleWord.articleId = articleId;
+           articleWord.article.id = articleId;
            articleWord.id = wordId;
         }
         //Close resources

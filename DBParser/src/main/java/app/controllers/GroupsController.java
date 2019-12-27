@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.util.Set;
 
 @Controller
-public class GroupController {
+public class GroupsController {
 
     @GetMapping("/groups/view")
     public String displayGroups(Model model, HttpServletRequest request) {
@@ -46,6 +46,7 @@ public class GroupController {
             WordGroup group = GroupLib.createGroup(groupName, user.userId);
             model.addAttribute("user", user);
             model.addAttribute("group", group);
+            model.addAttribute("groupName", groupName);
             return "groups/group_creation_result";
         } catch(SQLException e) {
             e.printStackTrace();

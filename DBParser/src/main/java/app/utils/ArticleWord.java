@@ -5,17 +5,20 @@ import java.util.ArrayList;
 
 public class ArticleWord extends Word{
 
-    public int articleId;
+    public Article article = new Article();
 
     public List<String> contextList = new ArrayList<>();
     public List<WordLocation> wordLocations = new ArrayList<>();
 
+
+    // Constructors
     public ArticleWord(String value) {
         super(value);
     }
 
-    public ArticleWord(String value, int id) {
-       super(value, id);
+    public ArticleWord(String value, int wordId,Article article) {
+       super(value, wordId);
+       this.article = article;
     }
 
     public ArticleWord() {

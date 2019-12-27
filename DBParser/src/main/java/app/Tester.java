@@ -34,8 +34,7 @@ public class Tester {
         Tester tester = new Tester();
         tester.beforeAll();
 
-        tester.
-        testCreateGroup();
+        tester.testCreateGroup();
     }
 
 

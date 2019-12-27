@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <title>WikiSearch | Upload Complete</title>
+<head xmlns:th="http://www.thymeleaf.org">
+    <title>WikiSearch | Search Words</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,35 +19,33 @@
 
 <nav th:insert="fragments/general.html :: nav(currUser=${user})"> </nav>
 
-<!--------------------Article Upload----------------------->
+<!-------------------- Page Area ----------------------->
 <div class="page">
+    <!-- Page Description -->
+    <h2>View Word Locations</h2>
+    <p>Now displaying word locations for word group '<span th:text="${group.groupName}"></span>'.</p>
+    <!-------- Result Area -------->
+    <div class="page id='searchResultArea'">
+        <table class="table table-hover table-bordered">
 
-    <!-- Group name already taken -->
-    <div th:if="${group == null}" class="alert alert-warning" role="alert">
-        <h4 class="alert-heading">Group '<span th:text="${groupName}"></span>' already exists!</h4>
-        <p>
-            You already have a group with such name.<br><br>
-            <b>What would you like to do?</b>
-        <p/>
+            <!-- Table Headers -->
+            <thead>
+            <tr>
+                <th scope="col">Context</th>
+            </tr>
+            </thead>
 
-        <ul>
-            <li>
-                <a href="/groups/create">Use a different name</a><br>
-            </li>
-            <li>
-                <a href="/groups/view">View your groups</a>
-            </li>
+            <!-- Table Body -->
+            <tbody>
+            <tr th:each="context: ${contexts}">
+                <td th:text="${context}"></td>
+            </tr>
+            </tbody>
 
-        </ul>
+        </table>
     </div>
-
-    <!-- Group created successfully -->
-    <div th:unless="${group == null}" class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Group '<span th:text="${group.groupName}"></span>' created successfully!</h4>
-        <p>You can view it <a href="/groups/view">here</a><p/>
-    </div>
-
 </div>
+
 
 <!------------------------ Bootstrap JS ------------------------->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -59,7 +57,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
-
+</div>
 </body>
 </html>

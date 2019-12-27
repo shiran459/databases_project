@@ -1,16 +1,11 @@
 package app.lib;
 
-import app.utils.ConnectionManager;
-import app.utils.Word;
-import app.utils.WordGroup;
+import app.utils.*;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class GroupLib {
     public static Integer getGroupIdByName(int userId, String groupName) throws SQLException{
@@ -20,7 +15,7 @@ public class GroupLib {
 
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
         pstmt.setString(1, groupName);
-        pstmt.setInt(1, userId);
+        pstmt.setInt(2, userId);
 
         ResultSet res = pstmt.executeQuery();
 
@@ -47,9 +42,9 @@ public class GroupLib {
      */
     public static WordGroup createGroup(String groupName, int userID) throws SQLException {
         //Check if group already exists -> return null
-        if(getGroupIdByName(userID, groupName) == null);
+        if (getGroupIdByName(userID, groupName) != null){
             return null;
-
+        }
         //Create a new Group
         java.sql.Date creationDate = new java.sql.Date(System.currentTimeMillis());
         String sql = "INSERT INTO groups(group_id, group_name, user_id, creation_date) " +
@@ -146,4 +141,44 @@ public class GroupLib {
 
         return result;
     }
+
+    public Map<String,List<ArticleWord>> getGroupWordLocations(int groupId) throws SQLException{
+        ResultSet res = null;
+        String sql = "SELECT value, word_id, title, article_id, word_offset, par_num, par_offset " +
+                "FROM group_words NATURAL JOIN word_index NATURAL JOIN words" +
+                "WHERE group_id = ?";
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, groupId);
+        res = pstmt.executeQuery();
+
+        Map<String,List<ArticleWord>> result = new HashMap<>();
+        Map<String,List<Integer>> wordToArticles = new HashMap<>(); //maps a word to all articles it appears in
+        Map<int[],ArticleWord> articleToArticleWord = new HashMap<>();  //maps word and article to an articleWord object
+        while(res.next()){
+            String value = res.getString("value");
+            int wordId = res.getInt("word_id");
+            String title = res.getString("title");
+            int articleId = res.getInt("article_id");
+            int wordOffset = res.getInt("word_offset");
+            int parNum = res.getInt("par_num");
+            int parOffset = res.getInt("par_offset");
+
+            WordLocation location = new WordLocation(wordOffset,parNum,parOffset);
+            Article article = new Article(articleId,title);
+            ArticleWord word = new ArticleWord(value,wordId, article);
+
+            wordToArticles.putIfAbsent(value,new ArrayList<>());
+            wordToArticles.get(value).add(articleId);
+            int[] wordAndArticle = {wordId,articleId};
+            articleToArticleWord.put(,word);
+
+
+        }
+
+        res.close();
+        pstmt.close();
+
+        return result;
+    }
+
 }

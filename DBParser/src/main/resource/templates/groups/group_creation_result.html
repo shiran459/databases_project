@@ -21,10 +21,30 @@
 
 <!--------------------Article Upload----------------------->
 <div class="page">
-    <!-- Successful Upload Flash Message -->
-    <div th:if="${group == null}" class="alert alert-success" role="alert">
+
+    <!-- Group name already taken -->
+    <div th:if="${group == null}" class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Group '<span th:text="${groupName}"></span>' already exists!</h4>
+        <p>
+            You already have a group with such name.<br><br>
+            <b>What would you like to do?</b>
+        <p/>
+
+        <ul>
+            <li>
+                <a href="/groups/create">Use a different name</a><br>
+            </li>
+            <li>
+                <a href="/groups/view">View your groups</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- Group created successfully -->
+    <div th:unless="${group == null}" class="alert alert-success" role="alert">
         <h4 class="alert-heading">Group '<span th:text="${group.groupName}"></span>' created successfully!</h4>
-        <p>You can view it <a href="groups/view">here</a><p/>
+        <p>You can view it <a href="/groups/view">here</a><p/>
     </div>
 
 </div>

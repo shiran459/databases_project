@@ -256,7 +256,7 @@ public class ArticleLib {
 
             wordHashMap.putIfAbsent(value, new ArticleWord(value));
             ArticleWord word = wordHashMap.get(value);
-            word.articleId = articleId;
+            word.article.id = articleId;
             word.id = wordId;
             word.wordLocations.add(new WordLocation(wordOffset, parNum, parOffset));
         }
