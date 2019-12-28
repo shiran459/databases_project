@@ -142,7 +142,7 @@ public class GroupLib {
         return result;
     }
 
-    public Map<String,List<ArticleWord>> getGroupWordLocations(int groupId) throws SQLException{
+    public Map<Integer,ArticleWord> getGroupWordLocations(int groupId) throws SQLException{
         ResultSet res = null;
         String sql = "SELECT value, word_id, title, article_id, word_offset, par_num, par_offset " +
                 "FROM group_words NATURAL JOIN word_index NATURAL JOIN words" +
@@ -151,9 +151,8 @@ public class GroupLib {
         pstmt.setInt(1, groupId);
         res = pstmt.executeQuery();
 
-        Map<String,List<ArticleWord>> result = new HashMap<>();
-        Map<String,List<Integer>> wordToArticles = new HashMap<>(); //maps a word to all articles it appears in
-        Map<int[],ArticleWord> articleToArticleWord = new HashMap<>();  //maps word and article to an articleWord object
+        Map<Integer,Set<Integer>> wordToArticles = new HashMap<>(); //maps a word to all articles it appears in
+        Map<int[],ArticleWord> idsToArticleWord = new HashMap<>();  //maps word and article to an articleWord object
         while(res.next()){
             String value = res.getString("value");
             int wordId = res.getInt("word_id");
@@ -163,16 +162,34 @@ public class GroupLib {
             int parNum = res.getInt("par_num");
             int parOffset = res.getInt("par_offset");
 
+
+            //Register new word
+            if(!wordToArticles.containsKey(wordId)){
+                wordToArticles.put(wordId, new HashSet<>());
+            }
+            //Register new article
+            int[] ids = {wordId,articleId};
+            if(!wordToArticles.get(wordId).contains(articleId)){
+                wordToArticles.get(wordId).add(articleId);
+
+                Article article = new Article(articleId,title);
+                ArticleWord word = new ArticleWord(value,wordId, article);
+                idsToArticleWord.put(ids,word);
+            }
+
+            //Register new location
             WordLocation location = new WordLocation(wordOffset,parNum,parOffset);
-            Article article = new Article(articleId,title);
-            ArticleWord word = new ArticleWord(value,wordId, article);
+            idsToArticleWord.get(ids).wordLocations.add(location);
+        }
 
-            wordToArticles.putIfAbsent(value,new ArrayList<>());
-            wordToArticles.get(value).add(articleId);
-            int[] wordAndArticle = {wordId,articleId};
-            articleToArticleWord.put(,word);
-
-
+        Map<Integer,ArticleWord> result = null;
+        for (Integer wordId:
+                wordToArticles.keySet()) {
+            for (Integer articleId:
+                 wordToArticles.get(wordId)) {
+                int[] ids = {wordId,articleId};
+                result.put(wordId,idsToArticleWord.get(ids));
+            }
         }
 
         res.close();
