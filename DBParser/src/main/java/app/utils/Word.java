@@ -17,4 +17,9 @@ public class Word {
         this.value = value;
         this.id = id;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.id == ((Word)obj).id;
+    }
 }

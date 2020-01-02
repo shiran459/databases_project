@@ -10,5 +10,7 @@ public class Article {
         this.title = title;
     }
 
-    public Article() {}
+    public Article() {
+        this.id = -1;
+    }
 }

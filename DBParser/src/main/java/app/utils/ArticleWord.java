@@ -32,4 +32,5 @@ public class ArticleWord extends Word{
         res += " )";
         return res;
     }
+
 }

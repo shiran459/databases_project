@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class GroupLib {
-    public static Integer getGroupIdByName(int userId, String groupName) throws SQLException{
+    public static Integer getGroupIdByName(int userId, String groupName) throws SQLException {
         String sql = "SELECT group_id " +
                 "FROM groups " +
                 "WHERE group_name = ? AND user_id = ?";
@@ -21,7 +21,7 @@ public class GroupLib {
 
         Integer result;
         if (!res.next()) {
-            result =  null;
+            result = null;
         } else {
             result = res.getInt("group_id");
         }
@@ -42,7 +42,7 @@ public class GroupLib {
      */
     public static WordGroup createGroup(String groupName, int userID) throws SQLException {
         //Check if group already exists -> return null
-        if (getGroupIdByName(userID, groupName) != null){
+        if (getGroupIdByName(userID, groupName) != null) {
             return null;
         }
         //Create a new Group
@@ -128,10 +128,10 @@ public class GroupLib {
 
         Set<WordGroup> result = new HashSet<>();
 
-        while(res.next()){
+        while (res.next()) {
             int groupId = res.getInt("group_id");
             String groupName = res.getString("group_name");
-            WordGroup group = new WordGroup(groupId,userId,groupName);
+            WordGroup group = new WordGroup(groupId, userId, groupName);
             group.words = getGroupWords(groupId);
             result.add(group);
         }
@@ -142,7 +142,8 @@ public class GroupLib {
         return result;
     }
 
-    public Map<Integer,ArticleWord> getGroupWordLocations(int groupId) throws SQLException{
+
+    public Map<ArticleWord, ArticleWord> getGroupWordLocations(int groupId) throws SQLException {
         ResultSet res = null;
         String sql = "SELECT value, word_id, title, article_id, word_offset, par_num, par_offset " +
                 "FROM group_words NATURAL JOIN word_index NATURAL JOIN words" +
@@ -151,9 +152,9 @@ public class GroupLib {
         pstmt.setInt(1, groupId);
         res = pstmt.executeQuery();
 
-        Map<Integer,Set<Integer>> wordToArticles = new HashMap<>(); //maps a word to all articles it appears in
-        Map<int[],ArticleWord> idsToArticleWord = new HashMap<>();  //maps word and article to an articleWord object
-        while(res.next()){
+        Map<ArticleWord, ArticleWord> result = new HashMap<>();
+
+        while (res.next()) {
             String value = res.getString("value");
             int wordId = res.getInt("word_id");
             String title = res.getString("title");
@@ -162,34 +163,14 @@ public class GroupLib {
             int parNum = res.getInt("par_num");
             int parOffset = res.getInt("par_offset");
 
+            Article article = new Article(articleId, title);
+            ArticleWord word = new ArticleWord(value, wordId, article);
+            WordLocation location = new WordLocation(wordOffset, parNum, parOffset);
 
-            //Register new word
-            if(!wordToArticles.containsKey(wordId)){
-                wordToArticles.put(wordId, new HashSet<>());
+            if (!result.containsKey(word)) {
+                result.put(word, word);
             }
-            //Register new article
-            int[] ids = {wordId,articleId};
-            if(!wordToArticles.get(wordId).contains(articleId)){
-                wordToArticles.get(wordId).add(articleId);
-
-                Article article = new Article(articleId,title);
-                ArticleWord word = new ArticleWord(value,wordId, article);
-                idsToArticleWord.put(ids,word);
-            }
-
-            //Register new location
-            WordLocation location = new WordLocation(wordOffset,parNum,parOffset);
-            idsToArticleWord.get(ids).wordLocations.add(location);
-        }
-
-        Map<Integer,ArticleWord> result = null;
-        for (Integer wordId:
-                wordToArticles.keySet()) {
-            for (Integer articleId:
-                 wordToArticles.get(wordId)) {
-                int[] ids = {wordId,articleId};
-                result.put(wordId,idsToArticleWord.get(ids));
-            }
+            result.get(word).wordLocations.add(location);
         }
 
         res.close();
@@ -197,5 +178,6 @@ public class GroupLib {
 
         return result;
     }
+
 
 }
