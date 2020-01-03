@@ -4,10 +4,7 @@ import app.lib.ArticleLib;
 import app.lib.GroupLib;
 import app.lib.UserLib;
 import app.lib.WordLib;
-import app.utils.Article;
-import app.utils.ArticleWord;
-import app.utils.User;
-import app.utils.Word;
+import app.utils.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +27,8 @@ public class WordsController {
             model.addAttribute("wordList", wordList);
             User user = UserLib.extractUser(request);
             model.addAttribute("user", user);
+            Set<WordGroup> groups = GroupLib.getGroupsByUser(user.userId);
+            model.addAttribute("allGroups", groups);
 
             return "words/all_words";
         } catch (Exception e) {
@@ -56,6 +55,8 @@ public class WordsController {
             model.addAttribute("wordList", wordList);
             User user = UserLib.extractUser(request);
             model.addAttribute("user", user);
+            Set<WordGroup> groups = GroupLib.getGroupsByUser(user.userId);
+            model.addAttribute("allGroups", groups);
 
             return "words/word_locations_in_article";
         } catch (Exception e) {
@@ -66,12 +67,16 @@ public class WordsController {
     @GetMapping("/words/by_group/{groupId}")
     public String displayGroupWords(@PathVariable int groupId, Model model, HttpServletRequest request) {
         try {
-            Set<Word> words = GroupLib.getGroupWords(groupId);
-            model.addAttribute("words", words);
             User user = UserLib.extractUser(request);
+            int userId = user.userId;
+            Set<ArticleWord> words = GroupLib.getGroupWordLocations(groupId);
+            String groupName = GroupLib.getGroupNameById(userId, groupId);
+            WordGroup group = new WordGroup(groupId,userId, groupName);
             model.addAttribute("user", user);
+            model.addAttribute("words", words);
+            model.addAttribute("group", group);
 
-            return "words/word_locations_in_group";
+            return "words/group_word_locations";
         } catch (Exception e) {
             return "error";
         }

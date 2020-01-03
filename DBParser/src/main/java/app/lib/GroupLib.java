@@ -2,6 +2,8 @@ package app.lib;
 
 import app.utils.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,6 +26,30 @@ public class GroupLib {
             result = null;
         } else {
             result = res.getInt("group_id");
+        }
+
+        res.close();
+        pstmt.close();
+
+        return result;
+    }
+
+    public static String getGroupNameById(int userId, int groupId) throws SQLException {
+        String sql = "SELECT group_name " +
+                "FROM groups " +
+                "WHERE group_id = ? AND user_id = ?";
+
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, groupId);
+        pstmt.setInt(2, userId);
+
+        ResultSet res = pstmt.executeQuery();
+
+        String result;
+        if (!res.next()) {
+            result = null;
+        } else {
+            result = res.getString("group_name");
         }
 
         res.close();
@@ -143,16 +169,16 @@ public class GroupLib {
     }
 
 
-    public Map<ArticleWord, ArticleWord> getGroupWordLocations(int groupId) throws SQLException {
+    public static Set<ArticleWord> getGroupWordLocations(int groupId) throws SQLException {
         ResultSet res = null;
         String sql = "SELECT value, word_id, title, article_id, word_offset, par_num, par_offset " +
-                "FROM group_words NATURAL JOIN word_index NATURAL JOIN words" +
+                "FROM group_words NATURAL JOIN word_index NATURAL JOIN words NATURAL JOIN articles " +
                 "WHERE group_id = ?";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
         pstmt.setInt(1, groupId);
         res = pstmt.executeQuery();
 
-        Map<ArticleWord, ArticleWord> result = new HashMap<>();
+        Map<ArticleWord, ArticleWord> result = new HashMap<>(); //Each word is mapped to itself (map is used since set has no 'get' method)
 
         while (res.next()) {
             String value = res.getString("value");
@@ -176,8 +202,27 @@ public class GroupLib {
         res.close();
         pstmt.close();
 
-        return result;
+        return result.keySet();
     }
+
+    public static void addWord(int groupId, int wordId) throws SQLException{
+        ResultSet res = null;
+        String sql = "MERGE INTO group_words " +
+                "USING (SELECT ? group_id,? word_id FROM dual) new_record " +
+                "ON (group_words.group_id = new_record.group_id AND group_words.word_id = new_record.word_id) " +
+                "WHEN NOT MATCHED THEN INSERT (group_id, word_id) " +
+                "VALUES (new_record.group_id, new_record.word_id)";
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, groupId);
+        pstmt.setInt(2, wordId);
+        pstmt.executeUpdate();
+
+        pstmt.close();
+    }
+
+//    public static File exportGroupLocations(int groupId) throws IOException,SQLException {
+//
+//    }
 
 
 }

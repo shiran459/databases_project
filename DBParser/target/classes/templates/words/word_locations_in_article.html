@@ -22,7 +22,7 @@
 <!-------------------- Words Display Area ----------------------->
 <div class="page">
     <!-- Page Description -->
-    <h2>View Words</h2>
+    <h2>View Word Locations</h2>
 
     <!-------- Result Area -------->
     <div class="page id='searchResultArea'">
@@ -57,6 +57,7 @@
                     </table>
                 </td>
                 <td><a th:href="@{/articles/{articleId}/context/{wordId}(articleId = ${word.article.id}, wordId = ${word.id})}">view contexts</a></td>
+                <td><div th:insert="fragments/group_selector.html :: div(groups=${allGroups},word=${word})"> </div>
             </tr>
             </tbody>
 
@@ -74,6 +75,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="/js/add_word_to_group.js"></script>
 </div>
 </body>
 </html>

@@ -17,46 +17,67 @@
 </head>
 <body>
 
-<nav th:insert="fragments/general.html :: nav(currUser=${user})"> </nav>
+<nav th:insert="fragments/general.html :: nav(currUser=${user})"></nav>
 
-<!-------------------- Page Area ----------------------->
+<!-------------------- Words Display Area ----------------------->
 <div class="page">
     <!-- Page Description -->
     <h2>View Word Locations</h2>
     <p>Now displaying word locations for word group '<span th:text="${group.groupName}"></span>'.</p>
+
+
     <!-------- Result Area -------->
-    <div class="page id='searchResultArea'">
+    <div id="print-content">
+        <button type="button" onclick="printContent('searchResultArea')" value="Print">Print</button>
+    </div>
+    <div class="page" id="searchResultArea">
         <table class="table table-hover table-bordered">
-
-            <!-- Table Headers -->
             <thead>
-            <tr>
-                <th scope="col">Context</th>
-            </tr>
+            <th scope="col">Word</th>
+            <th scope="col">Article</th>
+            <th scope="col">Locations by Offset</th>
+            <th scope="col">Locations by Paragraph</th>
             </thead>
-
-            <!-- Table Body -->
             <tbody>
-            <tr th:each="context: ${contexts}">
-                <td th:text="${context}"></td>
+            <tr th:each="articleWord: ${words}">
+                <td th:text="${articleWord.value}"></td>
+                <td th:text="${articleWord.article.title}"></td>
+                <td>
+                    <div th:each="location: ${articleWord.wordLocations}">
+                        <span th:text="${location.wordOffset}"></span>
+                    </div>
+                </td>
+                <td>
+                    <div th:each="location: ${articleWord.wordLocations}">
+                        <span th:text="${location.paragraphNum} + ', ' +${location.paragraphOffset}"></span>
+                    </div>
+                </td>
             </tr>
             </tbody>
-
         </table>
     </div>
-</div>
 
 
-<!------------------------ Bootstrap JS ------------------------->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <!------------------------ Bootstrap JS ------------------------->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        function printContent(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            w=window.open();
+            w.document.write(printContents);
+            w.print();
+            w.close();
+        }
+    </script>
 </div>
 </body>
 </html>

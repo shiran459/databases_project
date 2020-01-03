@@ -17,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,21 +58,21 @@
       <recent name="app.storage" />
       <recent name="main" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static\js" />
+      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\words" />
+      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
+      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\Examples" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\users" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\java" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\words" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\articles" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="app.controllers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static\js" />
-      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\words" />
-      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
-      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\Examples" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -215,6 +215,20 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/WordsController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/GroupsRestController.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((DTMNodeList)nodeList).m_iter" custom="com.sun.org.apache.xml.internal.dtm.ref.DTMNodeList" />

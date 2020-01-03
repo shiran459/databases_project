@@ -30,14 +30,15 @@
             <!-- Table Headers -->
             <thead class="thead-light">
             <tr>
-                <th scope="col" th:text="${group.groupName}"></th>
+                <th scope="col"><span th:text="${group.groupName}"></span>
+                <th scope="col" align="right"><a th:href="@{/words/by_group/{id}(id = ${group.groupId})}">View words' locations</a></th>
             </tr>
             </thead>
 
             <!-- Table Body -->
             <tbody>
             <tr th:each="word: ${group.words}">
-                <td th:text = "${word.value}"></td>
+                <td colspan="2" th:text = "${word.value}"></td>
             </tr>
             </tbody>
         </table>
