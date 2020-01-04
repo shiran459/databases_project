@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head xmlns:th="http://www.thymeleaf.org">
-    <title>WikiSearch | Search Article</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>WikiSearch | Create Group</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,22 +12,27 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/css/page.css">
-    <link rel="stylesheet" href="/css/submit_btn.css">
+    <link rel="stylesheet" href="/css/search.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
 </head>
 <body>
 
 <nav th:insert="fragments/general.html :: nav(currUser=${user})"> </nav>
-<!--------------------Article Content----------------------->
 
+<!-------------------- View Groups ----------------------->
 <div class="page">
-    <script type="text/javascript" src="/js/add_expression_button.js"></script>
-    <button class="float-right" value="" disabled="true" id="expression-btn" onclick="crateUserExpression(this.value)">Create Expression</button>
-    <h1 th:text="${article.title}"></h1>
-    <div th:utext="${articleContent}" id="article-content"></div>
+    <h2>Create Expression</h2>
+
+    <form action="/expressions/add" method="POST" id="expression-form">
+        <p>Please enter your expression:</p>
+        <input type="text" name="expressionString">
+        <br><br>
+        <button type="submit">CREATE</button>
+    </form>
+
 </div>
 
-<!------------------------ Bootstrap JS ------------------------->
+<!------------------------ Bootstrap JS ---------------------------->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -40,7 +45,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script src="/js/text_selector.js"></script>
+<script src="/js/add_expression.js"></script>
 
 </body>
 </html>

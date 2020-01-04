@@ -37,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577554918916" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DBParser/src/main/resource/static/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DBParser/src/main/resource/templates/words" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -59,8 +59,9 @@
       <recent name="main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static\js" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\words" />
+      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static\js" />
+      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\expressions" />
       <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
       <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\Examples" />
     </key>
@@ -219,13 +220,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/WordsController.java</url>
-          <line>30</line>
+          <line>31</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/GroupsRestController.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -239,6 +235,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/databases_project$Tester__1_.ic" NAME="Tester (1) Coverage Results" MODIFIED="1574321214239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>app.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/databases_project$Application__1_.ic" NAME="Application (1) Coverage Results" MODIFIED="1578138354348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.*</FILTER>
     </SUITE>
   </component>

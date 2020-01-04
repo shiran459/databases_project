@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head xmlns:th="http://www.thymeleaf.org">
+    <title>WikiSearch | Search Article</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/page.css">
+    <link rel="stylesheet" href="/css/submit_btn.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+</head>
+<body>
+
+<nav th:insert="fragments/general.html :: nav(currUser=${user})"></nav>
+
+<!--------------------Article Search----------------------->
+<div class="page">
+    <!-- Page Description -->
+    <h2>Search Word</h2>
+    <p>Search for a word</p>
+
+    <form action="/words/search/submit">
+        <!-- Select Search Key -->
+        Search by:
+        <select class="browser-default custom-select" name="searchKey">
+            <option selected value="wordOffset" onclick="showOffset()">Word offset</option>
+            <option value="parOffset" onclick="showParagraph()">Paragraph</option>
+        </select>
+
+        <br><br>
+
+        <!-- Search input -->
+        <div id="wordOffsetSearchInput">
+            <label for="wordOffset">Word offset:</label>
+            <input type="text" class="form-control" name="wordOffset" id="wordOffset"
+                   oninput="submitActive('wordOffsetSearchInput')">
+        </div>
+
+        <div id="parSearchInput" hidden="true">
+            <label for="parNum">Paragraph Num:</label>
+            <input type="text" class="form-control" name="parNum" id="parNum"
+                   oninput="submitActive('parSearchInput')">
+
+            <label for="parOffset">Paragraph offset:</label>
+            <input type="text" class="form-control" name="parOffset" id="parOffset"
+                   oninput="submitActive('parSearchInput')">
+        </div>
+        <br>
+
+        <!-- Submit Button -->
+        <div class="submit-btn">
+            <input type="submit" class="btn btn-primary btn-lg" value="SEARCH" id="submit" disabled="true">
+        </div>
+    </form>
+</div>
+
+
+<!------------------------ Bootstrap JS ------------------------->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+        function showOffset() {
+           document.getElementById("wordOffsetSearchInput").hidden = false;
+           document.getElementById("parSearchInput").hidden = true;
+           document.getElementById("parNum").value = '';
+           document.getElementById("parOffset").value = '';
+           document.getElementById("submit").disabled = true;
+        }
+
+</script>
+
+<script type="text/javascript">
+        function showParagraph() {
+           document.getElementById("wordOffsetSearchInput").hidden = true;
+           document.getElementById("wordOffset").value = '';
+           document.getElementById("submit").disabled = true;
+           document.getElementById("parSearchInput").hidden = false;
+        }
+
+</script>
+
+<script type="text/javascript">
+        function submitActive(searchType) {
+            var inputNotNull;
+            if(searchType === "wordOffsetSearchInput"){
+            var wordOffset = document.getElementById("wordOffset").value.toString();
+                inputNotNull = wordOffset.length > 0;
+            }
+            else{
+                var parNum = document.getElementById("parNum").value.toString();
+                var parOffset = document.getElementById("parOffset").value.toString();
+
+                inputNotNull = parNum.toString() > 0 && parOffset.toString() > 0;
+            }
+
+            var submitBtn = document.getElementById("submit");
+            if(inputNotNull){
+                submitBtn.disabled = false;
+            }
+            else{
+                submitBtn.disabled = true;
+            }
+        }
+</script>
+
+</body>
+</html>

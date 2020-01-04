@@ -1,14 +1,12 @@
 package app.lib;
 
-import app.utils.ArticleWord;
-import app.utils.ConnectionManager;
-import app.utils.Word;
-import app.utils.WordLocation;
+import app.utils.*;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -139,6 +137,63 @@ public class WordLib {
         return result;
     }
 
+    public static List<ArticleWord> searchWordByWordOffset(int wordOffset) throws SQLException{
+        String sql = "SELECT word_id,value,article_id,title " +
+                "FROM words NATURAL JOIN word_index NATURAL JOIN articles " +
+                "WHERE word_offset = ?";
+
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, wordOffset);
+        ResultSet res = pstmt.executeQuery();
+
+        List<ArticleWord> result = new ArrayList<>();
+        while (res.next()) {
+            int wordId = res.getInt("word_id");
+            int articleId = res.getInt("article_id");
+            String value = res.getString("value");
+            String title = res.getString("title");
+
+            Article article = new Article(articleId, title);
+            ArticleWord word = new ArticleWord(value,wordId,article);
+
+            result.add(word);
+        }
+
+        res.close();
+        pstmt.close();
+
+        return result;
+    }
+
+    public static List<ArticleWord> searchWordByParagraph(int parNum, int parOffset) throws SQLException{
+        String sql = "SELECT word_id,value,article_id,title " +
+                "FROM words NATURAL JOIN word_index NATURAL JOIN articles " +
+                "WHERE par_num = ? AND par_offset=?";
+
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, parNum);
+        pstmt.setInt(2, parOffset);
+        ResultSet res = pstmt.executeQuery();
+
+        List<ArticleWord> result = new ArrayList<>();
+        while (res.next()) {
+            int wordId = res.getInt("word_id");
+            int articleId = res.getInt("article_id");
+            String value = res.getString("value");
+            String title = res.getString("title");
+
+            Article article = new Article(articleId, title);
+            ArticleWord word = new ArticleWord(value,wordId,article);
+
+            result.add(word);
+        }
+
+        res.close();
+        pstmt.close();
+
+        return result;
+    }
+
     public static List<Word> getAllWords() throws SQLException {
         ResultSet res = null;
         String sql = "SELECT DISTINCT word_id, value " +
@@ -171,7 +226,7 @@ public class WordLib {
      * @throws SQLException If a transaction has failed.
      */
     static List<Integer> searchWordLocationsByArticle(int wordId, int articleId) throws SQLException {
-        String sql = "SELECT offset " +
+        String sql = "SELECT word_offset " +
                 "FROM word_index " +
                 "WHERE word_id = ? AND article_id = ?";
 
@@ -182,7 +237,7 @@ public class WordLib {
 
         ArrayList<Integer> locations = new ArrayList<>();
         while (res.next()) {
-            locations.add(res.getInt("offset"));
+            locations.add(res.getInt("word_offset"));
         }
 
         res.close();
@@ -240,6 +295,52 @@ public class WordLib {
         res.close();
 
         return result;
+    }
+
+    /**
+     * Returns all words appear in the list of strings that also appear in the DB.
+     * @param wordsStrings A list of words to search in the DB.
+     * @return A list of the words which exit in the DB.
+     * @throws SQLException
+     */
+    public static List<Word> getWordsFromStrings(List<String> wordsStrings) throws SQLException {
+        // Build query
+        StringBuilder sqlConstraint = new StringBuilder();
+        for(int i=0; i<wordsStrings.size(); i++){
+            if(i==wordsStrings.size()-1){
+                sqlConstraint.append(" value=?");
+            }
+            else{
+                sqlConstraint.append(" value=? OR");
+            }
+
+        }
+        String sql = "SELECT word_id, value " +
+                "FROM words WHERE"+sqlConstraint;
+
+        // Set query values
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        for(int i=0; i<wordsStrings.size();i++){
+            pstmt.setString(i+1,wordsStrings.get(i));
+        }
+
+        ResultSet res = pstmt.executeQuery();
+
+        // Extract results
+        List<Word> wordList = new ArrayList<>();
+        while(res.next()){
+            int wordId = res.getInt("word_id");
+            String value = res.getString("value");
+
+            Word word = new Word(value, wordId);
+            wordList.add(word);
+        }
+
+        //Close resources
+        pstmt.close();
+        res.close();
+
+        return wordList;
     }
 
 }

@@ -22,4 +22,9 @@ public class Word {
     public boolean equals(Object obj) {
         return this.id == ((Word)obj).id;
     }
+
+    @Override
+    public String toString() {
+        return this.value;
+    }
 }

@@ -17,52 +17,32 @@
 </head>
 <body>
 
-<nav th:insert="fragments/general.html :: nav(currUser=${user})"> </nav>
+<nav th:insert="fragments/general.html :: nav(currUser=${user})"></nav>
 
 <!-------------------- Words Display Area ----------------------->
 <div class="page">
     <!-- Page Description -->
-    <h2>View Word Locations</h2>
+    <h2>View Expression Locations</h2>
+<!--    <p>Now displaying word locations for word group '<span th:text="${expression.groupName}"></span>'.</p>-->
+
 
     <!-------- Result Area -------->
-    <div class="page id='searchResultArea'">
+    <div class="page" id="searchResultArea">
         <table class="table table-hover table-bordered">
-
-            <!-- Table Headers -->
             <thead class="thead-light">
-            <tr>
-                <th scope="col">Word</th>
-                <th scope="col">Word Offsets</th>
-                <th scope="col">Paragraph</th>
-                <th scope="col">Contexts</th>
-                <th scope="col">Add to group</th>
-            </tr>
+            <th scope="col">Article</th>
+            <th scope="col">Locations (by word offset)</th>
             </thead>
-
-            <!-- Table Body -->
             <tbody>
-            <tr th:each="word, iter: ${wordList}">
-                <td th:text="${word.value}"></td>
+            <tr th:each="mapEntry : ${articleMap}">
+                <td th:text="${mapEntry.key.title}"></td>
                 <td>
-                    <table>
-                        <tr th:each="location: ${word.wordLocations}">
-                            <td th:text="${location.wordOffset}"></td>
-                        </tr>
-                    </table>
+                    <div th:each="offset: ${mapEntry.value}">
+                        <span th:text="${offset}"></span>
+                    </div>
                 </td>
-                <td>
-                    <table>
-                        <tr th:each="location: ${word.wordLocations}">
-                            <td th:text="${location.paragraphNum}"></td>
-                            <td th:text="${location.paragraphOffset}"></td>
-                        </tr>
-                    </table>
-                </td>
-                <td><a th:href="@{/articles/{articleId}/context/{wordId}(articleId = ${word.article.id}, wordId = ${word.id})}">view contexts</a></td>
-                <td><div th:insert="fragments/group_selector.html :: div(groups=${allGroups},word=${word})"> </div>
             </tr>
             </tbody>
-
         </table>
     </div>
 
@@ -77,10 +57,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script src="/js/add_word_to_group.js"></script>
 </div>
 </body>
 </html>

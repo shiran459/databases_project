@@ -3,8 +3,7 @@ package app;
 import app.lib.*;
 import app.parsers.HtmlParser;
 import app.parsers.XMLParser;
-import app.utils.ArticleWord;
-import app.utils.User;
+import app.utils.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,9 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Tester {
     String xmlPath = null;
@@ -34,7 +31,6 @@ public class Tester {
         Tester tester = new Tester();
         tester.beforeAll();
 
-        tester.testCreateGroup();
     }
 
 
@@ -92,6 +88,15 @@ public class Tester {
         }
     }
 
+    public  static void testGetWordsFromStrings(List<String> stringList){
+        try{
+            System.out.println("Words searched: " + stringList);
+            List<Word> words = WordLib.getWordsFromStrings(stringList);
+            System.out.println("Words found: "+words);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     //####################################### TEST USER LIB ####################################//
     public static void testRegister(){
@@ -199,5 +204,22 @@ public class Tester {
         for (String key : wordsMap.keySet()){
             System.out.println(key + " :  " + wordsMap.get(key).locationsToString());
         }
+    }
+
+    private void testGetExpressions() throws Exception{
+        List<Expression> expressions = ExpressionLib.getExpressions(7);
+        for(Expression expression : expressions)
+            System.out.println(expression);
+    }
+
+    private void testInsetExpressions() throws Exception{
+        java.sql.Date creationDate = new java.sql.Date(System.currentTimeMillis());
+        Expression expression = new Expression(-1, 7, Arrays.asList(1,2,3,4,5,6,7), "Some expression", creationDate);
+        ExpressionLib.insertExpression(expression);
+    }
+
+    private void testSearchExpressions() throws Exception{
+        Map<Article, List<Integer>> map = ExpressionLib.searchExpressionInDB(0);
+        System.out.println(map);
     }
 }

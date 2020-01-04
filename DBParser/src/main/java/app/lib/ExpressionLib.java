@@ -1,42 +1,81 @@
 package app.lib;
 
-import app.utils.ConnectionManager;
+import app.utils.*;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ExpressionLib {
-    public static void insertExpression(int userId, String wordIdList, String value) throws SQLException {
+
+    public static Expression createExpression(String string, int userId) throws SQLException {
+        List<String> wordStrings = Arrays.asList(string.split("\\W+"));
+        List<Word> words = WordLib.getWordsFromStrings(wordStrings);
+
+        Map<String, Word> wordMap = new HashMap<>();
+        for(Word word : words)
+            wordMap.put(word.value, word);
+
+        List<Integer> idList = new ArrayList<>();
+        for (String str: wordStrings){
+            if (wordMap.containsKey(str))
+                idList.add(wordMap.get(str).id);
+            else
+                idList.add(-1);
+        }
         java.sql.Date creationDate = new java.sql.Date(System.currentTimeMillis());
-        String sql = "INSERT INTO expressions(expression_id, user_id, word_id_list, value, word_count, creation_date) " +
-                "VALUES (NULL, ?, ?, ?, ?, ?)";
-        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-        pstmt.setInt(1, userId);
-        pstmt.setString(2, wordIdList);
-        pstmt.setString(3, value);
-        pstmt.setDate(4, creationDate);
-        pstmt.executeUpdate();
+
+        return new Expression(-1, userId, idList, string, creationDate);
     }
 
-    private static boolean isValidExpressionStart(int start, List<Integer> ithWordLocations, int offset){
-        for(int location : ithWordLocations)
-            if(start + offset == location)
+    public static void insertExpression(Expression expression) throws SQLException {
+        String sql = "INSERT INTO expressions(expression_id, user_id, word_id_list, value, creation_date) " +
+                "VALUES (expression_seq.NEXTVAL, ?, ?, ?, ?)";
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, expression.userId);
+        pstmt.setString(2, paresWordIdStringFromInts(expression.wordIdList));
+        pstmt.setString(3, expression.value);
+        pstmt.setDate(4, expression.creationDate);
+        pstmt.executeUpdate();
+
+        pstmt.close();
+    }
+
+    private static boolean isValidExpressionStart(int start, List<Integer> ithWordLocations, int offset) {
+        for (int location : ithWordLocations)
+            if (start + offset == location)
                 return true;
 
         return false;
     }
 
+    public static Map<Article, List<Integer>> searchExpressionInDB(int expressionId) throws SQLException {
+
+        Expression expression = getExpressionsById(expressionId);
+        List<Integer> articleIdList = ArticleLib.searchArticlesByWordsIds(expression.wordIdList);
+        Map<Article, List<Integer>> articleMap = new HashMap<>();
+
+        for (int articleId : articleIdList) {
+            List<Integer> locations = searchExpressionInArticle(expressionId, articleId);
+            if (!locations.isEmpty()) {
+                articleMap.put(ArticleLib.getArticleById(articleId), locations);
+            }
+        }
+
+        return articleMap;
+    }
+
     /**
      * Returns a list of all locations (by word offset) of an expression in a given article.
+     *
      * @param expressionId ID of the expression searched.
-     * @param articleId ID of the article to be searched in.
+     * @param articleId    ID of the article to be searched in.
      * @return A list of all locations (by word offset) of an expression in a given article
      * @throws SQLException If a transaction has failed.
      */
-    static List<Integer> searchExpressionInArticle(int expressionId, int articleId) throws SQLException {
+    private static List<Integer> searchExpressionInArticle(int expressionId, int articleId) throws SQLException {
         List<Integer> expressionWords = getExpressionWordIdList(expressionId);
 
         List<Integer> potentialExpressionLocations = WordLib.searchWordLocationsByArticle(expressionWords.get(0), articleId); //Locations of the first word in the word ID list
@@ -54,49 +93,100 @@ public class ExpressionLib {
             for (int j = flags.size() - 1; j >= 0; j--)
                 if (!flags.get(j))
                     potentialExpressionLocations.remove(j);
-            if(potentialExpressionLocations.isEmpty())
+            if (potentialExpressionLocations.isEmpty())
                 break;
         }
 
         return potentialExpressionLocations;
     }
 
-    private static ResultSet getExpressions(int userId) throws SQLException {
+    public static List<Expression> getExpressions(int userId) throws SQLException {
         ResultSet res = null;
-        String sql = "SELECT expression_id, value " +
+        String sql = "SELECT expression_id, value, word_id_list, creation_date " +
                 "FROM expressions " +
                 "WHERE user_id = ?";
-        try {
-            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-            res = pstmt.executeQuery();
-            pstmt.setInt(1, userId);
-        } catch (SQLException e) {
-            throw new SQLException();
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, userId);
+        res = pstmt.executeQuery();
+
+        List<Expression> expressions = new ArrayList<>();
+
+        while (res.next()) {
+            int expression_id = res.getInt("expression_id");
+            String value = res.getString("value");
+            String word_id_list = res.getString("word_id_list");
+            java.sql.Date creationDate = res.getDate("creation_date");
+
+            expressions.add(new Expression(expression_id, userId, paresWordIdList(word_id_list), value, creationDate));
         }
-        return res;
+        //Close resources
+        pstmt.close();
+        res.close();
+
+        return expressions;
     }
 
-    static ArrayList<Integer> getExpressionWordIdList(int expressionId)
+    public static Expression getExpressionsById(int expressionId) throws SQLException {
+        ResultSet res = null;
+        String sql = "SELECT user_id, value, word_id_list, creation_date " +
+                "FROM expressions " +
+                "WHERE expression_id = ?";
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, expressionId);
+        res = pstmt.executeQuery();
+
+        Expression expression = null;
+
+        if (res.next()) {
+            int userId = res.getInt("user_id");
+            String value = res.getString("value");
+            String word_id_list = res.getString("word_id_list");
+            java.sql.Date creationDate = res.getDate("creation_date");
+
+            expression = new Expression(expressionId, userId, paresWordIdList(word_id_list), value, creationDate);
+        }
+        //Close resources
+        pstmt.close();
+        res.close();
+
+        return expression;
+    }
+
+    static List<Integer> getExpressionWordIdList(int expressionId)
             throws SQLException {
         ResultSet res = null;
         String sql = "SELECT word_id_list " +
                 "FROM expressions " +
                 "WHERE expression_id = ?";
-        try {
-            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-            res = pstmt.executeQuery();
-            pstmt.setInt(1, expressionId);
-        } catch (SQLException e) {
-            throw new SQLException();
-        }
+
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, expressionId);
+        res = pstmt.executeQuery();
 
         //Read the result
-        ArrayList<Integer> wordIdList = new ArrayList<>();
-        while (res.next()) {
-            int currWordId = res.getInt("word_id_list");
-            wordIdList.add(currWordId);
+        List<Integer> wordIdList = new ArrayList<>();
+        if (res.next()) {
+            String wordIdListString = res.getString("word_id_list");
+            wordIdList = paresWordIdList(wordIdListString);
         }
 
+        pstmt.close();
+        res.close();
+
         return wordIdList;
+    }
+
+    public static List<Integer> paresWordIdList(String idList) {
+        String[] ids = idList.split(",");
+        List<Integer> idsInt = new ArrayList<>();
+        for (String id : ids) {
+            idsInt.add(Integer.parseInt(id));
+        }
+
+        return idsInt;
+    }
+
+    public static String paresWordIdStringFromInts(List<Integer> wordIds) {
+        return wordIds.stream().map(String::valueOf).collect(Collectors.joining(","));
     }
 }

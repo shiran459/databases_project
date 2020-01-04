@@ -17,4 +17,9 @@ public class Expression {
         this.value = value;
         this.creationDate = creationDate;
     }
+
+    @Override
+    public String toString() {
+        return expressionId + ", " + userId + ", " + wordIdList + ", " + value + ", " + creationDate;
+    }
 }

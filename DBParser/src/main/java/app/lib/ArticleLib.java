@@ -72,20 +72,21 @@ public class ArticleLib {
         String sql = "SELECT path, title " +
                 "FROM articles " +
                 "WHERE article_id = ?";
-        try {
-            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-            pstmt.setInt(1, articleId);
-            res = pstmt.executeQuery();
-        } catch (SQLException e) {
-            throw new SQLException();
-        }
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        pstmt.setInt(1, articleId);
+        res = pstmt.executeQuery();
+
         if (!res.next()) {
+            pstmt.close();
             return null;
         } else {
             String title = res.getString("title");
             String path = res.getString("path");
             Article article = new Article(articleId, title);
             article.path = path;
+            res.close();
+            pstmt.close();
+
             return article;
         }
     }
@@ -112,6 +113,7 @@ public class ArticleLib {
 
         //Close resource
         res.close();
+        pstmt.close();
 
         return results;
     }
@@ -158,15 +160,12 @@ public class ArticleLib {
         }
         sql += "(" + wordSubQueries + ")";
 
-        try {
-            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-            for (int i = 0; i < words.size(); i++) {
-                pstmt.setString(i + 1, words.get(i));
-            }
-            res = pstmt.executeQuery();
-        } catch (SQLException e) {
-            throw new SQLException();
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        for (int i = 0; i < words.size(); i++) {
+            pstmt.setString(i + 1, words.get(i));
         }
+        res = pstmt.executeQuery();
+
 
         //Extract results
         List<Article> articles = new ArrayList<>();
@@ -179,6 +178,7 @@ public class ArticleLib {
 
         //Close resources
         res.close();
+        pstmt.close();
 
         return articles;
     }
@@ -186,27 +186,25 @@ public class ArticleLib {
     public static List<Integer> searchArticlesByWordsIds(List<Integer> containsWords) throws SQLException {
         ResultSet res;
         StringBuilder wordSubQueries = new StringBuilder();
-        String sql = "SELECT article_id, title " +
+        String sql = "SELECT DISTINCT article_id, title " +
                 "FROM word_index NATURAL JOIN articles NATURAL JOIN words " +
                 "WHERE article_id IN ";
         for (int i = 0; i < containsWords.size(); i++) {
             if (i == containsWords.size() - 1) {
                 wordSubQueries.append("(SELECT article_id FROM word_index WHERE word_id = ?)");
             } else {
-                wordSubQueries.append("(SELECT article_id FROM word_index word_id = ?) INTERSECT ");
+                wordSubQueries.append("(SELECT article_id FROM word_index WHERE word_id = ?) INTERSECT ");
             }
         }
         sql += "(" + wordSubQueries + ")";
 
-        try {
-            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-            for (int i = 0; i < containsWords.size(); i++) {
-                pstmt.setInt(i + 1, containsWords.get(i));
-            }
-            res = pstmt.executeQuery();
-        } catch (SQLException e) {
-            throw new SQLException();
+
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        for (int i = 0; i < containsWords.size(); i++) {
+            pstmt.setInt(i + 1, containsWords.get(i));
         }
+        res = pstmt.executeQuery();
+
 
         //Extract results
         List<Integer> articleIds = new ArrayList<>();
@@ -216,25 +214,26 @@ public class ArticleLib {
 
         //Close resources
         res.close();
+        pstmt.close();
 
         return articleIds;
     }
 
-    public static List<Integer> searchArticlesByExpression(int expressionId) throws SQLException {
-        //Filter by articles which contain all the words in the expression
-        List<Integer> wordIdList = ExpressionLib.getExpressionWordIdList(expressionId);
-        List<Integer> articleIdList = searchArticlesByWordsIds(wordIdList);
-        List<Integer> result = new ArrayList<>();
-
-        //Filter by articles which contain the expression
-        for (Integer articleId : articleIdList) {
-            List<Integer> expressionLocations = ExpressionLib.searchExpressionInArticle(expressionId, articleId);
-            if (!expressionLocations.isEmpty()) {
-                result.add(articleId);
-            }
-        }
-        return result;
-    }
+//    public static List<Integer> searchArticlesByExpression(int expressionId) throws SQLException {
+//        //Filter by articles which contain all the words in the expression
+//        List<Integer> wordIdList = ExpressionLib.getExpressionWordIdList(expressionId);
+//        List<Integer> articleIdList = searchArticlesByWordsIds(wordIdList);
+//        List<Integer> result = new ArrayList<>();
+//
+//        //Filter by articles which contain the expression
+//        for (Integer articleId : articleIdList) {
+//            List<Integer> expressionLocations = ExpressionLib.searchExpressionInArticle(expressionId, articleId);
+//            if (!expressionLocations.isEmpty()) {
+//                result.add(articleId);
+//            }
+//        }
+//        return result;
+//    }
 
     public static List<ArticleWord> getArticleWords(int articleId) throws SQLException {
         ResultSet res = null;

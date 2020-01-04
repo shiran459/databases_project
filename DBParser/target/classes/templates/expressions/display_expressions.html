@@ -24,16 +24,19 @@
     <h2>My Expressions</h2>
     <p>Now displaying your expressions:</p>
 
-    <table>
-        <thead>
+    <table class="table table-hover table-bordered">
+        <thead class="thead-light">
         <tr>
             <th>Expression</th>
             <th>Creation Date</th>
+            <th></th>
         </tr>
         </thead>
         <tr th:each="expression: ${expressions}">
             <td th:text="${expression.value}"></td>
             <td th:text="${expression.creationDate}"></td>
+            <td><a th:href="@{/expressions/{id}/locations/(id = ${expression.expressionId})}">view locations</a></td>
+
         </tr>
     </table>
 

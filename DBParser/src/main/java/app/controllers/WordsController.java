@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -42,8 +43,33 @@ public class WordsController {
             User user = UserLib.extractUser(request);
             model.addAttribute("user", user);
 
-            return "words/words_search";
+            return "words/word_search";
         } catch (Exception e) {
+            return "error";
+        }
+    }
+
+    @GetMapping("/words/search/submit")
+    public String searchWordsSubmit(@RequestParam(name = "searchKey") String searchKey,
+                                    @RequestParam(name = "wordOffset") String wordOffset,
+                                    @RequestParam(name = "parNum") String parNum,
+                                    @RequestParam(name = "parOffset") String parOffset,
+                                    Model model, HttpServletRequest request) {
+        try {
+            User user = UserLib.extractUser(request);
+            model.addAttribute("user", user);
+            List<ArticleWord> wordList;
+
+            if(searchKey.equals("wordOffset")){
+                wordList = WordLib.searchWordByWordOffset(Integer.parseInt(wordOffset));
+            }
+            else{
+                wordList = WordLib.searchWordByParagraph(Integer.parseInt(parNum),Integer.parseInt(parOffset));
+            }
+            model.addAttribute("wordList", wordList);
+            return "words/word_search_results";
+        } catch (Exception e) {
+            e.printStackTrace();
             return "error";
         }
     }

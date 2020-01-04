@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head xmlns:th="http://www.thymeleaf.org">
-    <title>WikiSearch | Search Article</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>WikiSearch | Word Search Results</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,22 +12,37 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/css/page.css">
-    <link rel="stylesheet" href="/css/submit_btn.css">
+    <link rel="stylesheet" href="/css/search.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
 </head>
 <body>
 
 <nav th:insert="fragments/general.html :: nav(currUser=${user})"> </nav>
-<!--------------------Article Content----------------------->
 
+<!--------------------Word Search Results----------------------->
 <div class="page">
-    <script type="text/javascript" src="/js/add_expression_button.js"></script>
-    <button class="float-right" value="" disabled="true" id="expression-btn" onclick="crateUserExpression(this.value)">Create Expression</button>
-    <h1 th:text="${article.title}"></h1>
-    <div th:utext="${articleContent}" id="article-content"></div>
+    <h2>Word Search Results</h2>
+
+    <div id="searchResultArea">
+        <table class="table table-hover table-bordered">
+
+            <!-- Table Body -->
+            <thead class="thead-light">
+            <th>Word</th>
+            <th>Article</th>
+            </thead>
+            <tbody>
+            <tr th:each="word: ${wordList}">
+                <td th:text="${word.value}"></td>
+                <td><a th:href="@{/articles//{articleId}(articleId=${word.article.id})}"><span th:text="${word.article.title}"></span></a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>
 
-<!------------------------ Bootstrap JS ------------------------->
+<!------------------------ Bootstrap JS ---------------------------->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -40,7 +55,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script src="/js/text_selector.js"></script>
+<script src="/js/add_word_to_group.js"></script>
 
 </body>
 </html>
