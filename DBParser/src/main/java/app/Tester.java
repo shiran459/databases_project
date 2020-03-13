@@ -32,7 +32,7 @@ public class Tester {
         Tester tester = new Tester();
         tester.beforeAll();
 
-        tester.testXmlLoad();
+        tester.testXmlDump();
     }
 
 
@@ -238,10 +238,7 @@ public class Tester {
     }
 
     private void testXmlLoad() throws Exception{
-        List<String> list = Arrays.asList(XMLDumper.tables);
-        Collections.reverse(list);
-        for(String table: list)
-            ServerLib.wipeTable(table);
+        ServerLib.wipeAllTables();
         XMLLoader.loadXML(new File("C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\temp\\dbDump.xml"));
     }
 }

@@ -11,15 +11,17 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 
 public class XMLDumper {
     public static final String[] tables = {"ARTICLES", "WORDS", "USERS", "WORD_INDEX", "EXPRESSIONS", "GROUPS", "GROUP_WORDS" };
-    private static final String xmlStoreLocation = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\temp\\dbDump.xml";
 
-    public static void buildTables() throws Exception {
+    public static Path buildTables() throws Exception {
         Document doc = getDocument();
 
         Element rootElement = doc.createElement("DB");
@@ -41,7 +43,7 @@ public class XMLDumper {
             table.appendChild(lines);
         }
 
-        storeResults(doc);
+        return storeResults(doc);
     }
 
     private static Document getDocument() throws Exception {
@@ -50,19 +52,29 @@ public class XMLDumper {
         return docBuilder.newDocument();
     }
 
-    private static void storeResults(Document doc) throws Exception {
+    private static Path storeResults(Document doc) throws Exception {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File(xmlStoreLocation));
+
+        Path dictPath =  Paths.get(System.getProperty("user.dir"),
+                "DBParser",
+                "temp");
+        Files.createDirectories(dictPath);
+        Path filePath = dictPath.resolve("dbDump.xml");
+
+        StreamResult result = new StreamResult(filePath.toFile());
 
         transformer.transform(source, result);
+
+        return filePath;
     }
 
     private static Element buildColumnData(String tableName, Document doc) throws Exception {
         String sql = "SELECT COLUMN_NAME, DATA_TYPE " +
                 "FROM all_tab_cols " +
-                "WHERE TABLE_NAME = ?";
+                "WHERE TABLE_NAME = ? " +
+                "ORDER BY column_id";
 
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
         pstmt.setString(1, tableName);

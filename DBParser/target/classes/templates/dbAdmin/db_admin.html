@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>WikiSearch | Upload Article</title>
+    <title>WikiSearch | DB Admin</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -22,20 +22,12 @@
 <!--------------------Article Upload----------------------->
 <div class="page">
     <!-- Page Description -->
-    <h2>Upload Article</h2>
-    <p>Upload a new article to WikiSearch.</p>
+    <h2>DB Admin</h2>
+    <p>Upload DB xml dump</p>
     <br>
 
     <!-- Upload Form -->
-    <form method="post" enctype="multipart/form-data" action="/articles/upload">
-
-        <!-- Article Title -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">Title</span>
-            </div>
-            <input type="text" class="form-control" id="title" aria-describedby="basic-addon3" name="Title">
-        </div>
+    <form method="post" enctype="multipart/form-data" action="/db_admin/upload">
 
         <!-- File Chooser -->
         <div class="input-group">
@@ -44,7 +36,7 @@
             </div>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="inputGroupFile01"
-                       aria-describedby="inputGroupFileAddon01" name="articleToUpload">
+                       aria-describedby="inputGroupFileAddon01" name="dbToUpload">
                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                 </div>
             </div>
@@ -57,9 +49,11 @@
 
         <!-- File Size Limit -->
         <br>
-        <p>Note: max file size is 128kB</p>
+        <p>Note: max file size is 1GB</p>
     </form>
+    <br>
 
+    <a class="btn btn-primary btn-lg" href="/db_admin/dump_db" id="db_dump" role="button">Dump DB</a>
 </div>
 
 <!------------------------ Bootstrap JS ---------------------------->
@@ -75,6 +69,9 @@
 
 <!-- Upload file chooser: script for displaying file path -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <script>
     $('#inputGroupFile01').on('change',function(){

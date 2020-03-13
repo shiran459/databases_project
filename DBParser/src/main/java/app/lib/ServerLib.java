@@ -21,9 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -41,7 +39,13 @@ public class ServerLib {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
+    public static void wipeAllTables() {
+        List<String> list = Arrays.asList(XMLDumper.tables);
+        Collections.reverse(list);
+        for(String table: list)
+            ServerLib.wipeTable(table);
     }
 
     /**
