@@ -1,4 +1,4 @@
-package app;
+package app.interceptors;
 
 import app.lib.UserLib;
 import app.utils.User;

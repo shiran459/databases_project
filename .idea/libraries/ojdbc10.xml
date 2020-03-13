@@ -2,6 +2,7 @@
   <library name="ojdbc10">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/DBParser/ojdbc10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/DBParser/commons-codec-1.14.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

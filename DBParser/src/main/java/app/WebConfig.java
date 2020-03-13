@@ -1,5 +1,7 @@
 package app;
 
+import app.interceptors.GuestInterceptor;
+import app.interceptors.UserInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -16,6 +18,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new UserInterceptor());
+        registry.addInterceptor(new GuestInterceptor())
+            .addPathPatterns(new String[] {"/articles/**", "/words/**", "/groups/**", "/expressions/**"});
     }
 
     @Override

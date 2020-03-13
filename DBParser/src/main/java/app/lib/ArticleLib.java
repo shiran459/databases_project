@@ -1,9 +1,6 @@
 package app.lib;
 
-import app.utils.Article;
-import app.utils.ArticleWord;
-import app.utils.ConnectionManager;
-import app.utils.WordLocation;
+import app.utils.*;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -297,4 +294,10 @@ public class ArticleLib {
         }
         return res;
     }
+
+//    public static Article getArticleWithMaxFrequency(Word word){
+//        String sql = "SELECT article_id " +
+//                "From word_index " +
+//                "WHERE "
+//    }
 }

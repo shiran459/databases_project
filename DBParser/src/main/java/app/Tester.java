@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.*;
@@ -31,6 +32,7 @@ public class Tester {
         Tester tester = new Tester();
         tester.beforeAll();
 
+        tester.testXmlLoad();
     }
 
 
@@ -221,5 +223,25 @@ public class Tester {
     private void testSearchExpressions() throws Exception{
         Map<Article, List<Integer>> map = ExpressionLib.searchExpressionInDB(0);
         System.out.println(map);
+    }
+
+    private void myTest() throws Exception{
+       String[] files = {"a", "b", "c", "d", "e", "f", "g"};
+       for (String file : files){
+           String path = ServerLib.getFilePath(file);
+           Files.write(Paths.get(path), "lines".getBytes());
+       }
+    }
+
+    private void testXmlDump() throws Exception{
+        XMLDumper.buildTables();
+    }
+
+    private void testXmlLoad() throws Exception{
+        List<String> list = Arrays.asList(XMLDumper.tables);
+        Collections.reverse(list);
+        for(String table: list)
+            ServerLib.wipeTable(table);
+        XMLLoader.loadXML(new File("C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\temp\\dbDump.xml"));
     }
 }

@@ -19,10 +19,13 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * This library holds methods used directly by the website controllers.
@@ -79,10 +82,8 @@ public class ServerLib {
         transformer.transform(new DOMSource(xmlDocument), new StreamResult(writer));
         html = writer.getBuffer().toString();
 
-
-        String path = "C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\article pages\\" + title + ".html";
+        String path = getFilePath(title);
         File htmlFile = createHtmlFile(html, path);
-
 
         //Insert article
         int articleId = ArticleLib.insertArticle(title, path);
@@ -101,6 +102,20 @@ public class ServerLib {
         String wikitext = Files.readString(wikitextPath);
         uploadArticle(title, wikitext);
     }
+
+    public static String getFilePath(String title) throws IOException{
+        String folderName = DigestUtils.sha1Hex(title).substring(0,4);
+        Path dictPath =  Paths.get(System.getProperty("user.dir"),
+                "DBParser",
+                "article pages" ,
+                folderName);
+        Files.createDirectories(dictPath);
+
+        return Paths.get(dictPath.toString(),
+                    title + ".html")
+                    .normalize().toString();
+    }
+
     //====================================== PRIVATE METHODS ====================================//
 
     private static File createHtmlFile(String html, String path) throws IOException {
@@ -117,5 +132,4 @@ public class ServerLib {
             out.close();
         }
     }
-
 }

@@ -1,0 +1,4584 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DB>
+    <table name="ARTICLES">
+        <metadata>
+            <columns>
+                <column type="NUMBER">ARTICLE_ID</column>
+                <column type="VARCHAR2">TITLE</column>
+                <column type="VARCHAR2">PATH</column>
+            </columns>
+        </metadata>
+        <lines>
+            <line>
+                <column>63</column>
+                <column>The Title</column>
+                <column>C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\article pages\The Title.html</column>
+            </line>
+        </lines>
+    </table>
+    <table name="WORDS">
+        <metadata>
+            <columns>
+                <column type="NUMBER">WORD_ID</column>
+                <column type="VARCHAR2">VALUE</column>
+                <column type="NUMBER">LENGTH</column>
+            </columns>
+        </metadata>
+        <lines>
+            <line>
+                <column>2148</column>
+                <column>year</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2149</column>
+                <column>christianity</column>
+                <column>12</column>
+            </line>
+            <line>
+                <column>2150</column>
+                <column>april</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2151</column>
+                <column>pea</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2152</column>
+                <column>three</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2153</column>
+                <column>years</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2154</column>
+                <column>begins</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2155</column>
+                <column>would</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2156</column>
+                <column>sweden</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2157</column>
+                <column>four</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2158</column>
+                <column>meaning</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2159</column>
+                <column>english</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2160</column>
+                <column>if</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2161</column>
+                <column>between</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2162</column>
+                <column>they</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2163</column>
+                <column>order</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2164</column>
+                <column>ii</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2165</column>
+                <column>flowers</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2166</column>
+                <column>15</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2167</column>
+                <column>in</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2168</column>
+                <column>16</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2169</column>
+                <column>july</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2170</column>
+                <column>birth</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2171</column>
+                <column>is</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2172</column>
+                <column>come</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2173</column>
+                <column>xvi</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2174</column>
+                <column>it</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2175</column>
+                <column>an</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2176</column>
+                <column>each</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2177</column>
+                <column>as</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2178</column>
+                <column>traditional</column>
+                <column>11</column>
+            </line>
+            <line>
+                <column>2179</column>
+                <column>245</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2180</column>
+                <column>likelihood</column>
+                <column>10</column>
+            </line>
+            <line>
+                <column>2181</column>
+                <column>carl</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2182</column>
+                <column>letter</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2183</column>
+                <column>astrological</column>
+                <column>12</column>
+            </line>
+            <line>
+                <column>2184</column>
+                <column>20</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2185</column>
+                <column>21</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2186</column>
+                <column>other</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2187</column>
+                <column>weeks</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2188</column>
+                <column>queen</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2189</column>
+                <column>27</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2190</column>
+                <column>comes</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2191</column>
+                <column>immediately</column>
+                <column>11</column>
+            </line>
+            <line>
+                <column>2192</column>
+                <column>out</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2193</column>
+                <column>current</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2194</column>
+                <column>same</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2195</column>
+                <column>are</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2196</column>
+                <column>have</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2197</column>
+                <column>luxembourg</column>
+                <column>10</column>
+            </line>
+            <line>
+                <column>2198</column>
+                <column>december</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2199</column>
+                <column>finishes</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2200</column>
+                <column>leap</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2201</column>
+                <column>after</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2202</column>
+                <column>daisy</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2203</column>
+                <column>30</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2204</column>
+                <column>gustaf</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2205</column>
+                <column>apart</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2206</column>
+                <column>a</column>
+                <column>1</column>
+            </line>
+            <line>
+                <column>2207</column>
+                <column>35</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2208</column>
+                <column>may</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2209</column>
+                <column>bigger</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2210</column>
+                <column>one</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2211</column>
+                <column>born</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2212</column>
+                <column>m</column>
+                <column>1</column>
+            </line>
+            <line>
+                <column>2213</column>
+                <column>march</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2214</column>
+                <column>the</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2215</column>
+                <column>s</column>
+                <column>1</column>
+            </line>
+            <line>
+                <column>2216</column>
+                <column>june</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2217</column>
+                <column>alexander</column>
+                <column>9</column>
+            </line>
+            <line>
+                <column>2218</column>
+                <column>january</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2219</column>
+                <column>additionally</column>
+                <column>12</column>
+            </line>
+            <line>
+                <column>2220</column>
+                <column>days</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2221</column>
+                <column>fourth</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2222</column>
+                <column>to</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2223</column>
+                <column>sweet</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2224</column>
+                <column>first</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2225</column>
+                <column>november</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2226</column>
+                <column>realms</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2227</column>
+                <column>duke</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2228</column>
+                <column>language</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2229</column>
+                <column>aries</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2230</column>
+                <column>easter</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2231</column>
+                <column>second</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2232</column>
+                <column>that</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2233</column>
+                <column>later</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2234</column>
+                <column>than</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2235</column>
+                <column>taurus</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2236</column>
+                <column>starts</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2237</column>
+                <column>female</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2238</column>
+                <column>day</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2239</column>
+                <column>belgium</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2240</column>
+                <column>others</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2241</column>
+                <column>always</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2242</column>
+                <column>given</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2243</column>
+                <column>making</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2244</column>
+                <column>months</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2245</column>
+                <column>alphabetical</column>
+                <column>12</column>
+            </line>
+            <line>
+                <column>2246</column>
+                <column>last</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2247</column>
+                <column>monarchs</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2248</column>
+                <column>king</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2249</column>
+                <column>european</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2250</column>
+                <column>netherlands</column>
+                <column>11</column>
+            </line>
+            <line>
+                <column>2251</column>
+                <column>its</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2252</column>
+                <column>philippe</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2253</column>
+                <column>both</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2254</column>
+                <column>month</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2255</column>
+                <column>were</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2256</column>
+                <column>name</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2257</column>
+                <column>october</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2258</column>
+                <column>western</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2259</column>
+                <column>week</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2260</column>
+                <column>united</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2261</column>
+                <column>for</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2262</column>
+                <column>birthstone</column>
+                <column>10</column>
+            </line>
+            <line>
+                <column>2263</column>
+                <column>around</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2264</column>
+                <column>september</column>
+                <column>9</column>
+            </line>
+            <line>
+                <column>2265</column>
+                <column>signs</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2266</column>
+                <column>arranged</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2267</column>
+                <column>denmark</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2268</column>
+                <column>common</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2269</column>
+                <column>along</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2270</column>
+                <column>and</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2271</column>
+                <column>of</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2272</column>
+                <column>ends</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2273</column>
+                <column>row</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2274</column>
+                <column>every</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2275</column>
+                <column>on</column>
+                <column>2</column>
+            </line>
+            <line>
+                <column>2276</column>
+                <column>falling</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2277</column>
+                <column>henri</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2278</column>
+                <column>elizabeth</column>
+                <column>9</column>
+            </line>
+            <line>
+                <column>2279</column>
+                <column>six</column>
+                <column>3</column>
+            </line>
+            <line>
+                <column>2280</column>
+                <column>previous</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2281</column>
+                <column>february</column>
+                <column>8</column>
+            </line>
+            <line>
+                <column>2282</column>
+                <column>start</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2283</column>
+                <column>trivia</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2284</column>
+                <column>also</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2285</column>
+                <column>exactly</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2286</column>
+                <column>grand</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2287</column>
+                <column>kingdom</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2288</column>
+                <column>with</column>
+                <column>4</column>
+            </line>
+            <line>
+                <column>2289</column>
+                <column>willem</column>
+                <column>6</column>
+            </line>
+            <line>
+                <column>2290</column>
+                <column>diamond</column>
+                <column>7</column>
+            </line>
+            <line>
+                <column>2291</column>
+                <column>there</column>
+                <column>5</column>
+            </line>
+            <line>
+                <column>2292</column>
+                <column>commonwealth</column>
+                <column>12</column>
+            </line>
+            <line>
+                <column>2146</column>
+                <column>margrethe</column>
+                <column>9</column>
+            </line>
+            <line>
+                <column>2147</column>
+                <column>innocence</column>
+                <column>9</column>
+            </line>
+        </lines>
+    </table>
+    <table name="USERS">
+        <metadata>
+            <columns>
+                <column type="NUMBER">USER_ID</column>
+                <column type="VARCHAR2">USERNAME</column>
+                <column type="VARCHAR2">PASSWORD_HASH</column>
+                <column type="VARCHAR2">SESSION_TOKEN</column>
+            </columns>
+        </metadata>
+        <lines>
+            <line>
+                <column>7</column>
+                <column>shiran</column>
+                <column>03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4</column>
+                <column>859bff78683e6e48cb6bcdd982e90f6a4c0d5d07a3723ece055b76497bad09a9</column>
+            </line>
+            <line>
+                <column>21</column>
+                <column>shiran459@gmail.com</column>
+                <column>03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4</column>
+                <column>f3805141ac19c63828262db026d10e088b5125195cb5014797e190412e719acd</column>
+            </line>
+            <line>
+                <column>1</column>
+                <column>test_user</column>
+                <column/>
+                <column/>
+            </line>
+        </lines>
+    </table>
+    <table name="WORD_INDEX">
+        <metadata>
+            <columns>
+                <column type="NUMBER">ARTICLE_ID</column>
+                <column type="NUMBER">WORD_ID</column>
+                <column type="NUMBER">WORD_OFFSET</column>
+                <column type="NUMBER">PAR_NUM</column>
+                <column type="NUMBER">PAR_OFFSET</column>
+                <column type="VARCHAR2">WORD_CONTEXT</column>
+            </columns>
+        </metadata>
+        <lines>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>412</column>
+                <column>10</column>
+                <column>141</column>
+                <column>belgium april 15 queen margrethe ii of denmark april 16 henri</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>419</column>
+                <column>10</column>
+                <column>148</column>
+                <column>denmark april 16 henri grand duke of luxembourg april 16 elizabeth</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>425</column>
+                <column>10</column>
+                <column>154</column>
+                <column>of luxembourg april 16 elizabeth ii of the united kingdom and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>437</column>
+                <column>10</column>
+                <column>166</column>
+                <column>realms april 21 king willem alexander of the netherlands april 27</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>447</column>
+                <column>10</column>
+                <column>176</column>
+                <column>27 and king carl xvi gustaf of sweden april 30</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2272</column>
+                <column>44</column>
+                <column>2</column>
+                <column>20</column>
+                <column>in leap years april always ends on the same day of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2272</column>
+                <column>144</column>
+                <column>6</column>
+                <column>28</column>
+                <column>january in leap years april ends on the same day of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2273</column>
+                <column>324</column>
+                <column>10</column>
+                <column>53</column>
+                <column>first of three months in a row along with may and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2274</column>
+                <column>128</column>
+                <column>6</column>
+                <column>12</column>
+                <column>of the week as july every year and on the same</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2274</column>
+                <column>154</column>
+                <column>6</column>
+                <column>38</column>
+                <column>of the week as december every year as each others last</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2275</column>
+                <column>28</column>
+                <column>2</column>
+                <column>4</column>
+                <column>april always begins on the same day of week</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2275</column>
+                <column>45</column>
+                <column>2</column>
+                <column>21</column>
+                <column>leap years april always ends on the same day of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2275</column>
+                <column>119</column>
+                <column>6</column>
+                <column>3</column>
+                <column>april begins on the same day of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2275</column>
+                <column>131</column>
+                <column>6</column>
+                <column>15</column>
+                <column>as july every year and on the same day of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2275</column>
+                <column>145</column>
+                <column>6</column>
+                <column>29</column>
+                <column>in leap years april ends on the same day of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2275</column>
+                <column>173</column>
+                <column>7</column>
+                <column>6</column>
+                <column>in common years april starts on the same day of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2275</column>
+                <column>200</column>
+                <column>7</column>
+                <column>33</column>
+                <column>in common years april finishes on the same day of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2275</column>
+                <column>234</column>
+                <column>7</column>
+                <column>67</column>
+                <column>other common years april starts on the same day of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2275</column>
+                <column>258</column>
+                <column>7</column>
+                <column>91</column>
+                <column>immediately after that april finishes on the same day of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2276</column>
+                <column>282</column>
+                <column>10</column>
+                <column>11</column>
+                <column>is a bigger likelihood of easter falling in april than in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2277</column>
+                <column>416</column>
+                <column>10</column>
+                <column>145</column>
+                <column>margrethe ii of denmark april 16 henri grand duke of luxembourg</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2278</column>
+                <column>423</column>
+                <column>10</column>
+                <column>152</column>
+                <column>grand duke of luxembourg april 16 elizabeth ii of the united</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2279</column>
+                <column>393</column>
+                <column>10</column>
+                <column>122</column>
+                <column>english language april would come first six current european monarchs were</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2280</column>
+                <column>184</column>
+                <column>7</column>
+                <column>17</column>
+                <column>week as october of the previous year and in leap years</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2280</column>
+                <column>193</column>
+                <column>7</column>
+                <column>26</column>
+                <column>leap years may of the previous year in common years april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2280</column>
+                <column>211</column>
+                <column>7</column>
+                <column>44</column>
+                <column>week as july of the previous year and in leap years</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2280</column>
+                <column>222</column>
+                <column>7</column>
+                <column>55</column>
+                <column>february and october of the previous year in common years immediately</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2280</column>
+                <column>245</column>
+                <column>7</column>
+                <column>78</column>
+                <column>week as january of the previous year and in leap years</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2280</column>
+                <column>269</column>
+                <column>7</column>
+                <column>102</column>
+                <column>week as january of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2281</column>
+                <column>217</column>
+                <column>7</column>
+                <column>50</column>
+                <column>year and in leap years february and october of the previous</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2282</column>
+                <column>296</column>
+                <column>10</column>
+                <column>25</column>
+                <column>around april march and may both start with an m in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2283</column>
+                <column>271</column>
+                <column>8</column>
+                <column>1</column>
+                <column>trivia</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2284</column>
+                <column>92</column>
+                <column>5</column>
+                <column>16</column>
+                <column>fourth month of the year it also comes first in the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2284</column>
+                <column>332</column>
+                <column>10</column>
+                <column>61</column>
+                <column>with may and june that is also a female given name</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2285</column>
+                <column>162</column>
+                <column>6</column>
+                <column>46</column>
+                <column>each others last days are exactly 35 weeks 245 days apart</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2286</column>
+                <column>417</column>
+                <column>10</column>
+                <column>146</column>
+                <column>ii of denmark april 16 henri grand duke of luxembourg april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2287</column>
+                <column>428</column>
+                <column>10</column>
+                <column>157</column>
+                <column>16 elizabeth ii of the united kingdom and commonwealth realms april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2288</column>
+                <column>297</column>
+                <column>10</column>
+                <column>26</column>
+                <column>april march and may both start with an m in the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2288</column>
+                <column>304</column>
+                <column>10</column>
+                <column>33</column>
+                <column>an m in the english language with an a as the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2288</column>
+                <column>326</column>
+                <column>10</column>
+                <column>55</column>
+                <column>three months in a row along with may and june that</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2289</column>
+                <column>435</column>
+                <column>10</column>
+                <column>164</column>
+                <column>and commonwealth realms april 21 king willem alexander of the netherlands</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2290</column>
+                <column>67</column>
+                <column>3</column>
+                <column>14</column>
+                <column>daisy its birthstone is the diamond the meaning of the diamond</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2290</column>
+                <column>72</column>
+                <column>3</column>
+                <column>19</column>
+                <column>diamond the meaning of the diamond is innocence</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2290</column>
+                <column>373</column>
+                <column>10</column>
+                <column>102</column>
+                <column>april birthstone for april is the diamond if the months of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2291</column>
+                <column>275</column>
+                <column>10</column>
+                <column>4</column>
+                <column>in western christianity there is a bigger likelihood</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2292</column>
+                <column>430</column>
+                <column>10</column>
+                <column>159</column>
+                <column>ii of the united kingdom and commonwealth realms april 21 king</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>442</column>
+                <column>10</column>
+                <column>171</column>
+                <column>alexander of the netherlands april 27 and king carl xvi gustaf</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>6</column>
+                <column>1</column>
+                <column>6</column>
+                <column>april is the fourth month of the year and comes between</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>18</column>
+                <column>1</column>
+                <column>18</column>
+                <column>and may it is one of four months to have 30</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>32</column>
+                <column>2</column>
+                <column>8</column>
+                <column>begins on the same day of week as july and additionally</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>49</column>
+                <column>2</column>
+                <column>25</column>
+                <column>ends on the same day of the week as december</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>70</column>
+                <column>3</column>
+                <column>17</column>
+                <column>is the diamond the meaning of the diamond is innocence</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>88</column>
+                <column>5</column>
+                <column>12</column>
+                <column>may making it the fourth month of the year it also</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>99</column>
+                <column>5</column>
+                <column>23</column>
+                <column>comes first in the year out of the four months that</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>123</column>
+                <column>6</column>
+                <column>7</column>
+                <column>begins on the same day of the week as july every</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>135</column>
+                <column>6</column>
+                <column>19</column>
+                <column>and on the same day of the week as january in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>149</column>
+                <column>6</column>
+                <column>33</column>
+                <column>ends on the same day of the week as december every</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>177</column>
+                <column>7</column>
+                <column>10</column>
+                <column>starts on the same day of the week as october of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>182</column>
+                <column>7</column>
+                <column>15</column>
+                <column>of the week as october of the previous year and in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>191</column>
+                <column>7</column>
+                <column>24</column>
+                <column>and in leap years may of the previous year in common</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>204</column>
+                <column>7</column>
+                <column>37</column>
+                <column>finishes on the same day of the week as july of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>209</column>
+                <column>7</column>
+                <column>42</column>
+                <column>of the week as july of the previous year and in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>220</column>
+                <column>7</column>
+                <column>53</column>
+                <column>leap years february and october of the previous year in common</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>238</column>
+                <column>7</column>
+                <column>71</column>
+                <column>starts on the same day of the week as january of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>243</column>
+                <column>7</column>
+                <column>76</column>
+                <column>of the week as january of the previous year and in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>262</column>
+                <column>7</column>
+                <column>95</column>
+                <column>finishes on the same day of the week as january of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>267</column>
+                <column>7</column>
+                <column>100</column>
+                <column>of the week as january of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>280</column>
+                <column>10</column>
+                <column>9</column>
+                <column>christianity there is a bigger likelihood of easter falling in april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>319</column>
+                <column>10</column>
+                <column>48</column>
+                <column>english language april is the first of three months in a</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>377</column>
+                <column>10</column>
+                <column>106</column>
+                <column>is the diamond if the months of the year were arranged</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2271</column>
+                <column>405</column>
+                <column>10</column>
+                <column>134</column>
+                <column>in april they are king philippe of belgium april 15 queen</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2146</column>
+                <column>410</column>
+                <column>10</column>
+                <column>139</column>
+                <column>philippe of belgium april 15 queen margrethe ii of denmark april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2147</column>
+                <column>74</column>
+                <column>3</column>
+                <column>21</column>
+                <column>meaning of the diamond is innocence</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>8</column>
+                <column>1</column>
+                <column>8</column>
+                <column>the fourth month of the year and comes between march and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>90</column>
+                <column>5</column>
+                <column>14</column>
+                <column>it the fourth month of the year it also comes first</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>97</column>
+                <column>5</column>
+                <column>21</column>
+                <column>it also comes first in the year out of the four</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>116</column>
+                <column>5</column>
+                <column>40</column>
+                <column>and november are later in the year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>129</column>
+                <column>6</column>
+                <column>13</column>
+                <column>the week as july every year and on the same day</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>155</column>
+                <column>6</column>
+                <column>39</column>
+                <column>the week as december every year as each others last days</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>185</column>
+                <column>7</column>
+                <column>18</column>
+                <column>as october of the previous year and in leap years may</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>194</column>
+                <column>7</column>
+                <column>27</column>
+                <column>years may of the previous year in common years april finishes</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>212</column>
+                <column>7</column>
+                <column>45</column>
+                <column>as july of the previous year and in leap years february</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>223</column>
+                <column>7</column>
+                <column>56</column>
+                <column>and october of the previous year in common years immediately after</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>246</column>
+                <column>7</column>
+                <column>79</column>
+                <column>as january of the previous year and in leap years and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>270</column>
+                <column>7</column>
+                <column>103</column>
+                <column>as january of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2148</column>
+                <column>379</column>
+                <column>10</column>
+                <column>108</column>
+                <column>diamond if the months of the year were arranged in alphabetical</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2149</column>
+                <column>274</column>
+                <column>10</column>
+                <column>3</column>
+                <column>in western christianity there is a bigger</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>1</column>
+                <column>1</column>
+                <column>1</column>
+                <column>april is the fourth month of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>25</column>
+                <column>2</column>
+                <column>1</column>
+                <column>april always begins on the same</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>42</column>
+                <column>2</column>
+                <column>18</column>
+                <column>additionally january in leap years april always ends on the same</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>54</column>
+                <column>3</column>
+                <column>1</column>
+                <column>april s flowers are the sweet</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>77</column>
+                <column>5</column>
+                <column>1</column>
+                <column>april comes between march and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>117</column>
+                <column>6</column>
+                <column>1</column>
+                <column>april begins on the same day</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>143</column>
+                <column>6</column>
+                <column>27</column>
+                <column>as january in leap years april ends on the same day</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>171</column>
+                <column>7</column>
+                <column>4</column>
+                <column>in common years april starts on the same day</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>198</column>
+                <column>7</column>
+                <column>31</column>
+                <column>previous year in common years april finishes on the same day</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>232</column>
+                <column>7</column>
+                <column>65</column>
+                <column>immediately after other common years april starts on the same day</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>256</column>
+                <column>7</column>
+                <column>89</column>
+                <column>and years immediately after that april finishes on the same day</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>284</column>
+                <column>10</column>
+                <column>13</column>
+                <column>bigger likelihood of easter falling in april than in march the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>291</column>
+                <column>10</column>
+                <column>20</column>
+                <column>than in march the months around april march and may both</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>315</column>
+                <column>10</column>
+                <column>44</column>
+                <column>second letter in the english language april is the first of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>341</column>
+                <column>10</column>
+                <column>70</column>
+                <column>given name the astrological signs for april are aries march 21</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>347</column>
+                <column>10</column>
+                <column>76</column>
+                <column>april are aries march 21 to april 20 and taurus april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>351</column>
+                <column>10</column>
+                <column>80</column>
+                <column>21 to april 20 and taurus april 21 to may 20</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>367</column>
+                <column>10</column>
+                <column>96</column>
+                <column>are the traditional birth flowers for april birthstone for april is</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>370</column>
+                <column>10</column>
+                <column>99</column>
+                <column>birth flowers for april birthstone for april is the diamond if</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>389</column>
+                <column>10</column>
+                <column>118</column>
+                <column>alphabetical order in the english language april would come first six</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>400</column>
+                <column>10</column>
+                <column>129</column>
+                <column>current european monarchs were born in april they are king philippe</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>407</column>
+                <column>10</column>
+                <column>136</column>
+                <column>they are king philippe of belgium april 15 queen margrethe ii</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>414</column>
+                <column>10</column>
+                <column>143</column>
+                <column>15 queen margrethe ii of denmark april 16 henri grand duke</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>421</column>
+                <column>10</column>
+                <column>150</column>
+                <column>16 henri grand duke of luxembourg april 16 elizabeth ii of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>432</column>
+                <column>10</column>
+                <column>161</column>
+                <column>the united kingdom and commonwealth realms april 21 king willem alexander</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>440</column>
+                <column>10</column>
+                <column>169</column>
+                <column>king willem alexander of the netherlands april 27 and king carl</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2150</column>
+                <column>449</column>
+                <column>10</column>
+                <column>178</column>
+                <column>king carl xvi gustaf of sweden april 30</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2151</column>
+                <column>60</column>
+                <column>3</column>
+                <column>7</column>
+                <column>s flowers are the sweet pea and daisy its birthstone is</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2151</column>
+                <column>358</column>
+                <column>10</column>
+                <column>87</column>
+                <column>21 to may 20 the sweet pea and daisy are the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2152</column>
+                <column>320</column>
+                <column>10</column>
+                <column>49</column>
+                <column>language april is the first of three months in a row</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>41</column>
+                <column>2</column>
+                <column>17</column>
+                <column>and additionally january in leap years april always ends on the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>142</column>
+                <column>6</column>
+                <column>26</column>
+                <column>week as january in leap years april ends on the same</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>170</column>
+                <column>7</column>
+                <column>3</column>
+                <column>in common years april starts on the same</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>189</column>
+                <column>7</column>
+                <column>22</column>
+                <column>previous year and in leap years may of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>197</column>
+                <column>7</column>
+                <column>30</column>
+                <column>the previous year in common years april finishes on the same</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>216</column>
+                <column>7</column>
+                <column>49</column>
+                <column>previous year and in leap years february and october of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>226</column>
+                <column>7</column>
+                <column>59</column>
+                <column>the previous year in common years immediately after other common years</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>231</column>
+                <column>7</column>
+                <column>64</column>
+                <column>years immediately after other common years april starts on the same</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>250</column>
+                <column>7</column>
+                <column>83</column>
+                <column>previous year and in leap years and years immediately after that</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2153</column>
+                <column>252</column>
+                <column>7</column>
+                <column>85</column>
+                <column>and in leap years and years immediately after that april finishes</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2154</column>
+                <column>27</column>
+                <column>2</column>
+                <column>3</column>
+                <column>april always begins on the same day of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2154</column>
+                <column>118</column>
+                <column>6</column>
+                <column>2</column>
+                <column>april begins on the same day of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2155</column>
+                <column>390</column>
+                <column>10</column>
+                <column>119</column>
+                <column>order in the english language april would come first six current</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2156</column>
+                <column>448</column>
+                <column>10</column>
+                <column>177</column>
+                <column>and king carl xvi gustaf of sweden april 30</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2157</column>
+                <column>19</column>
+                <column>1</column>
+                <column>19</column>
+                <column>may it is one of four months to have 30 days</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2157</column>
+                <column>101</column>
+                <column>5</column>
+                <column>25</column>
+                <column>in the year out of the four months that have 30</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2158</column>
+                <column>69</column>
+                <column>3</column>
+                <column>16</column>
+                <column>birthstone is the diamond the meaning of the diamond is innocence</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2159</column>
+                <column>302</column>
+                <column>10</column>
+                <column>31</column>
+                <column>start with an m in the english language with an a</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2159</column>
+                <column>313</column>
+                <column>10</column>
+                <column>42</column>
+                <column>as the second letter in the english language april is the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2159</column>
+                <column>387</column>
+                <column>10</column>
+                <column>116</column>
+                <column>arranged in alphabetical order in the english language april would come</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2160</column>
+                <column>374</column>
+                <column>10</column>
+                <column>103</column>
+                <column>birthstone for april is the diamond if the months of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2161</column>
+                <column>11</column>
+                <column>1</column>
+                <column>11</column>
+                <column>of the year and comes between march and may it is</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2161</column>
+                <column>79</column>
+                <column>5</column>
+                <column>3</column>
+                <column>april comes between march and may making</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2162</column>
+                <column>401</column>
+                <column>10</column>
+                <column>130</column>
+                <column>european monarchs were born in april they are king philippe of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2163</column>
+                <column>384</column>
+                <column>10</column>
+                <column>113</column>
+                <column>the year were arranged in alphabetical order in the english language</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2164</column>
+                <column>411</column>
+                <column>10</column>
+                <column>140</column>
+                <column>of belgium april 15 queen margrethe ii of denmark april 16</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2164</column>
+                <column>424</column>
+                <column>10</column>
+                <column>153</column>
+                <column>duke of luxembourg april 16 elizabeth ii of the united kingdom</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2165</column>
+                <column>56</column>
+                <column>3</column>
+                <column>3</column>
+                <column>april s flowers are the sweet pea and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2165</column>
+                <column>365</column>
+                <column>10</column>
+                <column>94</column>
+                <column>and daisy are the traditional birth flowers for april birthstone for</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2166</column>
+                <column>408</column>
+                <column>10</column>
+                <column>137</column>
+                <column>are king philippe of belgium april 15 queen margrethe ii of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>39</column>
+                <column>2</column>
+                <column>15</column>
+                <column>as july and additionally january in leap years april always ends</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>95</column>
+                <column>5</column>
+                <column>19</column>
+                <column>the year it also comes first in the year out of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>114</column>
+                <column>5</column>
+                <column>38</column>
+                <column>june september and november are later in the year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>140</column>
+                <column>6</column>
+                <column>24</column>
+                <column>of the week as january in leap years april ends on</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>168</column>
+                <column>7</column>
+                <column>1</column>
+                <column>in common years april starts on</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>187</column>
+                <column>7</column>
+                <column>20</column>
+                <column>of the previous year and in leap years may of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>195</column>
+                <column>7</column>
+                <column>28</column>
+                <column>may of the previous year in common years april finishes on</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>214</column>
+                <column>7</column>
+                <column>47</column>
+                <column>of the previous year and in leap years february and october</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>224</column>
+                <column>7</column>
+                <column>57</column>
+                <column>october of the previous year in common years immediately after other</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>248</column>
+                <column>7</column>
+                <column>81</column>
+                <column>of the previous year and in leap years and years immediately</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>272</column>
+                <column>10</column>
+                <column>1</column>
+                <column>in western christianity there is</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>283</column>
+                <column>10</column>
+                <column>12</column>
+                <column>a bigger likelihood of easter falling in april than in march</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>286</column>
+                <column>10</column>
+                <column>15</column>
+                <column>of easter falling in april than in march the months around</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>300</column>
+                <column>10</column>
+                <column>29</column>
+                <column>may both start with an m in the english language with</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>311</column>
+                <column>10</column>
+                <column>40</column>
+                <column>an a as the second letter in the english language april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>322</column>
+                <column>10</column>
+                <column>51</column>
+                <column>is the first of three months in a row along with</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>382</column>
+                <column>10</column>
+                <column>111</column>
+                <column>months of the year were arranged in alphabetical order in the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>385</column>
+                <column>10</column>
+                <column>114</column>
+                <column>year were arranged in alphabetical order in the english language april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2167</column>
+                <column>399</column>
+                <column>10</column>
+                <column>128</column>
+                <column>six current european monarchs were born in april they are king</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2168</column>
+                <column>415</column>
+                <column>10</column>
+                <column>144</column>
+                <column>queen margrethe ii of denmark april 16 henri grand duke of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2168</column>
+                <column>422</column>
+                <column>10</column>
+                <column>151</column>
+                <column>henri grand duke of luxembourg april 16 elizabeth ii of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2169</column>
+                <column>35</column>
+                <column>2</column>
+                <column>11</column>
+                <column>same day of week as july and additionally january in leap</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2169</column>
+                <column>127</column>
+                <column>6</column>
+                <column>11</column>
+                <column>day of the week as july every year and on the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2169</column>
+                <column>208</column>
+                <column>7</column>
+                <column>41</column>
+                <column>day of the week as july of the previous year and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2170</column>
+                <column>364</column>
+                <column>10</column>
+                <column>93</column>
+                <column>pea and daisy are the traditional birth flowers for april birthstone</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2171</column>
+                <column>2</column>
+                <column>1</column>
+                <column>2</column>
+                <column>april is the fourth month of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2171</column>
+                <column>16</column>
+                <column>1</column>
+                <column>16</column>
+                <column>between march and may it is one of four months to</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2171</column>
+                <column>65</column>
+                <column>3</column>
+                <column>12</column>
+                <column>pea and daisy its birthstone is the diamond the meaning of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2171</column>
+                <column>73</column>
+                <column>3</column>
+                <column>20</column>
+                <column>the meaning of the diamond is innocence</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2171</column>
+                <column>276</column>
+                <column>10</column>
+                <column>5</column>
+                <column>in western christianity there is a bigger likelihood of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2171</column>
+                <column>316</column>
+                <column>10</column>
+                <column>45</column>
+                <column>letter in the english language april is the first of three</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2171</column>
+                <column>331</column>
+                <column>10</column>
+                <column>60</column>
+                <column>along with may and june that is also a female given</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2171</column>
+                <column>371</column>
+                <column>10</column>
+                <column>100</column>
+                <column>flowers for april birthstone for april is the diamond if the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2172</column>
+                <column>391</column>
+                <column>10</column>
+                <column>120</column>
+                <column>in the english language april would come first six current european</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2173</column>
+                <column>445</column>
+                <column>10</column>
+                <column>174</column>
+                <column>netherlands april 27 and king carl xvi gustaf of sweden april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2174</column>
+                <column>15</column>
+                <column>1</column>
+                <column>15</column>
+                <column>comes between march and may it is one of four months</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2174</column>
+                <column>84</column>
+                <column>5</column>
+                <column>8</column>
+                <column>comes between march and may making it the fourth month of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2174</column>
+                <column>91</column>
+                <column>5</column>
+                <column>15</column>
+                <column>the fourth month of the year it also comes first in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2175</column>
+                <column>298</column>
+                <column>10</column>
+                <column>27</column>
+                <column>march and may both start with an m in the english</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2175</column>
+                <column>305</column>
+                <column>10</column>
+                <column>34</column>
+                <column>m in the english language with an a as the second</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2176</column>
+                <column>157</column>
+                <column>6</column>
+                <column>41</column>
+                <column>as december every year as each others last days are exactly</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>34</column>
+                <column>2</column>
+                <column>10</column>
+                <column>the same day of week as july and additionally january in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>52</column>
+                <column>2</column>
+                <column>28</column>
+                <column>same day of the week as december</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>107</column>
+                <column>5</column>
+                <column>31</column>
+                <column>four months that have 30 days as june september and november</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>126</column>
+                <column>6</column>
+                <column>10</column>
+                <column>same day of the week as july every year and on</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>138</column>
+                <column>6</column>
+                <column>22</column>
+                <column>same day of the week as january in leap years april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>152</column>
+                <column>6</column>
+                <column>36</column>
+                <column>same day of the week as december every year as each</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>156</column>
+                <column>6</column>
+                <column>40</column>
+                <column>week as december every year as each others last days are</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>180</column>
+                <column>7</column>
+                <column>13</column>
+                <column>same day of the week as october of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>207</column>
+                <column>7</column>
+                <column>40</column>
+                <column>same day of the week as july of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>241</column>
+                <column>7</column>
+                <column>74</column>
+                <column>same day of the week as january of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>265</column>
+                <column>7</column>
+                <column>98</column>
+                <column>same day of the week as january of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2177</column>
+                <column>307</column>
+                <column>10</column>
+                <column>36</column>
+                <column>the english language with an a as the second letter in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2178</column>
+                <column>363</column>
+                <column>10</column>
+                <column>92</column>
+                <column>sweet pea and daisy are the traditional birth flowers for april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2179</column>
+                <column>165</column>
+                <column>6</column>
+                <column>49</column>
+                <column>days are exactly 35 weeks 245 days apart</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2180</column>
+                <column>279</column>
+                <column>10</column>
+                <column>8</column>
+                <column>western christianity there is a bigger likelihood of easter falling in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2181</column>
+                <column>444</column>
+                <column>10</column>
+                <column>173</column>
+                <column>the netherlands april 27 and king carl xvi gustaf of sweden</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2182</column>
+                <column>310</column>
+                <column>10</column>
+                <column>39</column>
+                <column>with an a as the second letter in the english language</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2183</column>
+                <column>338</column>
+                <column>10</column>
+                <column>67</column>
+                <column>also a female given name the astrological signs for april are</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2184</column>
+                <column>348</column>
+                <column>10</column>
+                <column>77</column>
+                <column>are aries march 21 to april 20 and taurus april 21</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2184</column>
+                <column>355</column>
+                <column>10</column>
+                <column>84</column>
+                <column>and taurus april 21 to may 20 the sweet pea and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2185</column>
+                <column>345</column>
+                <column>10</column>
+                <column>74</column>
+                <column>signs for april are aries march 21 to april 20 and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2185</column>
+                <column>352</column>
+                <column>10</column>
+                <column>81</column>
+                <column>to april 20 and taurus april 21 to may 20 the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2185</column>
+                <column>433</column>
+                <column>10</column>
+                <column>162</column>
+                <column>united kingdom and commonwealth realms april 21 king willem alexander of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2186</column>
+                <column>229</column>
+                <column>7</column>
+                <column>62</column>
+                <column>in common years immediately after other common years april starts on</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2187</column>
+                <column>164</column>
+                <column>6</column>
+                <column>48</column>
+                <column>last days are exactly 35 weeks 245 days apart</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2188</column>
+                <column>409</column>
+                <column>10</column>
+                <column>138</column>
+                <column>king philippe of belgium april 15 queen margrethe ii of denmark</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2189</column>
+                <column>441</column>
+                <column>10</column>
+                <column>170</column>
+                <column>willem alexander of the netherlands april 27 and king carl xvi</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2190</column>
+                <column>10</column>
+                <column>1</column>
+                <column>10</column>
+                <column>month of the year and comes between march and may it</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2190</column>
+                <column>78</column>
+                <column>5</column>
+                <column>2</column>
+                <column>april comes between march and may</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2190</column>
+                <column>93</column>
+                <column>5</column>
+                <column>17</column>
+                <column>month of the year it also comes first in the year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2191</column>
+                <column>227</column>
+                <column>7</column>
+                <column>60</column>
+                <column>previous year in common years immediately after other common years april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2191</column>
+                <column>253</column>
+                <column>7</column>
+                <column>86</column>
+                <column>in leap years and years immediately after that april finishes on</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2192</column>
+                <column>98</column>
+                <column>5</column>
+                <column>22</column>
+                <column>also comes first in the year out of the four months</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2193</column>
+                <column>394</column>
+                <column>10</column>
+                <column>123</column>
+                <column>language april would come first six current european monarchs were born</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2194</column>
+                <column>30</column>
+                <column>2</column>
+                <column>6</column>
+                <column>april always begins on the same day of week as july</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2194</column>
+                <column>47</column>
+                <column>2</column>
+                <column>23</column>
+                <column>april always ends on the same day of the week as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2194</column>
+                <column>121</column>
+                <column>6</column>
+                <column>5</column>
+                <column>april begins on the same day of the week as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2194</column>
+                <column>133</column>
+                <column>6</column>
+                <column>17</column>
+                <column>every year and on the same day of the week as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2194</column>
+                <column>147</column>
+                <column>6</column>
+                <column>31</column>
+                <column>years april ends on the same day of the week as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2194</column>
+                <column>175</column>
+                <column>7</column>
+                <column>8</column>
+                <column>years april starts on the same day of the week as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2194</column>
+                <column>202</column>
+                <column>7</column>
+                <column>35</column>
+                <column>years april finishes on the same day of the week as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2194</column>
+                <column>236</column>
+                <column>7</column>
+                <column>69</column>
+                <column>years april starts on the same day of the week as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2194</column>
+                <column>260</column>
+                <column>7</column>
+                <column>93</column>
+                <column>that april finishes on the same day of the week as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2195</column>
+                <column>57</column>
+                <column>3</column>
+                <column>4</column>
+                <column>april s flowers are the sweet pea and daisy</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2195</column>
+                <column>112</column>
+                <column>5</column>
+                <column>36</column>
+                <column>days as june september and november are later in the year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2195</column>
+                <column>161</column>
+                <column>6</column>
+                <column>45</column>
+                <column>as each others last days are exactly 35 weeks 245 days</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2195</column>
+                <column>342</column>
+                <column>10</column>
+                <column>71</column>
+                <column>name the astrological signs for april are aries march 21 to</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2195</column>
+                <column>361</column>
+                <column>10</column>
+                <column>90</column>
+                <column>20 the sweet pea and daisy are the traditional birth flowers</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2195</column>
+                <column>402</column>
+                <column>10</column>
+                <column>131</column>
+                <column>monarchs were born in april they are king philippe of belgium</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2196</column>
+                <column>22</column>
+                <column>1</column>
+                <column>22</column>
+                <column>one of four months to have 30 days</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2196</column>
+                <column>104</column>
+                <column>5</column>
+                <column>28</column>
+                <column>out of the four months that have 30 days as june</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2197</column>
+                <column>420</column>
+                <column>10</column>
+                <column>149</column>
+                <column>april 16 henri grand duke of luxembourg april 16 elizabeth ii</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2198</column>
+                <column>53</column>
+                <column>2</column>
+                <column>29</column>
+                <column>day of the week as december</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2198</column>
+                <column>153</column>
+                <column>6</column>
+                <column>37</column>
+                <column>day of the week as december every year as each others</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2199</column>
+                <column>199</column>
+                <column>7</column>
+                <column>32</column>
+                <column>year in common years april finishes on the same day of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2199</column>
+                <column>257</column>
+                <column>7</column>
+                <column>90</column>
+                <column>years immediately after that april finishes on the same day of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2200</column>
+                <column>40</column>
+                <column>2</column>
+                <column>16</column>
+                <column>july and additionally january in leap years april always ends on</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2200</column>
+                <column>141</column>
+                <column>6</column>
+                <column>25</column>
+                <column>the week as january in leap years april ends on the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2200</column>
+                <column>188</column>
+                <column>7</column>
+                <column>21</column>
+                <column>the previous year and in leap years may of the previous</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2200</column>
+                <column>215</column>
+                <column>7</column>
+                <column>48</column>
+                <column>the previous year and in leap years february and october of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2200</column>
+                <column>249</column>
+                <column>7</column>
+                <column>82</column>
+                <column>the previous year and in leap years and years immediately after</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2201</column>
+                <column>228</column>
+                <column>7</column>
+                <column>61</column>
+                <column>year in common years immediately after other common years april starts</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2201</column>
+                <column>254</column>
+                <column>7</column>
+                <column>87</column>
+                <column>leap years and years immediately after that april finishes on the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2202</column>
+                <column>62</column>
+                <column>3</column>
+                <column>9</column>
+                <column>are the sweet pea and daisy its birthstone is the diamond</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2202</column>
+                <column>360</column>
+                <column>10</column>
+                <column>89</column>
+                <column>may 20 the sweet pea and daisy are the traditional birth</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2203</column>
+                <column>23</column>
+                <column>1</column>
+                <column>23</column>
+                <column>of four months to have 30 days</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2203</column>
+                <column>105</column>
+                <column>5</column>
+                <column>29</column>
+                <column>of the four months that have 30 days as june september</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2203</column>
+                <column>450</column>
+                <column>10</column>
+                <column>179</column>
+                <column>carl xvi gustaf of sweden april 30</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2204</column>
+                <column>446</column>
+                <column>10</column>
+                <column>175</column>
+                <column>april 27 and king carl xvi gustaf of sweden april 30</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2205</column>
+                <column>167</column>
+                <column>6</column>
+                <column>51</column>
+                <column>exactly 35 weeks 245 days apart</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2206</column>
+                <column>277</column>
+                <column>10</column>
+                <column>6</column>
+                <column>in western christianity there is a bigger likelihood of easter</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2206</column>
+                <column>306</column>
+                <column>10</column>
+                <column>35</column>
+                <column>in the english language with an a as the second letter</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2206</column>
+                <column>323</column>
+                <column>10</column>
+                <column>52</column>
+                <column>the first of three months in a row along with may</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2206</column>
+                <column>333</column>
+                <column>10</column>
+                <column>62</column>
+                <column>may and june that is also a female given name the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2207</column>
+                <column>163</column>
+                <column>6</column>
+                <column>47</column>
+                <column>others last days are exactly 35 weeks 245 days apart</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2208</column>
+                <column>14</column>
+                <column>1</column>
+                <column>14</column>
+                <column>and comes between march and may it is one of four</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2208</column>
+                <column>82</column>
+                <column>5</column>
+                <column>6</column>
+                <column>april comes between march and may making it the fourth</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2208</column>
+                <column>190</column>
+                <column>7</column>
+                <column>23</column>
+                <column>year and in leap years may of the previous year in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2208</column>
+                <column>294</column>
+                <column>10</column>
+                <column>23</column>
+                <column>the months around april march and may both start with an</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2208</column>
+                <column>327</column>
+                <column>10</column>
+                <column>56</column>
+                <column>months in a row along with may and june that is</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2208</column>
+                <column>354</column>
+                <column>10</column>
+                <column>83</column>
+                <column>20 and taurus april 21 to may 20 the sweet pea</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2209</column>
+                <column>278</column>
+                <column>10</column>
+                <column>7</column>
+                <column>in western christianity there is a bigger likelihood of easter falling</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2210</column>
+                <column>17</column>
+                <column>1</column>
+                <column>17</column>
+                <column>march and may it is one of four months to have</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2211</column>
+                <column>398</column>
+                <column>10</column>
+                <column>127</column>
+                <column>first six current european monarchs were born in april they are</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2212</column>
+                <column>299</column>
+                <column>10</column>
+                <column>28</column>
+                <column>and may both start with an m in the english language</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2213</column>
+                <column>12</column>
+                <column>1</column>
+                <column>12</column>
+                <column>the year and comes between march and may it is one</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2213</column>
+                <column>80</column>
+                <column>5</column>
+                <column>4</column>
+                <column>april comes between march and may making it</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2213</column>
+                <column>287</column>
+                <column>10</column>
+                <column>16</column>
+                <column>easter falling in april than in march the months around april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2213</column>
+                <column>292</column>
+                <column>10</column>
+                <column>21</column>
+                <column>in march the months around april march and may both start</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2213</column>
+                <column>344</column>
+                <column>10</column>
+                <column>73</column>
+                <column>astrological signs for april are aries march 21 to april 20</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>3</column>
+                <column>1</column>
+                <column>3</column>
+                <column>april is the fourth month of the year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>7</column>
+                <column>1</column>
+                <column>7</column>
+                <column>is the fourth month of the year and comes between march</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>29</column>
+                <column>2</column>
+                <column>5</column>
+                <column>april always begins on the same day of week as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>46</column>
+                <column>2</column>
+                <column>22</column>
+                <column>years april always ends on the same day of the week</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>50</column>
+                <column>2</column>
+                <column>26</column>
+                <column>on the same day of the week as december</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>58</column>
+                <column>3</column>
+                <column>5</column>
+                <column>april s flowers are the sweet pea and daisy its</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>66</column>
+                <column>3</column>
+                <column>13</column>
+                <column>and daisy its birthstone is the diamond the meaning of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>68</column>
+                <column>3</column>
+                <column>15</column>
+                <column>its birthstone is the diamond the meaning of the diamond is</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>71</column>
+                <column>3</column>
+                <column>18</column>
+                <column>the diamond the meaning of the diamond is innocence</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>75</column>
+                <column>4</column>
+                <column>1</column>
+                <column>the month</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>85</column>
+                <column>5</column>
+                <column>9</column>
+                <column>between march and may making it the fourth month of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>89</column>
+                <column>5</column>
+                <column>13</column>
+                <column>making it the fourth month of the year it also comes</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>96</column>
+                <column>5</column>
+                <column>20</column>
+                <column>year it also comes first in the year out of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>100</column>
+                <column>5</column>
+                <column>24</column>
+                <column>first in the year out of the four months that have</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>115</column>
+                <column>5</column>
+                <column>39</column>
+                <column>september and november are later in the year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>120</column>
+                <column>6</column>
+                <column>4</column>
+                <column>april begins on the same day of the week</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>124</column>
+                <column>6</column>
+                <column>8</column>
+                <column>on the same day of the week as july every year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>132</column>
+                <column>6</column>
+                <column>16</column>
+                <column>july every year and on the same day of the week</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>136</column>
+                <column>6</column>
+                <column>20</column>
+                <column>on the same day of the week as january in leap</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>146</column>
+                <column>6</column>
+                <column>30</column>
+                <column>leap years april ends on the same day of the week</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>150</column>
+                <column>6</column>
+                <column>34</column>
+                <column>on the same day of the week as december every year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>174</column>
+                <column>7</column>
+                <column>7</column>
+                <column>common years april starts on the same day of the week</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>178</column>
+                <column>7</column>
+                <column>11</column>
+                <column>on the same day of the week as october of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>183</column>
+                <column>7</column>
+                <column>16</column>
+                <column>the week as october of the previous year and in leap</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>192</column>
+                <column>7</column>
+                <column>25</column>
+                <column>in leap years may of the previous year in common years</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>201</column>
+                <column>7</column>
+                <column>34</column>
+                <column>common years april finishes on the same day of the week</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>205</column>
+                <column>7</column>
+                <column>38</column>
+                <column>on the same day of the week as july of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>210</column>
+                <column>7</column>
+                <column>43</column>
+                <column>the week as july of the previous year and in leap</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>221</column>
+                <column>7</column>
+                <column>54</column>
+                <column>years february and october of the previous year in common years</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>235</column>
+                <column>7</column>
+                <column>68</column>
+                <column>common years april starts on the same day of the week</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>239</column>
+                <column>7</column>
+                <column>72</column>
+                <column>on the same day of the week as january of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>244</column>
+                <column>7</column>
+                <column>77</column>
+                <column>the week as january of the previous year and in leap</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>259</column>
+                <column>7</column>
+                <column>92</column>
+                <column>after that april finishes on the same day of the week</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>263</column>
+                <column>7</column>
+                <column>96</column>
+                <column>on the same day of the week as january of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>268</column>
+                <column>7</column>
+                <column>101</column>
+                <column>the week as january of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>288</column>
+                <column>10</column>
+                <column>17</column>
+                <column>falling in april than in march the months around april march</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>301</column>
+                <column>10</column>
+                <column>30</column>
+                <column>both start with an m in the english language with an</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>308</column>
+                <column>10</column>
+                <column>37</column>
+                <column>english language with an a as the second letter in the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>312</column>
+                <column>10</column>
+                <column>41</column>
+                <column>a as the second letter in the english language april is</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>317</column>
+                <column>10</column>
+                <column>46</column>
+                <column>in the english language april is the first of three months</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>337</column>
+                <column>10</column>
+                <column>66</column>
+                <column>is also a female given name the astrological signs for april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>356</column>
+                <column>10</column>
+                <column>85</column>
+                <column>taurus april 21 to may 20 the sweet pea and daisy</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>362</column>
+                <column>10</column>
+                <column>91</column>
+                <column>the sweet pea and daisy are the traditional birth flowers for</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>372</column>
+                <column>10</column>
+                <column>101</column>
+                <column>for april birthstone for april is the diamond if the months</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>375</column>
+                <column>10</column>
+                <column>104</column>
+                <column>for april is the diamond if the months of the year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>378</column>
+                <column>10</column>
+                <column>107</column>
+                <column>the diamond if the months of the year were arranged in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>386</column>
+                <column>10</column>
+                <column>115</column>
+                <column>were arranged in alphabetical order in the english language april would</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>426</column>
+                <column>10</column>
+                <column>155</column>
+                <column>luxembourg april 16 elizabeth ii of the united kingdom and commonwealth</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2214</column>
+                <column>438</column>
+                <column>10</column>
+                <column>167</column>
+                <column>april 21 king willem alexander of the netherlands april 27 and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2215</column>
+                <column>55</column>
+                <column>3</column>
+                <column>2</column>
+                <column>april s flowers are the sweet pea</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2216</column>
+                <column>108</column>
+                <column>5</column>
+                <column>32</column>
+                <column>months that have 30 days as june september and november are</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2216</column>
+                <column>329</column>
+                <column>10</column>
+                <column>58</column>
+                <column>a row along with may and june that is also a</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2217</column>
+                <column>436</column>
+                <column>10</column>
+                <column>165</column>
+                <column>commonwealth realms april 21 king willem alexander of the netherlands april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2218</column>
+                <column>38</column>
+                <column>2</column>
+                <column>14</column>
+                <column>week as july and additionally january in leap years april always</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2218</column>
+                <column>139</column>
+                <column>6</column>
+                <column>23</column>
+                <column>day of the week as january in leap years april ends</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2218</column>
+                <column>242</column>
+                <column>7</column>
+                <column>75</column>
+                <column>day of the week as january of the previous year and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2218</column>
+                <column>266</column>
+                <column>7</column>
+                <column>99</column>
+                <column>day of the week as january of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2219</column>
+                <column>37</column>
+                <column>2</column>
+                <column>13</column>
+                <column>of week as july and additionally january in leap years april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2220</column>
+                <column>24</column>
+                <column>1</column>
+                <column>24</column>
+                <column>four months to have 30 days</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2220</column>
+                <column>106</column>
+                <column>5</column>
+                <column>30</column>
+                <column>the four months that have 30 days as june september and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2220</column>
+                <column>160</column>
+                <column>6</column>
+                <column>44</column>
+                <column>year as each others last days are exactly 35 weeks 245</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2220</column>
+                <column>166</column>
+                <column>6</column>
+                <column>50</column>
+                <column>are exactly 35 weeks 245 days apart</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2221</column>
+                <column>4</column>
+                <column>1</column>
+                <column>4</column>
+                <column>april is the fourth month of the year and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2221</column>
+                <column>86</column>
+                <column>5</column>
+                <column>10</column>
+                <column>march and may making it the fourth month of the year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2222</column>
+                <column>21</column>
+                <column>1</column>
+                <column>21</column>
+                <column>is one of four months to have 30 days</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2222</column>
+                <column>346</column>
+                <column>10</column>
+                <column>75</column>
+                <column>for april are aries march 21 to april 20 and taurus</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2222</column>
+                <column>353</column>
+                <column>10</column>
+                <column>82</column>
+                <column>april 20 and taurus april 21 to may 20 the sweet</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2223</column>
+                <column>59</column>
+                <column>3</column>
+                <column>6</column>
+                <column>april s flowers are the sweet pea and daisy its birthstone</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2223</column>
+                <column>357</column>
+                <column>10</column>
+                <column>86</column>
+                <column>april 21 to may 20 the sweet pea and daisy are</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2224</column>
+                <column>94</column>
+                <column>5</column>
+                <column>18</column>
+                <column>of the year it also comes first in the year out</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2224</column>
+                <column>318</column>
+                <column>10</column>
+                <column>47</column>
+                <column>the english language april is the first of three months in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2224</column>
+                <column>392</column>
+                <column>10</column>
+                <column>121</column>
+                <column>the english language april would come first six current european monarchs</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2225</column>
+                <column>111</column>
+                <column>5</column>
+                <column>35</column>
+                <column>30 days as june september and november are later in the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2226</column>
+                <column>431</column>
+                <column>10</column>
+                <column>160</column>
+                <column>of the united kingdom and commonwealth realms april 21 king willem</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2227</column>
+                <column>418</column>
+                <column>10</column>
+                <column>147</column>
+                <column>of denmark april 16 henri grand duke of luxembourg april 16</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2228</column>
+                <column>303</column>
+                <column>10</column>
+                <column>32</column>
+                <column>with an m in the english language with an a as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2228</column>
+                <column>314</column>
+                <column>10</column>
+                <column>43</column>
+                <column>the second letter in the english language april is the first</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2228</column>
+                <column>388</column>
+                <column>10</column>
+                <column>117</column>
+                <column>in alphabetical order in the english language april would come first</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2229</column>
+                <column>343</column>
+                <column>10</column>
+                <column>72</column>
+                <column>the astrological signs for april are aries march 21 to april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2230</column>
+                <column>281</column>
+                <column>10</column>
+                <column>10</column>
+                <column>there is a bigger likelihood of easter falling in april than</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2231</column>
+                <column>309</column>
+                <column>10</column>
+                <column>38</column>
+                <column>language with an a as the second letter in the english</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2232</column>
+                <column>103</column>
+                <column>5</column>
+                <column>27</column>
+                <column>year out of the four months that have 30 days as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2232</column>
+                <column>255</column>
+                <column>7</column>
+                <column>88</column>
+                <column>years and years immediately after that april finishes on the same</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2232</column>
+                <column>330</column>
+                <column>10</column>
+                <column>59</column>
+                <column>row along with may and june that is also a female</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2233</column>
+                <column>113</column>
+                <column>5</column>
+                <column>37</column>
+                <column>as june september and november are later in the year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2234</column>
+                <column>285</column>
+                <column>10</column>
+                <column>14</column>
+                <column>likelihood of easter falling in april than in march the months</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2235</column>
+                <column>350</column>
+                <column>10</column>
+                <column>79</column>
+                <column>march 21 to april 20 and taurus april 21 to may</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2236</column>
+                <column>172</column>
+                <column>7</column>
+                <column>5</column>
+                <column>in common years april starts on the same day of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2236</column>
+                <column>233</column>
+                <column>7</column>
+                <column>66</column>
+                <column>after other common years april starts on the same day of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2237</column>
+                <column>334</column>
+                <column>10</column>
+                <column>63</column>
+                <column>and june that is also a female given name the astrological</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2238</column>
+                <column>31</column>
+                <column>2</column>
+                <column>7</column>
+                <column>always begins on the same day of week as july and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2238</column>
+                <column>48</column>
+                <column>2</column>
+                <column>24</column>
+                <column>always ends on the same day of the week as december</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2238</column>
+                <column>122</column>
+                <column>6</column>
+                <column>6</column>
+                <column>april begins on the same day of the week as july</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2238</column>
+                <column>134</column>
+                <column>6</column>
+                <column>18</column>
+                <column>year and on the same day of the week as january</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2238</column>
+                <column>148</column>
+                <column>6</column>
+                <column>32</column>
+                <column>april ends on the same day of the week as december</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2238</column>
+                <column>176</column>
+                <column>7</column>
+                <column>9</column>
+                <column>april starts on the same day of the week as october</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2238</column>
+                <column>203</column>
+                <column>7</column>
+                <column>36</column>
+                <column>april finishes on the same day of the week as july</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2238</column>
+                <column>237</column>
+                <column>7</column>
+                <column>70</column>
+                <column>april starts on the same day of the week as january</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2238</column>
+                <column>261</column>
+                <column>7</column>
+                <column>94</column>
+                <column>april finishes on the same day of the week as january</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2239</column>
+                <column>406</column>
+                <column>10</column>
+                <column>135</column>
+                <column>april they are king philippe of belgium april 15 queen margrethe</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2240</column>
+                <column>158</column>
+                <column>6</column>
+                <column>42</column>
+                <column>december every year as each others last days are exactly 35</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2241</column>
+                <column>26</column>
+                <column>2</column>
+                <column>2</column>
+                <column>april always begins on the same day</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2241</column>
+                <column>43</column>
+                <column>2</column>
+                <column>19</column>
+                <column>january in leap years april always ends on the same day</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2242</column>
+                <column>335</column>
+                <column>10</column>
+                <column>64</column>
+                <column>june that is also a female given name the astrological signs</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2243</column>
+                <column>83</column>
+                <column>5</column>
+                <column>7</column>
+                <column>april comes between march and may making it the fourth month</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2244</column>
+                <column>20</column>
+                <column>1</column>
+                <column>20</column>
+                <column>it is one of four months to have 30 days</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2244</column>
+                <column>102</column>
+                <column>5</column>
+                <column>26</column>
+                <column>the year out of the four months that have 30 days</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2244</column>
+                <column>289</column>
+                <column>10</column>
+                <column>18</column>
+                <column>in april than in march the months around april march and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2244</column>
+                <column>321</column>
+                <column>10</column>
+                <column>50</column>
+                <column>april is the first of three months in a row along</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2244</column>
+                <column>376</column>
+                <column>10</column>
+                <column>105</column>
+                <column>april is the diamond if the months of the year were</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2245</column>
+                <column>383</column>
+                <column>10</column>
+                <column>112</column>
+                <column>of the year were arranged in alphabetical order in the english</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2246</column>
+                <column>159</column>
+                <column>6</column>
+                <column>43</column>
+                <column>every year as each others last days are exactly 35 weeks</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2247</column>
+                <column>396</column>
+                <column>10</column>
+                <column>125</column>
+                <column>would come first six current european monarchs were born in april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2248</column>
+                <column>403</column>
+                <column>10</column>
+                <column>132</column>
+                <column>were born in april they are king philippe of belgium april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2248</column>
+                <column>434</column>
+                <column>10</column>
+                <column>163</column>
+                <column>kingdom and commonwealth realms april 21 king willem alexander of the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2248</column>
+                <column>443</column>
+                <column>10</column>
+                <column>172</column>
+                <column>of the netherlands april 27 and king carl xvi gustaf of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2249</column>
+                <column>395</column>
+                <column>10</column>
+                <column>124</column>
+                <column>april would come first six current european monarchs were born in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2250</column>
+                <column>439</column>
+                <column>10</column>
+                <column>168</column>
+                <column>21 king willem alexander of the netherlands april 27 and king</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2251</column>
+                <column>63</column>
+                <column>3</column>
+                <column>10</column>
+                <column>the sweet pea and daisy its birthstone is the diamond the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2252</column>
+                <column>404</column>
+                <column>10</column>
+                <column>133</column>
+                <column>born in april they are king philippe of belgium april 15</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2253</column>
+                <column>295</column>
+                <column>10</column>
+                <column>24</column>
+                <column>months around april march and may both start with an m</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2254</column>
+                <column>5</column>
+                <column>1</column>
+                <column>5</column>
+                <column>april is the fourth month of the year and comes</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2254</column>
+                <column>76</column>
+                <column>4</column>
+                <column>2</column>
+                <column>the month</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2254</column>
+                <column>87</column>
+                <column>5</column>
+                <column>11</column>
+                <column>and may making it the fourth month of the year it</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2255</column>
+                <column>380</column>
+                <column>10</column>
+                <column>109</column>
+                <column>if the months of the year were arranged in alphabetical order</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2255</column>
+                <column>397</column>
+                <column>10</column>
+                <column>126</column>
+                <column>come first six current european monarchs were born in april they</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2256</column>
+                <column>336</column>
+                <column>10</column>
+                <column>65</column>
+                <column>that is also a female given name the astrological signs for</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2257</column>
+                <column>181</column>
+                <column>7</column>
+                <column>14</column>
+                <column>day of the week as october of the previous year and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2257</column>
+                <column>219</column>
+                <column>7</column>
+                <column>52</column>
+                <column>in leap years february and october of the previous year in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2258</column>
+                <column>273</column>
+                <column>10</column>
+                <column>2</column>
+                <column>in western christianity there is a</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2259</column>
+                <column>33</column>
+                <column>2</column>
+                <column>9</column>
+                <column>on the same day of week as july and additionally january</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2259</column>
+                <column>51</column>
+                <column>2</column>
+                <column>27</column>
+                <column>the same day of the week as december</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2259</column>
+                <column>125</column>
+                <column>6</column>
+                <column>9</column>
+                <column>the same day of the week as july every year and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2259</column>
+                <column>137</column>
+                <column>6</column>
+                <column>21</column>
+                <column>the same day of the week as january in leap years</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2259</column>
+                <column>151</column>
+                <column>6</column>
+                <column>35</column>
+                <column>the same day of the week as december every year as</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2259</column>
+                <column>179</column>
+                <column>7</column>
+                <column>12</column>
+                <column>the same day of the week as october of the previous</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2259</column>
+                <column>206</column>
+                <column>7</column>
+                <column>39</column>
+                <column>the same day of the week as july of the previous</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2259</column>
+                <column>240</column>
+                <column>7</column>
+                <column>73</column>
+                <column>the same day of the week as january of the previous</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2259</column>
+                <column>264</column>
+                <column>7</column>
+                <column>97</column>
+                <column>the same day of the week as january of the previous</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2260</column>
+                <column>427</column>
+                <column>10</column>
+                <column>156</column>
+                <column>april 16 elizabeth ii of the united kingdom and commonwealth realms</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2261</column>
+                <column>340</column>
+                <column>10</column>
+                <column>69</column>
+                <column>female given name the astrological signs for april are aries march</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2261</column>
+                <column>366</column>
+                <column>10</column>
+                <column>95</column>
+                <column>daisy are the traditional birth flowers for april birthstone for april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2261</column>
+                <column>369</column>
+                <column>10</column>
+                <column>98</column>
+                <column>traditional birth flowers for april birthstone for april is the diamond</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2262</column>
+                <column>64</column>
+                <column>3</column>
+                <column>11</column>
+                <column>sweet pea and daisy its birthstone is the diamond the meaning</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2262</column>
+                <column>368</column>
+                <column>10</column>
+                <column>97</column>
+                <column>the traditional birth flowers for april birthstone for april is the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2263</column>
+                <column>290</column>
+                <column>10</column>
+                <column>19</column>
+                <column>april than in march the months around april march and may</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2264</column>
+                <column>109</column>
+                <column>5</column>
+                <column>33</column>
+                <column>that have 30 days as june september and november are later</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2265</column>
+                <column>339</column>
+                <column>10</column>
+                <column>68</column>
+                <column>a female given name the astrological signs for april are aries</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2266</column>
+                <column>381</column>
+                <column>10</column>
+                <column>110</column>
+                <column>the months of the year were arranged in alphabetical order in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2267</column>
+                <column>413</column>
+                <column>10</column>
+                <column>142</column>
+                <column>april 15 queen margrethe ii of denmark april 16 henri grand</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2268</column>
+                <column>169</column>
+                <column>7</column>
+                <column>2</column>
+                <column>in common years april starts on the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2268</column>
+                <column>196</column>
+                <column>7</column>
+                <column>29</column>
+                <column>of the previous year in common years april finishes on the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2268</column>
+                <column>225</column>
+                <column>7</column>
+                <column>58</column>
+                <column>of the previous year in common years immediately after other common</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2268</column>
+                <column>230</column>
+                <column>7</column>
+                <column>63</column>
+                <column>common years immediately after other common years april starts on the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2269</column>
+                <column>325</column>
+                <column>10</column>
+                <column>54</column>
+                <column>of three months in a row along with may and june</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>9</column>
+                <column>1</column>
+                <column>9</column>
+                <column>fourth month of the year and comes between march and may</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>13</column>
+                <column>1</column>
+                <column>13</column>
+                <column>year and comes between march and may it is one of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>36</column>
+                <column>2</column>
+                <column>12</column>
+                <column>day of week as july and additionally january in leap years</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>61</column>
+                <column>3</column>
+                <column>8</column>
+                <column>flowers are the sweet pea and daisy its birthstone is the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>81</column>
+                <column>5</column>
+                <column>5</column>
+                <column>april comes between march and may making it the</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>110</column>
+                <column>5</column>
+                <column>34</column>
+                <column>have 30 days as june september and november are later in</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>130</column>
+                <column>6</column>
+                <column>14</column>
+                <column>week as july every year and on the same day of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>186</column>
+                <column>7</column>
+                <column>19</column>
+                <column>october of the previous year and in leap years may of</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>213</column>
+                <column>7</column>
+                <column>46</column>
+                <column>july of the previous year and in leap years february and</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>218</column>
+                <column>7</column>
+                <column>51</column>
+                <column>and in leap years february and october of the previous year</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>247</column>
+                <column>7</column>
+                <column>80</column>
+                <column>january of the previous year and in leap years and years</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>251</column>
+                <column>7</column>
+                <column>84</column>
+                <column>year and in leap years and years immediately after that april</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>293</column>
+                <column>10</column>
+                <column>22</column>
+                <column>march the months around april march and may both start with</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>328</column>
+                <column>10</column>
+                <column>57</column>
+                <column>in a row along with may and june that is also</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>349</column>
+                <column>10</column>
+                <column>78</column>
+                <column>aries march 21 to april 20 and taurus april 21 to</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>359</column>
+                <column>10</column>
+                <column>88</column>
+                <column>to may 20 the sweet pea and daisy are the traditional</column>
+            </line>
+            <line>
+                <column>63</column>
+                <column>2270</column>
+                <column>429</column>
+                <column>10</column>
+                <column>158</column>
+                <column>elizabeth ii of the united kingdom and commonwealth realms april 21</column>
+            </line>
+        </lines>
+    </table>
+    <table name="EXPRESSIONS">
+        <metadata>
+            <columns>
+                <column type="NUMBER">EXPRESSION_ID</column>
+                <column type="NUMBER">USER_ID</column>
+                <column type="VARCHAR2">WORD_ID_LIST</column>
+                <column type="VARCHAR2">VALUE</column>
+                <column type="DATE">CREATION_DATE</column>
+            </columns>
+        </metadata>
+        <lines>
+            <line>
+                <column>2</column>
+                <column>7</column>
+                <column>1,2,3,4,5,6,7</column>
+                <column>Some expression</column>
+                <column>2020-01-03 15:42:31</column>
+            </line>
+            <line>
+                <column>0</column>
+                <column>7</column>
+                <column>2280,2148</column>
+                <column>hellow my world</column>
+                <column>2019-12-16 00:00:00</column>
+            </line>
+            <line>
+                <column>3</column>
+                <column>7</column>
+                <column>-1,-1</column>
+                <column>expression test</column>
+                <column>2020-01-04 13:12:17</column>
+            </line>
+            <line>
+                <column>4</column>
+                <column>7</column>
+                <column>2271,2214</column>
+                <column>of the</column>
+                <column>2020-01-04 13:13:25</column>
+            </line>
+            <line>
+                <column>6</column>
+                <column>7</column>
+                <column>-1,2171,2214,2157</column>
+                <column>April is the four</column>
+                <column>2020-01-04 13:53:26</column>
+            </line>
+            <line>
+                <column>8</column>
+                <column>7</column>
+                <column>-1,2190,2161,-1,2270,-1,2243,2174,2214,-1</column>
+                <column>April comes between March and May, making it the f</column>
+                <column>2020-01-04 13:54:14</column>
+            </line>
+            <line>
+                <column>9</column>
+                <column>7</column>
+                <column>-1,2148</column>
+                <column>he year.</column>
+                <column>2020-01-04 14:00:12</column>
+            </line>
+            <line>
+                <column>10</column>
+                <column>7</column>
+                <column>2214,2148</column>
+                <column>the year.</column>
+                <column>2020-01-04 14:00:17</column>
+            </line>
+        </lines>
+    </table>
+    <table name="GROUPS">
+        <metadata>
+            <columns>
+                <column type="NUMBER">GROUP_ID</column>
+                <column type="VARCHAR2">GROUP_NAME</column>
+                <column type="NUMBER">USER_ID</column>
+                <column type="DATE">CREATION_DATE</column>
+            </columns>
+        </metadata>
+        <lines>
+            <line>
+                <column>25</column>
+                <column>My Group Name</column>
+                <column>1</column>
+                <column>2019-12-16 18:34:59</column>
+            </line>
+            <line>
+                <column>26</column>
+                <column>My Group 3</column>
+                <column>7</column>
+                <column>2019-12-16 18:45:56</column>
+            </line>
+            <line>
+                <column>27</column>
+                <column>My Group 4</column>
+                <column>7</column>
+                <column>2019-12-16 18:58:31</column>
+            </line>
+            <line>
+                <column>1</column>
+                <column>my group</column>
+                <column>7</column>
+                <column/>
+            </line>
+            <line>
+                <column>2</column>
+                <column>my group 2</column>
+                <column>7</column>
+                <column/>
+            </line>
+            <line>
+                <column>41</column>
+                <column>bla</column>
+                <column>7</column>
+                <column>2020-01-04 13:12:46</column>
+            </line>
+        </lines>
+    </table>
+    <table name="GROUP_WORDS">
+        <metadata>
+            <columns>
+                <column type="NUMBER">GROUP_ID</column>
+                <column type="NUMBER">WORD_ID</column>
+            </columns>
+        </metadata>
+        <lines>
+            <line>
+                <column>1</column>
+                <column>2148</column>
+            </line>
+            <line>
+                <column>1</column>
+                <column>2149</column>
+            </line>
+            <line>
+                <column>1</column>
+                <column>2215</column>
+            </line>
+            <line>
+                <column>2</column>
+                <column>2149</column>
+            </line>
+            <line>
+                <column>2</column>
+                <column>2252</column>
+            </line>
+            <line>
+                <column>2</column>
+                <column>2280</column>
+            </line>
+            <line>
+                <column>26</column>
+                <column>2148</column>
+            </line>
+            <line>
+                <column>27</column>
+                <column>2146</column>
+            </line>
+            <line>
+                <column>27</column>
+                <column>2149</column>
+            </line>
+            <line>
+                <column>27</column>
+                <column>2162</column>
+            </line>
+            <line>
+                <column>27</column>
+                <column>2206</column>
+            </line>
+            <line>
+                <column>27</column>
+                <column>2280</column>
+            </line>
+        </lines>
+    </table>
+</DB>

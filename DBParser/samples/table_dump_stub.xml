@@ -1,0 +1,16 @@
+<table name="articles">
+    <metadata>
+        <columms>
+            <column type="int">article_id</column>
+            <column type="string">title</column>
+            <column type="string">path</column>
+        </columms>
+    </metadata>
+    <lines>
+        <line>
+            <column>63</column>
+            <column>The title</column>
+            <column>aklfklafkleaklfakfajkflalkfgjlk</column>
+        </line>
+    </lines>
+</table>
