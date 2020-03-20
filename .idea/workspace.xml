@@ -88,7 +88,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Application.Tester">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Application" />
       <module name="DBPROJECT" />
@@ -180,8 +180,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
         <item itemvalue="Application.Tester" />
+        <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>

@@ -1,6 +1,14 @@
 package app;
 
 import app.lib.*;
+import app.lib.articleStats.ArticleStats;
+import app.lib.articleStats.ArticleStatsLib;
+import app.lib.expressionStats.ExpressionStats;
+import app.lib.expressionStats.ExpressionStatsLib;
+import app.lib.groupStats.GroupStats;
+import app.lib.groupStats.GroupStatsLib;
+import app.lib.wordStats.WordStatLib;
+import app.lib.wordStats.WordStats;
 import app.parsers.HtmlParser;
 import app.parsers.XMLParser;
 import app.utils.*;
@@ -32,7 +40,7 @@ public class Tester {
         Tester tester = new Tester();
         tester.beforeAll();
 
-        tester.testXmlDump();
+        tester.testExpressionStats();
     }
 
 
@@ -240,5 +248,34 @@ public class Tester {
     private void testXmlLoad() throws Exception{
         ServerLib.wipeAllTables();
         XMLLoader.loadXML(new File("C:\\Users\\Gilad\\Documents\\GitHub\\databases_project\\DBParser\\temp\\dbDump.xml"));
+    }
+
+    private void testWordStats() throws Exception{
+        Word word = new Word();
+        word.value = "Aba";
+        word.id = 2271;
+        WordStats stats = WordStatLib.calculateStats(word);
+        System.out.println(stats);
+    }
+
+    private void testGroupStats() throws Exception{
+        WordGroup group = new WordGroup(27, 7, "Blabla");
+        group.addWords(GroupLib.getGroupWords(27));
+
+        GroupStats stats = GroupStatsLib.calculateGroupStats(group);
+        System.out.println(stats);
+    }
+
+
+    private void testArticleStats() throws Exception{
+        Article article = ArticleLib.getArticleById(63);
+        ArticleStats stats = ArticleStatsLib.calculateArticleStats(article);
+        System.out.println(stats);
+    }
+
+    private void testExpressionStats() throws Exception{
+        Expression expression = ExpressionLib.getExpressionsById(10);
+        ExpressionStats stats = ExpressionStatsLib.calculateExpressionStats(expression);
+        System.out.println(stats);
     }
 }

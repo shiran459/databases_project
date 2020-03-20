@@ -294,10 +294,4 @@ public class ArticleLib {
         }
         return res;
     }
-
-//    public static Article getArticleWithMaxFrequency(Word word){
-//        String sql = "SELECT article_id " +
-//                "From word_index " +
-//                "WHERE "
-//    }
 }

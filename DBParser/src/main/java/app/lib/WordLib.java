@@ -342,28 +342,4 @@ public class WordLib {
 
         return wordList;
     }
-
-    public static int getNumOfOccurrences(Word word) throws SQLException {
-        // Build query
-        String sql = "SELECT COUNT(*) as occurrences " +
-                "FROM words +" +
-                "WHERE word_id=?";
-
-        // Set query values
-        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-        pstmt.setInt(0,word.id);
-        ResultSet res = pstmt.executeQuery();
-
-        // Extract results
-        int occurrences = 0;
-        while(res.next()){
-            occurrences = res.getInt("occurrences");
-        }
-
-        //Close resources
-        pstmt.close();
-        res.close();
-
-        return occurrences;
-    }
 }
