@@ -4,6 +4,7 @@ import app.lib.ArticleLib;
 import app.lib.GroupLib;
 import app.lib.UserLib;
 import app.lib.WordLib;
+import app.lib.wordStats.WordStats;
 import app.utils.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,7 @@ public class WordsController {
     public String displayAllWords(Model model, HttpServletRequest request) {
         try {
             List<Word> wordList = WordLib.getAllWords();
+            WordLib.setStats(wordList);
             model.addAttribute("wordList", wordList);
             User user = UserLib.extractUser(request);
             model.addAttribute("user", user);

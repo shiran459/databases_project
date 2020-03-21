@@ -30,13 +30,14 @@
             <th>Expression</th>
             <th>Creation Date</th>
             <th></th>
+            <th>Statistics</th>
         </tr>
         </thead>
         <tr th:each="expression: ${expressions}">
             <td th:text="${expression.value}"></td>
             <td th:text="${expression.creationDate}"></td>
             <td><a th:href="@{/expressions/{id}/locations/(id = ${expression.expressionId})}">view locations</a></td>
-
+            <td><div th:insert="fragments/expression_stats.html :: div(stats=${expression.stats})"></div></td>
         </tr>
     </table>
 

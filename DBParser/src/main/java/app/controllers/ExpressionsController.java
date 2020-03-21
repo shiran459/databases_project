@@ -27,7 +27,7 @@ public class ExpressionsController {
             model.addAttribute("user", user);
             model.addAttribute("expressions", expressions);
             return "expressions/display_expressions";
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }

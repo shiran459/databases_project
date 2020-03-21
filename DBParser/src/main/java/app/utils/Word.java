@@ -1,9 +1,12 @@
 package app.utils;
 
+import app.lib.wordStats.WordStats;
+
 public class Word {
 
     public String value;
     public int id;
+    public WordStats stats;
 
     public Word() {
         this.id = -1;

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="expression-stats" th:fragment="div (stats)">
+    <span th:text="'Creation date: ' + ${stats.createDate}"></span></br>
+    <span th:text="'Number of words: ' + ${stats.numOfWords}"></span></br>
+    <span th:if="${stats.longestWord != null}" th:text="'Longest words: ' + ${stats.longestWord.value}"></span>
+</div>
+</body>
+</html>

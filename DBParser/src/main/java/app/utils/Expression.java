@@ -1,5 +1,7 @@
 package app.utils;
 
+import app.lib.expressionStats.ExpressionStats;
+
 import java.sql.Date;
 import java.util.List;
 
@@ -9,6 +11,7 @@ public class Expression {
     public List<Integer> wordIdList;
     public String value;
     public Date creationDate;
+    public ExpressionStats stats;
 
     public Expression(int expressionId, int userId, List<Integer> wordIdList, String value, Date creationDate) {
         this.expressionId = expressionId;

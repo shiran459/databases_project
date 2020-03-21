@@ -25,7 +25,7 @@ public class GroupsController {
             model.addAttribute("user", user);
             model.addAttribute("groups", groups);
             return "groups/display_groups";
-        } catch(SQLException e) {
+        } catch(Exception e) {
             e.printStackTrace();
             return "error";
         }

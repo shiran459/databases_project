@@ -1,5 +1,6 @@
 package app.lib;
 
+import app.lib.articleStats.ArticleStatsLib;
 import app.utils.*;
 
 import java.sql.PreparedStatement;
@@ -88,7 +89,7 @@ public class ArticleLib {
         }
     }
 
-    public static List<Article> searchArticlesByTitle(String title) throws SQLException {
+    public static List<Article> searchArticlesByTitle(String title) throws Exception {
         String titlePattern = '%' + title + '%';
         ResultSet res = null;
         String sql = "SELECT article_id, title " +
@@ -105,6 +106,7 @@ public class ArticleLib {
             int articleId = res.getInt("article_id");
             String articleTitle = res.getString("title");
             Article curr = new Article(articleId, articleTitle);
+            curr.stats = ArticleStatsLib.calculateArticleStats(curr);
             results.add(curr);
         }
 
@@ -138,7 +140,7 @@ public class ArticleLib {
         return results;
     }
 
-    public static List<Article> searchArticlesByWords(List<String> words) throws SQLException {
+    public static List<Article> searchArticlesByWords(List<String> words) throws Exception {
         ResultSet res;
         StringBuilder wordSubQueries = new StringBuilder();
         String sql = "SELECT DISTINCT article_id, title " +
@@ -170,6 +172,7 @@ public class ArticleLib {
             int articleId = res.getInt("article_id");
             String title = res.getString("title");
             Article article = new Article(articleId,title);
+            article.stats = ArticleStatsLib.calculateArticleStats(article);
             articles.add(article);
         }
 

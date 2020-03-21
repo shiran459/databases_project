@@ -4,10 +4,10 @@ import app.utils.Article;
 import app.utils.Word;
 
 public class ArticleStats {
-    Article article;
-    int parNum;
-    int wordCount;
-    Word commonWord;
+    public Article article;
+    public int parNum;
+    public int wordCount;
+    public Word commonWord;
 
     public ArticleStats(Article article, int parNum, int wordCount, Word commonWord) {
         this.article = article;

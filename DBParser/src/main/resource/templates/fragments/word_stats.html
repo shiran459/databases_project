@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="word-stats" th:fragment="div (stats)">
+    <span th:text="'length: ' + ${stats.length}"></span></br>
+    <span th:if="${stats.article != null}" th:text="'Most appeared in: ' + ${stats.article.title}"></span></br>
+    <span th:text="'occurrences: ' + ${stats.occurrences}"></span>
+</div>
+</body>
+</html>

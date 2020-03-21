@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="expression-stats" th:fragment="div (stats)">
+    <span th:text="'Number of words: ' + ${stats.numOfWords}"></span></br>
+    <span th:text="'Length: ' + ${stats.length}"></span></br>
+</div>
+</body>
+</html>

@@ -37,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577554918916" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DBParser/src/main/resource/templates/dbAdmin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DBParser/src/main/resource/templates/fragments" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -59,11 +59,11 @@
       <recent name="app.storage" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\fragments" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\dbAdmin" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\words" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\static\js" />
       <recent name="C:\Users\Gilad\Documents\GitHub\databases_project\DBParser\src\main\resource\templates\expressions" />
-      <recent name="C:\Users\User\Documents\GitHub\databases_project\DBParser\src\main\resource\templates" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="app.controllers" />
@@ -88,7 +88,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Tester">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Application" />
       <module name="DBPROJECT" />
@@ -180,8 +180,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tester" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.Tester" />
       </list>
     </recent_temporary>
   </component>
@@ -218,6 +218,11 @@
           <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/lib/XMLLoader.java</url>
           <line>63</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DBParser/src/main/java/app/controllers/WordsController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

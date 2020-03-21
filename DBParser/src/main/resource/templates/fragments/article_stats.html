@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="article-stats" th:fragment="div (stats)">
+    <span th:text="'Number of paragraphs: ' + ${stats.parNum}"></span></br>
+    <span th:text="'Word count: ' + ${stats.wordCount}"></span></br>
+    <span th:if="${stats.commonWord != null}" th:text="'Most common word: ' + ${stats.commonWord.value}"></span></br>
+</div>
+</body>
+</html>

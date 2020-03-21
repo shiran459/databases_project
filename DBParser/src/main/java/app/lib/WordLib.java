@@ -1,5 +1,7 @@
 package app.lib;
 
+import app.lib.wordStats.WordStatLib;
+import app.lib.wordStats.WordStats;
 import app.utils.*;
 
 import java.sql.PreparedStatement;
@@ -215,6 +217,11 @@ public class WordLib {
         res.close();
 
         return result;
+    }
+
+    public static void setStats(List<Word> words) throws Exception{
+        for(Word word : words)
+            word.stats = WordStatLib.calculateStats(word);
     }
 
     /**

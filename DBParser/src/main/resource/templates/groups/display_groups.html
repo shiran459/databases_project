@@ -40,6 +40,9 @@
             <tr th:each="word: ${group.words}">
                 <td colspan="2" th:text = "${word.value}"></td>
             </tr>
+            <tr>
+                <td colspan="2" width="30%"><div th:insert="fragments/group_stats.html :: div(stats=${group.stats})"></div></td>
+            </tr>
             </tbody>
         </table>
     </div>

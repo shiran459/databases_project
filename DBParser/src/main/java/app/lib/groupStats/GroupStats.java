@@ -6,10 +6,10 @@ import app.utils.WordGroup;
 import java.util.Date;
 
 public class GroupStats {
-    WordGroup group;
-    Date createDate;
-    int numOfWords;
-    Word longestWord;
+    public WordGroup group;
+    public Date createDate;
+    public int numOfWords;
+    public Word longestWord;
 
     public GroupStats(WordGroup group, Date createDate, int numOfWords, Word longestWord) {
         this.group = group;

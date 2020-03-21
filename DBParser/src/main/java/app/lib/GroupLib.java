@@ -1,5 +1,6 @@
 package app.lib;
 
+import app.lib.groupStats.GroupStatsLib;
 import app.utils.*;
 
 import java.io.File;
@@ -142,7 +143,7 @@ public class GroupLib {
         return result;
     }
 
-    public static Set<WordGroup> getGroupsByUser(int userId) throws SQLException {
+    public static Set<WordGroup> getGroupsByUser(int userId) throws Exception {
         ResultSet res = null;
         String sql = "SELECT group_id, user_id, group_name " +
                 "FROM groups " +
@@ -159,6 +160,7 @@ public class GroupLib {
             String groupName = res.getString("group_name");
             WordGroup group = new WordGroup(groupId, userId, groupName);
             group.words = getGroupWords(groupId);
+            group.stats = GroupStatsLib.calculateGroupStats(group);
             result.add(group);
         }
 

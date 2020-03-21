@@ -1,5 +1,7 @@
 package app.lib.wordStats;
 
+import app.lib.ArticleLib;
+import app.utils.Article;
 import app.utils.ConnectionManager;
 import app.utils.Word;
 
@@ -11,9 +13,9 @@ public class WordStatLib {
     public static WordStats calculateStats(Word word) throws Exception {
         int length = calculateLength(word);
         int occurrences = calculateOccurrences(word);
-        int articleId = calculateArticle(word);
+        Article article = calculateArticle(word);
 
-        return new WordStats(word, length, occurrences, articleId);
+        return new WordStats(word, length, occurrences, article);
     }
 
     private static int calculateLength(Word word) {
@@ -43,7 +45,7 @@ public class WordStatLib {
         return occurrences;
     }
 
-    private static int calculateArticle(Word word) throws Exception {
+    private static Article calculateArticle(Word word) throws Exception {
         String sql =
                 "SELECT COUNT(*) as c, article_id " +
                 "FROM word_index " +
@@ -57,16 +59,19 @@ public class WordStatLib {
         ResultSet res = pstmt.executeQuery();
 
         // Extract results
-        int article = 0;
+        int articleId = -1;
         if (res.next()) {
-            article = res.getInt("article_id");
+            articleId = res.getInt("article_id");
         }
 
         //Close resources
         pstmt.close();
         res.close();
 
-        return article;
+        if(articleId > -1)
+            return ArticleLib.getArticleById(articleId);
+        else
+            return null;
     }
 
 }

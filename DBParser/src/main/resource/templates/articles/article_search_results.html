@@ -32,6 +32,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Article Title</th>
                 <th scope="col"></th>
+                <th scope="col">Statistics</th>
             </tr>
             </thead>
 
@@ -41,6 +42,7 @@
                 <td th:text="${iter.index+1}"></td>
                 <td><a th:href="@{/articles/{id}(id = ${article.id})}"><span th:text="${article.title}"></span></a></td>
                 <td><a th:href="@{/words/by_article/{id}(id = ${article.id})}">view all words</a></td>
+                <td><div th:insert="fragments/article_stats.html :: div(stats=${article.stats})"></div></td>
             </tr>
             </tbody>
 

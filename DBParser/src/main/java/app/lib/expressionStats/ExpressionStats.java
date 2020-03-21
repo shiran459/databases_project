@@ -5,10 +5,10 @@ import app.utils.Expression;
 import java.util.Date;
 
 public class ExpressionStats {
-    Expression expression;
-    Date createDate;
-    int numOfWords;
-    int length;
+    public Expression expression;
+    public Date createDate;
+    public int numOfWords;
+    public int length;
 
     public ExpressionStats(Expression expression, Date createDate, int numOfWords, int length) {
         this.expression = expression;

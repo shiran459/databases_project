@@ -1,5 +1,6 @@
 package app.lib;
 
+import app.lib.expressionStats.ExpressionStatsLib;
 import app.utils.*;
 
 import java.sql.PreparedStatement;
@@ -100,7 +101,7 @@ public class ExpressionLib {
         return potentialExpressionLocations;
     }
 
-    public static List<Expression> getExpressions(int userId) throws SQLException {
+    public static List<Expression> getExpressions(int userId) throws Exception {
         ResultSet res = null;
         String sql = "SELECT expression_id, value, word_id_list, creation_date " +
                 "FROM expressions " +
@@ -116,8 +117,9 @@ public class ExpressionLib {
             String value = res.getString("value");
             String word_id_list = res.getString("word_id_list");
             java.sql.Date creationDate = res.getDate("creation_date");
-
-            expressions.add(new Expression(expression_id, userId, paresWordIdList(word_id_list), value, creationDate));
+            Expression expression = new Expression(expression_id, userId, paresWordIdList(word_id_list), value, creationDate);
+            expression.stats = ExpressionStatsLib.calculateExpressionStats(expression);
+            expressions.add(expression);
         }
         //Close resources
         pstmt.close();

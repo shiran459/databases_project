@@ -31,8 +31,8 @@
             <tr th:each="word: ${wordList}">
                 <td th:text="${word.value}"></td>
                 <td><a th:href="@{/words/context/{wordId}(wordId=${word.id})}">View Contexts</a></td>
-                <td><div th:insert="fragments/group_selector.html :: div(groups=${allGroups},word=${word})"> </div>
-                </td>
+                <td><div th:insert="fragments/group_selector.html :: div(groups=${allGroups},word=${word})"></div></td>
+                <td><div th:insert="fragments/word_stats.html :: div(stats=${word.stats})"></div></td>
             </tr>
             </tbody>
         </table>
