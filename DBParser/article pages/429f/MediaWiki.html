@@ -1,0 +1,123 @@
+<div>
+<p>{{Selfref|For the MediaWiki <a href="//en.wikipedia.org/wiki/Namespace">namespace</a> on Wikipedia, see <a href="//en.wikipedia.org/wiki/MediaWiki_namespace">Wikipedia:MediaWiki namespace</a>.}}
+{{Infobox software
+| name = MediaWiki
+| logo = <a class="image" href="/File:135px-MediaWiki-smaller-logo.png" title="The '''MediaWiki''' logo. The brackets around the [[sunflower]] symbolise the way internal links are created when editing pages"><img alt="The '''MediaWiki''' logo. The brackets around the [[sunflower]] symbolise the way internal links are created when editing pages" src="/135px-MediaWiki-smaller-logo.png" width="135"/>
+</a>
+| screenshot = <a class="image" href="/Image:220px-Simple_English_Wikipedia_screenshot.png"><img src="/220px-Simple_English_Wikipedia_screenshot.png" width="220"/>
+</a>
+| collapsible = yes
+| caption = The <a href="/Main_Page" title="Main Page">Main Page</a> of the <a href="/Simple_English_Wikipedia" title="Simple English Wikipedia">Simple English Wikipedia</a> which runs on MediaWiki
+| author =
+| developer = <a href="/Wikimedia_Foundation" title="Wikimedia Foundation">Wikimedia Foundation</a>, <br/> Tim Starling (release manager)
+| released = 25 January 2002
+| latest release version = 1.27.1
+| latest release date = {{start date and age|2016|08|22}}<sup class="reference" id="_ref-version"><a href="#_note-version" title="">[1]</a></sup>
+| operating system = <a href="/Cross-platform" title="Cross-platform">Cross-platform</a>
+| platform = 
+| language = More than 350 languages
+| genre = <a href="/Wiki" title="Wiki">Wiki</a>
+| license = <a href="/GPLv2" title="GPLv2">GPLv2</a>+
+| website = <a class="external text" href="https://www.mediawiki.org/" rel="nofollow">mediawiki.org</a>
+}}
+<b>MediaWiki</b> is the name of the <a href="/Software" title="Software">software</a> that runs all of the <a href="/Wikimedia" title="Wikimedia">Wikimedia</a> projects.  MediaWiki was released in 2003.  It is free server-based software which is licensed under the <a href="/GNU" title="GNU">GNU</a> General Public License (GPL).  The software is licensed under the <a href="/GPL" title="GPL">GPL</a>. This means it is <a href="/Free_content" title="Free content">free content</a>, or <a href="/Open_source" title="Open source">open source</a>.</p>
+<p>MediaWiki is designed to be run on a large <a href="/Web_server" title="Web server">web server</a> farm for a website that gets millions of hits per day.  MediaWiki is a very powerful, scalable software and a feature-rich wiki implementation, that uses <a href="/PHP" title="PHP">PHP</a> to process and display data stored in its <a href="/MySQL" title="MySQL">MySQL</a> database.  Pages use MediaWiki's <a href="/Wikitext" title="Wikitext">Wikitext</a> format, so that users without knowledge of <a href="/XHTML" title="XHTML">XHTML</a> or <a href="/Cascading_Style_Sheets" title="Cascading Style Sheets">CSS</a> can edit them easily.</p>
+<p>When a user submits an edit to a page, MediaWiki writes it to the database, but without deleting the previous versions of the page, thus allowing easy reverts in case of vandalism or spamming. MediaWiki can manage image and multimedia files, too, which are stored in the filesystem. For large wikis with lots of users, MediaWiki supports <a href="/Caching" title="Caching">caching</a> and can be easily coupled with Squid proxy server software.</p>
+<p>All Wikimedia projects run on MediaWiki version  {{CURRENTVERSION}}.<sup class="reference" id="_ref-2"><a href="#_note-2" title="">[2]</a></sup></p>
+<table class="toc" id="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<ul>
+<li class="toclevel-1"><a href="#Usage">Usage</a>
+</li>
+<li class="toclevel-1"><a href="#Extensions">Extensions</a>
+</li>
+<li class="toclevel-1"><a href="#Namespaces">Namespaces</a>
+</li>
+<li class="toclevel-1"><a href="#Bugs">Bugs</a>
+</li>
+<li class="toclevel-1"><a href="#Skins">Skins</a>
+</li>
+<li class="toclevel-1"><a href="#More_information">More information</a>
+</li>
+<li class="toclevel-1"><a href="#References">References</a>
+</li>
+<li class="toclevel-1"><a href="#Other_websites">Other websites</a>
+</li>
+</ul>
+</ul></td></tr></table><hr/>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+
+<p>As MediaWiki is more flexible, therefore many websites use MediaWiki rather than other types of wiki software. Besides Wikimedia, <a href="/Wikia" title="Wikia">Wikia</a> is also another company that uses MediaWiki greatly for people to contribute information.</p>
+<p>There are also some websites that uses MediaWiki as a content management system.<sup class="reference" id="_ref-3"><a href="#_note-3" title="">[3]</a></sup></p>
+<h2><span class="mw-headline" id="Extensions">Extensions</span></h2>
+<p>In MediaWiki, a system administrator can choose to install extensions which are provided on the main MediaWiki website. Some are from the MediaWiki developers, while others are from programmers from all around the world.</p>
+<p>Most extensions can be download from Wikimedia's <a href="/Subversion_(software)" title="Subversion (software)">Subversion</a> repository. However, there are some other extensions that other people host themselves.</p>
+<p>Some extensions had been added to the main software along the development of MediaWiki.<sup class="reference" id="_ref-4"><a href="#_note-4" title="">[4]</a></sup> For example, the <a href="//www.mediawiki.org/wiki/Extension:%2Bsysop">Makesysop</a> extension is an extension to promote a user into an administrator or a bureaucrat.</p>
+<p>There were a total of 2124 extensions as of October 4, 2013.<sup class="reference" id="_ref-5"><a href="#_note-5" title="">[5]</a></sup></p>
+<h2><span class="mw-headline" id="Namespaces">Namespaces</span></h2>
+<p>In the default installation of MediaWiki, the software has 17 namespaces<sup class="reference" id="_ref-Namespace"><a href="#_note-Namespace" title="">[6]</a></sup>(18 actually, but one does not have a namespace), namely:
+</p>
+<ul>
+<li>Article (No namespace, like this page)</li>
+<li>Talk - for main namespace talk page</li>
+<li>User - the user page, also from <a href="/Special:MyPage" title="Special:MyPage">Special:MyPage</a></li>
+<li>User talk - the user talk page, also from <a href="/Special:MyTalk" title="Special:MyTalk">Special:MyTalk</a></li>
+<li>Project - The project namespace(like on this wiki, is Wikipedia)</li>
+<li>Project talk - The project page talk page</li>
+<li>File - Page for images and sounds</li>
+<li>File talk - Talk about the media</li>
+<li>MediaWiki - Software pages, can only be changed from an administrator</li>
+<li>MediaWiki talk - Talk about the software page, anyone can write in this namespace</li>
+<li>Template - for templates</li>
+<li>Template talk - talk about the template</li>
+<li>Help - Help pages(like <a href="/Help:Contents" title="Help:Contents">Help:Contents</a>)</li>
+<li>Help talk - talk about the help page</li>
+<li>Category - Categorising pages</li>
+<li>Category talk - talk about the category</li>
+<li>Special - Special pages of the MediaWiki software</li>
+<li>Media - Namespace to directly link to the file</li>
+</ul>
+
+<p>Additional namespaces can be added using the <a href="//www.mediawiki.org/wiki/Manual:LocalSettings.php">settings file</a> from the installation of MediaWiki.<sup class="reference" id="_ref-7"><a href="#_note-7" title="">[7]</a></sup></p>
+<h2><span class="mw-headline" id="Bugs">Bugs</span></h2>
+<p>As MediaWiki is a complex software, there would always be bugs in the software, especially for new extensions. Therefore, Wikimedia has created a <a href="/Bugzilla" title="Bugzilla">bugzilla</a> website for people who see a bug to tell the developers of MediaWiki.</p>
+<p>Some extensions of MediaWiki use the <a href="https://bugzilla.wikimedia.org/">Wikimedia Bugzilla</a>, while some just use the talk pages of the extension page.</p>
+<h2><span class="mw-headline" id="Skins">Skins</span></h2>
+
+
+<p>
+During the development of MediaWiki, different skins have come into the main software. For example, Wikipedia used to be using Nostalgia.<sup class="reference" id="_ref-8"><a href="#_note-8" title="">[8]</a></sup> But it changed to Monobook before the new Vector skin came up in 1.16.<sup class="reference" id="_ref-9"><a href="#_note-9" title="">[9]</a></sup></p>
+<p>A survey done by Wikimedia showed that more people prefer the Vector skin.</p>
+<p>It is possible to change the skin that a user wants to see a wiki as by going to their <a href="/Special:Preferences" title="Special:Preferences">preferences</a>.</p>
+<h2><span class="mw-headline" id="More_information">More information</span></h2>
+<p><i>More information about the software:</i></p>
+
+<ul>
+<li><a href="//www.mediawiki.org/wiki/">Main MediaWiki website</a></li>
+<li><a href="//meta.wikimedia.org/wiki/MediaWiki">MediaWiki on Meta Wiki</a></li>
+<li><a href="//meta.wikimedia.org/wiki/MediaWiki_User's_Guide">MediaWiki User's Guide on Meta Wiki</a></li>
+<li><a href="/En:Wikipedia:PHP_script_FAQ" title="En:Wikipedia:PHP script FAQ">PHP script FAQ</a></li>
+<li><a href="/En:Wikipedia:PHP_script_automatic_wikification" title="En:Wikipedia:PHP script automatic wikification">PHP script automatic wikification</a> (former feature)</li>
+<li><a href="//www.mediawiki.org/wiki/How_to_become_a_MediaWiki_hacker">How to become a MediaWiki hacker</a> (installation advice)</li>
+</ul>
+
+<h2><span class="mw-headline" id="References">References</span></h2>
+<p>{{reflist|2}}</p>
+<h2><span class="mw-headline" id="Other_websites">Other websites</span></h2>
+
+<ul>
+<li><a href="https://lists.wikimedia.org/mailman/listinfo/wikitech-l">Wikitech-L</a> mailing list (technical discussions regarding the development)</li>
+<li><a href="//www.mediawiki.org/wiki/Sites_using_MediaWiki">Sites using MediaWiki</a></li>
+<li><a class="external text" href="http://sourceforge.net/projects/wikipedia/" rel="nofollow">Sourceforge: MediaWiki Project page</a> <i>Now changed to <a href="//www.mediawiki.org/wiki/">MediaWiki.org</a></i>.</li>
+<li><a class="external text" href="http://sourceforge.net/tracker/?group_id=34373&amp;atid=411192" rel="nofollow">Sourceforge: MediaWiki Bug reports</a> <i>Now changed to <a href="https://bugzilla.wikimedia.org/">Wikimedia Bugzilla</a></i>.</li>
+<li><a class="external text" href="http://sourceforge.net/tracker/?atid=411195&amp;group_id=34373" rel="nofollow">Sourceforge: MediaWiki Feature requests</a> <i>Now changed to Wikimedia Bugzilla</i>.</li>
+<li><a href="https://translatewiki.net/wiki/">Translatewiki.net</a> - The place to translate MediaWiki messages.</li>
+</ul>
+
+<p>
+</p></div>

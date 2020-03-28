@@ -50,6 +50,8 @@ public class HtmlParser {
         //extract words from each paragraph
         HashMap<String, ArticleWord> wordsMap = new HashMap<>();
 
+        wordsCounter = 1;
+
         for (int i=0; i < paragraphList.getLength(); i++){
             Node paragraph = paragraphList.item(i);
             extractWordsFromParagraph(paragraph, wordsMap, i+1);

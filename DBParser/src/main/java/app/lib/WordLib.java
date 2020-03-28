@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class WordLib {
+
     /**
      * Stores the words of a word index at the WORDS and WORD_INDEX tables.
      *
@@ -44,7 +45,10 @@ public class WordLib {
         for (ArticleWord word : wordsList) {
             String currWord = word.value;
 
-            insertWord(currWord);
+            boolean success = insertWord(currWord);
+            if(!success)
+                continue;
+
             int wordId = getWordId(currWord);
             for (int j = 0; j < word.wordLocations.size(); j++) {
                 int offset = word.wordLocations.get(j).wordOffset;
@@ -77,21 +81,23 @@ public class WordLib {
      * @param value String of the word to be added.
      * @return True if the word was added, otherwise returns false.
      */
-    public static void insertWord(String value) throws SQLException {
+    public static boolean insertWord(String value) throws SQLException {
         int length = value.length();
+        if (length > 256)
+            return false;
         String sql = "MERGE INTO words " +
-                "USING (SELECT ? word_id,? value,? length FROM dual) new_word " +
+                "USING (SELECT ? word_id,? value FROM dual) new_word " +
                 "ON (words.value = new_word.value) " +
-                "WHEN NOT MATCHED THEN INSERT (word_id, value, length) " +
-                "VALUES (NULL, new_word.value, new_word.length)";
+                "WHEN NOT MATCHED THEN INSERT (word_id, value) " +
+                "VALUES (NULL, new_word.value)";
         PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
         pstmt.setNull(1, java.sql.Types.INTEGER);
         pstmt.setString(2, value);
-        pstmt.setInt(3, length);
         pstmt.executeQuery();
 
         //close resources
         pstmt.close();
+        return true;
     }
 
     //--------------------------------------- QUERY METHODS -------------------------------//

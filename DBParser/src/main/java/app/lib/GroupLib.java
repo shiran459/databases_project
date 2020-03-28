@@ -221,10 +221,4 @@ public class GroupLib {
 
         pstmt.close();
     }
-
-//    public static File exportGroupLocations(int groupId) throws IOException,SQLException {
-//
-//    }
-
-
 }

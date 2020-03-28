@@ -40,7 +40,16 @@ public class Tester {
         Tester tester = new Tester();
         tester.beforeAll();
 
-        tester.testExpressionStats();
+//        tester.testExpressionStats();
+//        String[]arr = {"a", "b"};
+//        System.out.println(Paths.get("start", arr));
+
+        String filepath = "C:\\Users\\Gilad\\Desktop\\דברים של שירן\\simplewiki-20170820-pages-meta-current.xml";
+        File xmlFile = new File(filepath);
+
+        ServerLib.wipeAllTables();
+        XMLParser parser = new XMLParser(xmlFile);
+        parser.initDatabase(true);
     }
 
 

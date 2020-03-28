@@ -19,24 +19,34 @@ public class ArticleLib {
      * @throws SQLException If the transaction has failed.
      */
     public static int insertArticle(String title, String path) throws SQLException {
-        String sql = "INSERT INTO articles(article_id, title, path)" +
-                "VALUES (article_seq.NEXTVAL, ?, ?)";
-        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql,new String[]{"article_id"});
-//        pstmt.setNull(1, java.sql.Types.INTEGER);
+//        String sql = "INSERT INTO articles(article_id, title, path)" +
+//                "VALUES (article_seq.NEXTVAL, ?, ?)";
+
+        String sql = "MERGE INTO articles " +
+                "USING (SELECT ? title, ? path FROM dual) new_article " +
+                "ON (articles.title = new_article.title) " +
+                "WHEN NOT MATCHED THEN INSERT (article_id, title, path) " +
+                "VALUES (article_seq.NEXTVAL, new_article.title, new_article.path)";
+
+        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
         pstmt.setString(1, title);
         pstmt.setString(2, path);
-        pstmt.executeUpdate();
 
-        //Get the generated articleId
-        ResultSet rs = pstmt.getGeneratedKeys();
-        int result = -1;
-        if (rs.next()) {
-            result = rs.getInt(1);
-        }
+        pstmt.executeUpdate();
 
         //Close resources
         pstmt.close();
-        rs.close();;
+
+        //Get the generated articleId
+        sql = "select article_seq.currval from DUAL";
+        pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
+        int result = -1;
+        if(rs.next())
+            result = rs.getInt(1);
+
+        pstmt.close();
+        rs.close();
 
         return result;
     }
@@ -111,29 +121,6 @@ public class ArticleLib {
         }
 
         //Close resource
-        res.close();
-        pstmt.close();
-
-        return results;
-    }
-
-    public static List<String> searchArticlesByCategory(String category) throws SQLException {
-        ResultSet res;
-        String sql = "SELECT title " +
-                "FROM articles_by_category NATURAL JOIN categories " +
-                "WHERE category_name = ?";
-
-        PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
-        pstmt.setString(1, category);
-        res = pstmt.executeQuery();
-
-        //Extract results
-        List<String> results = new ArrayList<String>();
-        while (res.next()) {
-            results.add(res.getString("title"));
-        }
-
-        //Close resources
         res.close();
         pstmt.close();
 

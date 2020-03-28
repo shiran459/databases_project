@@ -70,7 +70,10 @@ public class ServerLib {
 
         Node root = xmlDocument.getChildNodes().item(0);
         NodeList list = root.getChildNodes();
+        int length = list.getLength();
         System.out.println(list.getLength());
+        if (!(length > 0 ))
+            return;
         for (int i = 0; i < list.getLength(); i++) {
             Node node = list.item(i);
             if (node.getNodeName().equals("div")){
@@ -91,6 +94,8 @@ public class ServerLib {
 
         //Insert article
         int articleId = ArticleLib.insertArticle(title, path);
+        if (articleId <= 0)
+            return;
 
         //Index the article
         HashMap<String, ArticleWord> wordMap = HtmlParser.indexWords(htmlFile);
@@ -109,7 +114,7 @@ public class ServerLib {
 
     public static String getFilePath(String title) throws IOException{
         String folderName = DigestUtils.sha1Hex(title).substring(0,4);
-        Path dictPath =  Paths.get(System.getProperty("user.dir"),
+        Path dictPath =  Paths.get(
                 "DBParser",
                 "article pages" ,
                 folderName);

@@ -57,9 +57,6 @@ public class ArticlesController {
             case "words": {
                 return searchArticleByWords(searchInput, model);
             }
-            case "category": {
-                return searchArticleByCategory(searchInput, model);
-            }
             default:{
                 return "error";
             }
@@ -99,22 +96,6 @@ public class ArticlesController {
         }
     }
 
-    /**
-     * Displays article search results for searches made with category as key.
-     * @param category Category to use as search key.
-     * @param model
-     * @return Article search result page.
-     */
-    public String searchArticleByCategory(String category, Model model) {
-        try {
-            List<String> titleList = ArticleLib.searchArticlesByCategory(category);
-            model.addAttribute("titleList", titleList);
-            return "article_search_results";
-        } catch (Exception e) {
-            return "error";
-        }
-    }
-
     //=============================== ARTICLE UPLOAD PAGE ====================================//
     @GetMapping("/articles/upload")
     public String displayUploadPage(Model model,  HttpServletRequest request) {
@@ -142,7 +123,7 @@ public class ArticlesController {
             Article article = ArticleLib.getArticleById(Integer.parseInt(id));
 
             //Read into string
-            String content = Files.readString(Paths.get(article.path));
+            String content = Files.readString(Paths.get(System.getProperty("user.dir"), pathSplitter(article.path)));
             //Wrap in model
             model.addAttribute("articleContent", content);
             model.addAttribute("article", article);
@@ -152,5 +133,12 @@ public class ArticlesController {
         } catch (Exception e) {
             return "error";
         }
+    }
+
+    private String[] pathSplitter(String path){
+        if(path.contains("/"))
+            return path.split("/");
+        else
+            return path.split("\\\\");
     }
 }
